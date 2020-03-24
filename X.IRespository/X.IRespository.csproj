@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug\netcoreapp2.1\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\X.Common\X.Common.csproj" />
+    <ProjectReference Include="..\X.Models\X.Models.csproj" />
+    <ProjectReference Include="..\X.ORM\X.ORM.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DBSession\" />
+    <Folder Include="Sons\" />
+  </ItemGroup>
+
+</Project>

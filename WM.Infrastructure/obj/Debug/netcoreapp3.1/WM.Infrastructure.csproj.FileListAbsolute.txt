@@ -1,0 +1,8 @@
+D:\demo\WeChatMall\WM.Infrastructure\bin\Debug\netcoreapp3.1\WM.Infrastructure.deps.json
+D:\demo\WeChatMall\WM.Infrastructure\bin\Debug\netcoreapp3.1\WM.Infrastructure.dll
+D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.csprojAssemblyReference.cache
+D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.AssemblyInfoInputs.cache
+D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.AssemblyInfo.cs
+D:\demo\WeChatMall\WM.Infrastructure\bin\Debug\netcoreapp3.1\WM.Infrastructure.pdb
+D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.dll
+D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.pdb

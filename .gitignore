@@ -3,3 +3,27 @@
 ################################################################################
 
 /.vs
+/WM.Api.Manager/bin/Debug/netcoreapp3.1
+/WM.Api.Manager/obj
+/WM.Api.Manager/Properties
+/WM.Infrastructure/bin/Debug
+/WM.Infrastructure/bin/Release/netcoreapp2.1
+/WM.Service.App/bin/Debug/netcoreapp3.1
+/WM.Service.App/obj
+/WM.Service.Domain/bin/Debug/netcoreapp3.1
+/WM.Service.Domain/obj
+/WM.Web.Api/bin/Debug/netcoreapp3.1
+/WM.Web.Api/obj
+/WM.Web.Api/Properties
+/X.Common/bin
+/X.Common/obj
+/X.IRespository/bin
+/X.IRespository/obj
+/X.Models/bin
+/X.Models/obj
+/X.ORM/bin
+/X.ORM/obj
+/X.Respository/bin
+/X.Respository/obj
+/X.TConsole/bin
+/X.TConsole/obj

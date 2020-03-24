@@ -1,0 +1,8 @@
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\bin\Release\netcoreapp2.1\MT.Infrastructure.deps.json
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\bin\Release\netcoreapp2.1\MT.Infrastructure.dll
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\bin\Release\netcoreapp2.1\MT.Infrastructure.pdb
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\obj\Release\netcoreapp2.1\MT.Infrastructure.csprojAssemblyReference.cache
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\obj\Release\netcoreapp2.1\MT.Infrastructure.AssemblyInfoInputs.cache
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\obj\Release\netcoreapp2.1\MT.Infrastructure.AssemblyInfo.cs
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\obj\Release\netcoreapp2.1\MT.Infrastructure.dll
+D:\GitProjects\MicroTrade.NET-Core\04.基础设施层\MT.Infrastructure\obj\Release\netcoreapp2.1\MT.Infrastructure.pdb
