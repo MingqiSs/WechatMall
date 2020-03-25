@@ -6,7 +6,7 @@
 /WM.Api.Manager/bin
 /WM.Api.Manager/obj
 /WM.Api.Manager/Properties
-/WM.Infrastructure/bin/Debug
+/WM.Infrastructure/bin
 /WM.Infrastructure/obj
 /WM.Service.App/bin
 /WM.Service.App/obj
@@ -28,3 +28,5 @@
 /X.Respository/obj
 /X.TConsole/bin
 /X.TConsole/obj
+/WM.Api.AuthCenter/bin/Debug/netcoreapp3.1
+/WM.Api.AuthCenter/obj
