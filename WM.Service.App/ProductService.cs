@@ -11,11 +11,11 @@ using WM.Service.App.Dto.WebDto.RQ;
 
 namespace WM.Service.App
 {
-  public class Product : BaseSerivce , IProductService
+  public class ProductService : BaseSerivce , IProductService
     {
         private readonly X.IRespository.DBSession.IWMDBSession _ibll;
         private readonly IUserDomainService _userDomainService;
-        public Product(X.IRespository.DBSession.IWMDBSession ibll , IUserDomainService userDomainService)
+        public ProductService(X.IRespository.DBSession.IWMDBSession ibll , IUserDomainService userDomainService)
         {
             _ibll = ibll;
             _userDomainService = userDomainService;

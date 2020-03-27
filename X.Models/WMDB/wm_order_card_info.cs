@@ -21,14 +21,14 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
-           public string Order_CardID { get; set; }
+           public int Order_CardID { get; set; }
 
            /// <summary>
            /// Desc:商品id
            /// Default:1
            /// Nullable:False
            /// </summary>
-           public int ProductID { get; set; }
+           public string ProductID { get; set; }
 
            /// <summary>
            /// Desc:商品数

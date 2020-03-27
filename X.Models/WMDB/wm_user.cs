@@ -10,13 +10,6 @@ namespace X.Models.WMDB
            public wm_user(){}
 
            /// <summary>
-           /// Desc:邮箱
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Email { get; set; }
-
-           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
@@ -92,6 +85,13 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Pwd { get; set; }
+
+           /// <summary>
+           /// Desc:邮箱
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Email { get; set; }
 
 
     }

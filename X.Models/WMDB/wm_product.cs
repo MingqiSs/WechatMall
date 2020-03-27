@@ -10,13 +10,6 @@ namespace X.Models.WMDB
            public wm_product(){}
 
            /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Icon { get; set; }
-
-           /// <summary>
            /// Desc:商品ID
            /// Default:
            /// Nullable:False
@@ -113,6 +106,13 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ProductTypeID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Icon { get; set; }
 
 
     }

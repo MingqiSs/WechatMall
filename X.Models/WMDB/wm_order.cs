@@ -14,13 +14,6 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
            public int ID { get; set; }
 
            /// <summary>
@@ -92,6 +85,13 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public decimal? OrderPrice { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
 
 
     }

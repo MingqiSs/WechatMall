@@ -10,13 +10,6 @@ namespace X.Models.WMDB
            public wm_user_shopping_address(){}
 
            /// <summary>
-           /// Desc:市
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int CityID { get; set; }
-
-           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
@@ -92,6 +85,13 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ProvinceID { get; set; }
+
+           /// <summary>
+           /// Desc:市
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int CityID { get; set; }
 
 
     }

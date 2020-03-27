@@ -25,20 +25,21 @@ namespace WM.Web.Api.Controllers
     public class OrderController : ControllerBase
     {
        
-        private readonly IInfoService _infoService;
-        public OrderController( IInfoService infoService)
+        private readonly IOrderService _orderService;
+        public OrderController(IOrderService orderService)
         {
-            _infoService = infoService;
+            _orderService = orderService;
         }
         /// <summary>
         /// 查看购物车
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M301")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult GetOrderCard()
+        [ProducesResponseType(typeof(ResultDto<OrderCradRP>), 200)]
+        public IActionResult GetOrderCardInfo()
         {
-            return Ok();
+            var r=_orderService.GetOrderCardInfo(User.GetToken().UID);
+            return Ok(r);
         }
         /// <summary>
         ///商品添加到购物车
