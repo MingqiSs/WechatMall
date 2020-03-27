@@ -10,6 +10,34 @@ namespace X.Models.WMDB
            public wm_product(){}
 
            /// <summary>
+           /// Desc:价格
+           /// Default:0.00
+           /// Nullable:False
+           /// </summary>
+           public decimal Price { get; set; }
+
+           /// <summary>
+           /// Desc:备注
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Remark { get; set; }
+
+           /// <summary>
+           /// Desc:图片
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Image { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
            /// Desc:销量
            /// Default:0
            /// Nullable:False
@@ -45,6 +73,13 @@ namespace X.Models.WMDB
            public bool Hot { get; set; }
 
            /// <summary>
+           /// Desc:商品分类id
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int ProductTypeID { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
@@ -78,34 +113,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Describe { get; set; }
-
-           /// <summary>
-           /// Desc:价格
-           /// Default:0.00
-           /// Nullable:False
-           /// </summary>
-           public decimal Price { get; set; }
-
-           /// <summary>
-           /// Desc:备注
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Remark { get; set; }
-
-           /// <summary>
-           /// Desc:图片
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Image { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
 
 
     }

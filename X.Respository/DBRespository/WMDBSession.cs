@@ -58,6 +58,14 @@ public partial class WMDBSession : X.Respository.RespositorySession, X.IResposit
            {
                get { return new X.Respository.Sons.WMDB.wm_product(); }
            }
+           public X.IRespository.Sons.WMDB.Iwm_product_tag wm_product_tag
+           {
+               get { return new X.Respository.Sons.WMDB.wm_product_tag(); }
+           }
+           public X.IRespository.Sons.WMDB.Iwm_product_type wm_product_type
+           {
+               get { return new X.Respository.Sons.WMDB.wm_product_type(); }
+           }
            public X.IRespository.Sons.WMDB.Iwm_user wm_user
            {
                get { return new X.Respository.Sons.WMDB.wm_user(); }

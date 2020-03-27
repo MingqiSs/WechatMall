@@ -5,37 +5,37 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class cm_setting
+    public partial class wm_product_tag
     {
-           public cm_setting(){}
+           public wm_product_tag(){}
 
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Key { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Value { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:1
            /// Nullable:False
            /// </summary>
            public byte DataStatus { get; set; }
 
            /// <summary>
            /// Desc:
-           /// Default:CURRENT_TIMESTAMP
+           /// Default:
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Sort { get; set; }
 
            /// <summary>
            /// Desc:
@@ -49,7 +49,7 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
-           public string Name { get; set; }
+           public string TagName { get; set; }
 
 
     }

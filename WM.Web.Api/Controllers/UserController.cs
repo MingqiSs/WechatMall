@@ -22,7 +22,7 @@ namespace WM.Web.Api.Controllers
 
     [Authorize]
     [ApiController]
-    [Route("[controller]")]
+    [Route("v1")]
     public class UserController : ControllerBase
     {
 

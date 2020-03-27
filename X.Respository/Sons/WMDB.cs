@@ -115,6 +115,26 @@ namespace X.Respository.Sons.WMDB
                }
            }
     }
+    public partial class wm_product_tag:BaseRespository<X.Models.WMDB.wm_product_tag>,X.IRespository.Sons.WMDB.Iwm_product_tag
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
+    public partial class wm_product_type:BaseRespository<X.Models.WMDB.wm_product_type>,X.IRespository.Sons.WMDB.Iwm_product_type
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
     public partial class wm_user:BaseRespository<X.Models.WMDB.wm_user>,X.IRespository.Sons.WMDB.Iwm_user
     {
            public override SqlSugarClient db

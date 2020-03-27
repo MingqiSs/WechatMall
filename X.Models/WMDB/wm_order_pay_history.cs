@@ -14,6 +14,20 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public decimal Order_Amount { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Payment_Amount { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public string Pay_Json { get; set; }
 
            /// <summary>
@@ -43,20 +57,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int PaymentType { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public decimal Order_Amount { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Payment_Amount { get; set; }
 
 
     }

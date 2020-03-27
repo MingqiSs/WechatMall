@@ -10,6 +10,20 @@ namespace X.Models.WMDB
            public wm_order_card_info(){}
 
            /// <summary>
+           /// Desc:商品id
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public int ProductID { get; set; }
+
+           /// <summary>
+           /// Desc:商品数
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Product_Num { get; set; }
+
+           /// <summary>
            /// Desc:数据状态
            /// Default:
            /// Nullable:False
@@ -36,20 +50,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Order_CardID { get; set; }
-
-           /// <summary>
-           /// Desc:商品id
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public int ProductID { get; set; }
-
-           /// <summary>
-           /// Desc:商品数
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int Product_Num { get; set; }
 
 
     }

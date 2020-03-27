@@ -14,6 +14,20 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public string Product_Icon { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Product_Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public decimal Product_Price { get; set; }
 
            /// <summary>
@@ -43,20 +57,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int OrderId { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Product_Icon { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Product_Name { get; set; }
 
 
     }

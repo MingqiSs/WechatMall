@@ -10,6 +10,34 @@ namespace X.Models.WMDB
            public wm_order(){}
 
            /// <summary>
+           /// Desc:账单号
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string BillNo { get; set; }
+
+           /// <summary>
+           /// Desc:收货人电话
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Receiver_Phone { get; set; }
+
+           /// <summary>
+           /// Desc:微信订单号
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string WxOrderNo { get; set; }
+
+           /// <summary>
+           /// Desc:收货人地址
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Receiver_Address { get; set; }
+
+           /// <summary>
            /// Desc:订单状态
            /// Default:
            /// Nullable:True
@@ -64,34 +92,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string Receiver_Name { get; set; }
-
-           /// <summary>
-           /// Desc:账单号
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string BillNo { get; set; }
-
-           /// <summary>
-           /// Desc:收货人电话
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Receiver_Phone { get; set; }
-
-           /// <summary>
-           /// Desc:微信订单号
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string WxOrderNo { get; set; }
-
-           /// <summary>
-           /// Desc:收货人地址
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Receiver_Address { get; set; }
 
 
     }

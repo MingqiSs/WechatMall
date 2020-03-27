@@ -17,6 +17,8 @@ namespace X.IRespository.DBSession
            X.IRespository.Sons.WMDB.Iwm_order_logistics_flow wm_order_logistics_flow {get;}
            X.IRespository.Sons.WMDB.Iwm_order_pay_history wm_order_pay_history {get;}
            X.IRespository.Sons.WMDB.Iwm_product wm_product {get;}
+           X.IRespository.Sons.WMDB.Iwm_product_tag wm_product_tag {get;}
+           X.IRespository.Sons.WMDB.Iwm_product_type wm_product_type {get;}
            X.IRespository.Sons.WMDB.Iwm_user wm_user {get;}
            X.IRespository.Sons.WMDB.Iwm_user_shopping_address wm_user_shopping_address {get;}
 

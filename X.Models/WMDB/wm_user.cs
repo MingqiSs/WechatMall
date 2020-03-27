@@ -10,6 +10,34 @@ namespace X.Models.WMDB
            public wm_user(){}
 
            /// <summary>
+           /// Desc:微信appID
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string WeChatAppID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? BirthDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
@@ -64,34 +92,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:微信appID
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string WeChatAppID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? BirthDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
 
 
     }

@@ -37,6 +37,12 @@ namespace X.IRespository.Sons.WMDB
     public partial interface Iwm_product:IBaseRespository<X.Models.WMDB.wm_product>
     {
     }
+    public partial interface Iwm_product_tag:IBaseRespository<X.Models.WMDB.wm_product_tag>
+    {
+    }
+    public partial interface Iwm_product_type:IBaseRespository<X.Models.WMDB.wm_product_type>
+    {
+    }
     public partial interface Iwm_user:IBaseRespository<X.Models.WMDB.wm_user>
     {
     }

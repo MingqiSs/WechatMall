@@ -5,23 +5,9 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class cm_setting
+    public partial class wm_product_type
     {
-           public cm_setting(){}
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Key { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Value { get; set; }
+           public wm_product_type(){}
 
            /// <summary>
            /// Desc:
@@ -32,10 +18,24 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
-           /// Default:CURRENT_TIMESTAMP
+           /// Default:
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Sort { get; set; }
 
            /// <summary>
            /// Desc:

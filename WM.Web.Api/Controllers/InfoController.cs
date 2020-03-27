@@ -21,7 +21,7 @@ namespace WM.Web.Api.Controllers
 {
 
     [ApiController]
-    [Route("[controller]")]
+    [Route("v1")]
     public class InfoController : ControllerBase
     {
 
@@ -44,34 +44,37 @@ namespace WM.Web.Api.Controllers
             return Ok(r);
         }
         /// <summary>
-        /// 获取商品列表
+        /// 获取商品列表(带分页)
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M202")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult GetproductPageList()
+        [ProducesResponseType(typeof(ResultDto<PageDto<ProductRP>>), 200)]
+        public IActionResult GetproductPageList(ProductRQ rq)
         {
-            return Ok();
+           var r= _infoService.GetProductPageList(rq);
+            return Ok(r);
         }
         /// <summary>
         /// 获取商品分类
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M203")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult GetProductType()
+        [ProducesResponseType(typeof(ResultDto<List<ProductTypeRP>>), 200)]
+        public IActionResult GetProductTypeList()
         {
-            return Ok();
+            var r = _infoService.GetProductTypeList();
+            return Ok(r);
         }
         /// <summary>
         /// 获取商品标签
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M204")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
+        [ProducesResponseType(typeof(ResultDto<List<ProductTagRP>>), 200)]
         public IActionResult GetProductTag()
         {
-            return Ok();
+            var r = _infoService.GetProductTagList();
+            return Ok(r);
         }
     }
 }
