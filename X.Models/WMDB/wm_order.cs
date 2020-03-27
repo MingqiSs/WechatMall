@@ -10,6 +10,41 @@ namespace X.Models.WMDB
            public wm_order(){}
 
            /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:收货人姓名
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Receiver_Name { get; set; }
+
+           /// <summary>
            /// Desc:账单号
            /// Default:
            /// Nullable:True
@@ -57,41 +92,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public decimal? OrderPrice { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:收货人姓名
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Receiver_Name { get; set; }
 
 
     }

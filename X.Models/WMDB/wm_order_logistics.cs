@@ -12,6 +12,20 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string OrderID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? Logistics_CompanyID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:True
            /// </summary>
            public string Logistics_CompanyCode { get; set; }
@@ -43,20 +57,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public DateTime? ReceivingTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string OrderID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? Logistics_CompanyID { get; set; }
 
 
     }

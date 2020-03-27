@@ -11,6 +11,20 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:1
            /// Nullable:False
            /// </summary>
@@ -36,20 +50,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int Sort { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Name { get; set; }
 
 
     }

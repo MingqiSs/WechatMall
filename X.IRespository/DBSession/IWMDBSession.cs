@@ -9,6 +9,7 @@ namespace X.IRespository.DBSession
            X.IRespository.Sons.WMDB.Icm_city cm_city {get;}
            X.IRespository.Sons.WMDB.Icm_province cm_province {get;}
            X.IRespository.Sons.WMDB.Icm_setting cm_setting {get;}
+           X.IRespository.Sons.WMDB.Ir_product_tag r_product_tag {get;}
            X.IRespository.Sons.WMDB.Iwm_order wm_order {get;}
            X.IRespository.Sons.WMDB.Iwm_order_card wm_order_card {get;}
            X.IRespository.Sons.WMDB.Iwm_order_card_info wm_order_card_info {get;}

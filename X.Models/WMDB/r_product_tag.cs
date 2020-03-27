@@ -5,9 +5,9 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class wm_order_info
+    public partial class r_product_tag
     {
-           public wm_order_info(){}
+           public r_product_tag(){}
 
            /// <summary>
            /// Desc:
@@ -21,35 +21,14 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
-           public int OrderId { get; set; }
+           public string ProductID { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
-           public string Product_Icon { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Product_Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public decimal Product_Price { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStauts { get; set; }
+           public int Product_TagID { get; set; }
 
            /// <summary>
            /// Desc:

@@ -10,6 +10,20 @@ namespace X.Models.WMDB
            public wm_order_card_info(){}
 
            /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:购物车ID
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Order_CardID { get; set; }
+
+           /// <summary>
            /// Desc:商品id
            /// Default:1
            /// Nullable:False
@@ -36,20 +50,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:购物车ID
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Order_CardID { get; set; }
 
 
     }

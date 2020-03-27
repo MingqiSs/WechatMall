@@ -10,6 +10,41 @@ namespace X.Models.WMDB
            public wm_user_shopping_address(){}
 
            /// <summary>
+           /// Desc:市
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int CityID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:区
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int DistrictID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
            /// Desc:联系人分名称
            /// Default:
            /// Nullable:False
@@ -57,41 +92,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ProvinceID { get; set; }
-
-           /// <summary>
-           /// Desc:市
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int CityID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:区
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int DistrictID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
 
 
     }

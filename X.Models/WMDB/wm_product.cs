@@ -10,6 +10,41 @@ namespace X.Models.WMDB
            public wm_product(){}
 
            /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Icon { get; set; }
+
+           /// <summary>
+           /// Desc:商品ID
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Sort { get; set; }
+
+           /// <summary>
+           /// Desc:商品名称
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:商品描述
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Describe { get; set; }
+
+           /// <summary>
            /// Desc:价格
            /// Default:0.00
            /// Nullable:False
@@ -78,41 +113,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ProductTypeID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Icon { get; set; }
-
-           /// <summary>
-           /// Desc:商品ID
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int Sort { get; set; }
-
-           /// <summary>
-           /// Desc:商品名称
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:商品描述
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Describe { get; set; }
 
 
     }

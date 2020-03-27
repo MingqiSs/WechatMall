@@ -26,6 +26,10 @@ public partial class WMDBSession : X.Respository.RespositorySession, X.IResposit
            {
                get { return new X.Respository.Sons.WMDB.cm_setting(); }
            }
+           public X.IRespository.Sons.WMDB.Ir_product_tag r_product_tag
+           {
+               get { return new X.Respository.Sons.WMDB.r_product_tag(); }
+           }
            public X.IRespository.Sons.WMDB.Iwm_order wm_order
            {
                get { return new X.Respository.Sons.WMDB.wm_order(); }

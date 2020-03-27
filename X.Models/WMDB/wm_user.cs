@@ -10,6 +10,41 @@ namespace X.Models.WMDB
            public wm_user(){}
 
            /// <summary>
+           /// Desc:邮箱
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Email { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:昵称
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Nickname { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:CURRENT_TIMESTAMP
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
            /// Desc:微信appID
            /// Default:
            /// Nullable:True
@@ -57,41 +92,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Pwd { get; set; }
-
-           /// <summary>
-           /// Desc:邮箱
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Email { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:昵称
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Nickname { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:CURRENT_TIMESTAMP
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
 
 
     }
