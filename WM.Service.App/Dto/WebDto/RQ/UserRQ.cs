@@ -65,5 +65,48 @@ namespace WM.Service.App.Dto.WebDto.RQ
         /// 头像
         /// </summary>
         public string HeadImg { get; set; }
+        /// <summary>
+        /// 昵称
+        /// </summary>
+        public string NickName { get; set; }
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    public class UserShoppingAddressRQ
+    {
+        /// <summary>
+        /// 地址id 新增时:id传0
+        /// </summary>
+        public int AddressID { get; set; }
+        /// <summary>
+        /// 联系人
+        /// </summary>
+        public string Receiver_Name { get; set; }
+        /// <summary>
+        /// 联系人电话
+        /// </summary>
+        public string Receiver_Phone { get; set; }
+        /// <summary>
+        /// 详细地址
+        /// </summary>
+        public string Receiver_Address { get; set; }
+        /// <summary>
+        /// 是否默认
+        /// </summary>
+        public bool isDef { get; set; }
+        /// <summary>
+        /// 省份id
+        /// </summary>
+        public int ProvinceID { get; set; }
+        /// <summary>
+        /// 城市id
+        /// </summary>
+        public int CityID { get; set; }
+        /// <summary>
+        /// 区域ID
+        /// </summary>
+        public int DistrictID { get; set; }
+
     }
 }

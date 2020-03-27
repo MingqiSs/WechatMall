@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -69,7 +70,7 @@ namespace WM.Web.Api.Controllers
             return Ok(r);
         }
         /// <summary>
-        /// 微信登录/注册
+        /// 微信登录/注册 （未实现）
         /// </summary>
         /// <returns></returns>
         [AllowAnonymous]
@@ -102,10 +103,37 @@ namespace WM.Web.Api.Controllers
             var r = _userService.ModifyUserInfo(User.GetToken().UID,rq);
             return Ok(r);
         }
+        /// <summary>
+        /// 获取收货地址列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, Route("W106")]
+        [ProducesResponseType(typeof(List<UserShoppingAddressRP>), 200)]
+        public IActionResult GetUserShoppingAddress()
+        {
+            var r = _userService.GetUserShoppingAddress(User.GetToken().UID);
+            return Ok(r);
+        }
+        /// <summary>
+        /// 新增或修改收货地址
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, Route("W107")]
+        [ProducesResponseType(typeof(bool), 200)]
+        public IActionResult AddOrUpdateUserShoppingAddress(UserShoppingAddressRQ rq)
+        {
+            var r = _userService.AddOrUpdateUserShoppingAddress(User.GetToken().UID, rq);
+            return Ok(r);
+        }
 
+        #region Common
         private ResultDto<UserLoginRP> LoginInterface(UserLoginRQ rq)
         {
             var r = _userService.Login(rq);
+            if (r.Res != 1)
+            {
+                return r;
+            }
             var userToken = new UserToken
             {
                 IP = "",
@@ -159,5 +187,6 @@ namespace WM.Web.Api.Controllers
         //    return true;
 
         //}
+        #endregion
     }
 }

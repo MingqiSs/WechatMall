@@ -51,6 +51,7 @@ namespace WM.Service.App
                     Email = q.Email,
                     Mobile = q.Mobile,
                     Name = q.Name,
+                    NickName=q.Nickname
                 }).First();
             if (r == null)
             {
@@ -132,13 +133,16 @@ namespace WM.Service.App
                 DataStatus = (byte)DataStatus.Enable,
                 CreateTime = DateTime.Now,
                 Email = "",
-                WeChatID = "",
+                WeChatAppID = "",
             };
             var isSave = _ibll.wm_user.Add(user);
             return Result(isSave);
         }
+        /// <summary>
         /// 修改用户信息
         /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="rq"></param>
         /// <returns></returns>
         public ResultDto<bool> ModifyUserInfo(string uid,ModifyUserInfoRQ rq)
         {
@@ -152,10 +156,100 @@ namespace WM.Service.App
                 user.Email = rq.Email;
             } 
             if(!string.IsNullOrWhiteSpace(rq.HeadImg)) user.HeadImg = rq.HeadImg;
-            if (!string.IsNullOrWhiteSpace(rq.UserName)) user.HeadImg = rq.UserName;
+            if (!string.IsNullOrWhiteSpace(rq.UserName)) user.Name = rq.UserName;
+            if (!string.IsNullOrWhiteSpace(rq.NickName)) user.Name = rq.NickName;
             if (rq.BirthDate.HasValue) user.BirthDate = rq.BirthDate;
 
            var isSave=  _ibll.wm_user.Update(user);
+            return Result(isSave);
+        }
+        /// <summary>
+        /// 获取收货地址
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <returns></returns>
+        public ResultDto<List<UserShoppingAddressRP>> GetUserShoppingAddress(string uid)
+        {
+            var user = _userDomainService.GetUserByUID(uid);
+            if (user == null) return Result<List<UserShoppingAddressRP>>(ResponseCode.sys_token_invalid, "获取用户信息错误");
+
+           var list= _ibll.wm_user_shopping_address.Where(q => q.UID ==uid && q.DataStatus == (byte)DataStatus.Enable)
+                                           .Select(q=>new UserShoppingAddressRP { 
+                                           AddressID=q.ID,
+                                           isDef=q.Isdef,
+                                           Receiver_Name=q.Receiver_Name,
+                                           Receiver_Phone=q.Receiver_Phone,
+                                           Receiver_Address=q.Receiver_Address,
+                                           CityID=q.CityID,
+                                           DistrictID=q.DistrictID,
+                                           ProvinceID=q.ProvinceID,
+                                           }).OrderBy(q=>q.AddressID,SqlSugar.OrderByType.Desc).ToList();
+
+            list.ForEach(q => q.Receiver_Address = q.Receiver_Address);//拼接省市区
+            return Result(list);
+        }
+        /// <summary>
+        /// 添加收货地址
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="rq"></param>
+        /// <returns></returns>
+        public ResultDto<bool> AddOrUpdateUserShoppingAddress(string uid, UserShoppingAddressRQ rq)
+        {
+            var user = _userDomainService.GetUserByUID(uid);
+            if (user == null) return Result<bool>(ResponseCode.sys_token_invalid, "获取用户信息错误");
+            if(rq.Receiver_Name.IsNullOrWhiteSpace())
+                return Result<bool>(ResponseCode.sys_param_format_error, "联系人不能为空");
+            if (rq.Receiver_Phone.IsNullOrWhiteSpace())
+                return Result<bool>(ResponseCode.sys_param_format_error, "联系电话不能为空");
+            if (rq.Receiver_Address.IsNullOrWhiteSpace())
+                return Result<bool>(ResponseCode.sys_param_format_error, "联系地址不能为空");
+            if (rq.ProvinceID<=0)
+                return Result<bool>(ResponseCode.sys_param_format_error, "省份不能为空");
+            if (rq.CityID <= 0)
+                return Result<bool>(ResponseCode.sys_param_format_error, "城市不能为空");
+            var isSave = false;
+            if (rq.isDef)
+            {
+                var tranSql = $"update {nameof(wm_user_shopping_address)} set Isdef=0 where UID='{uid}'";
+                 _ibll.Sql_ExecuteCommand(tranSql);
+            }
+            if (rq.AddressID == 0)
+            {
+                var model = new wm_user_shopping_address
+                {
+                    UID = uid,
+                    CityID = rq.CityID,
+                    ProvinceID = rq.ProvinceID,
+                    DistrictID = rq.DistrictID,
+                    DataStatus = (byte)DataStatus.Enable,
+                    Receiver_Address = rq.Receiver_Address,
+                    Receiver_Name = rq.Receiver_Name,
+                    Receiver_Phone = rq.Receiver_Phone,
+                    Isdef = rq.isDef,
+                    CreateTime = DateTime.Now,
+                };
+                //新增
+                isSave = _ibll.wm_user_shopping_address.Add(model);
+
+            }
+            else {
+                var addressModel = _ibll.wm_user_shopping_address.Where(q => q.UID == uid && q.ID == rq.AddressID).First();
+                if(addressModel==null) return Result<bool>(ResponseCode.sys_param_format_error, "未找到修改的地址信息");
+                addressModel.Receiver_Address = rq.Receiver_Address;
+                addressModel.Receiver_Name = rq.Receiver_Name;
+                addressModel.Receiver_Phone = rq.Receiver_Phone;
+                addressModel.Isdef = rq.isDef;
+                addressModel.CityID = rq.CityID;
+                addressModel.ProvinceID = rq.ProvinceID;
+                addressModel.DistrictID = rq.DistrictID;
+                addressModel.ModifyTime = DateTime.Now;
+                //新增
+                isSave = _ibll.wm_user_shopping_address.Update(addressModel);
+            }
+
+
+            
             return Result(isSave);
         }
     }

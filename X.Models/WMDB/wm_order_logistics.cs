@@ -14,6 +14,27 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:发货时间
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? DeliveryTime { get; set; }
+
+           /// <summary>
+           /// Desc:收货时间
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ReceivingTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public string OrderID { get; set; }
 
            /// <summary>
@@ -36,27 +57,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string TrackingNumber { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:发货时间
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? DeliveryTime { get; set; }
-
-           /// <summary>
-           /// Desc:收货时间
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ReceivingTime { get; set; }
 
 
     }

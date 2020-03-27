@@ -10,6 +10,27 @@ namespace X.Models.WMDB
            public wm_order(){}
 
            /// <summary>
+           /// Desc:订单状态
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public byte? Oredstatus { get; set; }
+
+           /// <summary>
+           /// Desc:(1 在线支付,2货到付款)
+           /// Default:1
+           /// Nullable:True
+           /// </summary>
+           public byte? Distribution { get; set; }
+
+           /// <summary>
+           /// Desc:订单价格
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public decimal? OrderPrice { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
@@ -71,27 +92,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string Receiver_Address { get; set; }
-
-           /// <summary>
-           /// Desc:订单状态
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public byte? Oredstatus { get; set; }
-
-           /// <summary>
-           /// Desc:(1 在线支付,2货到付款)
-           /// Default:1
-           /// Nullable:True
-           /// </summary>
-           public byte? Distribution { get; set; }
-
-           /// <summary>
-           /// Desc:订单价格
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public decimal? OrderPrice { get; set; }
 
 
     }

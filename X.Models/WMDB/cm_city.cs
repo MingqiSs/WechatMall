@@ -11,6 +11,27 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:A
+           /// Nullable:False
+           /// </summary>
+           public string FirstChar { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:b'0'
+           /// Nullable:False
+           /// </summary>
+           public bool IsHot { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:100
+           /// Nullable:False
+           /// </summary>
+           public byte Sort { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:CURRENT_TIMESTAMP
            /// Nullable:False
            /// </summary>
@@ -43,27 +64,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:A
-           /// Nullable:False
-           /// </summary>
-           public string FirstChar { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool IsHot { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:100
-           /// Nullable:False
-           /// </summary>
-           public byte Sort { get; set; }
 
 
     }

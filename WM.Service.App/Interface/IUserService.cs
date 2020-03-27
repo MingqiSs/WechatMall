@@ -35,5 +35,18 @@ namespace WM.Service.App.Interface
         /// <param name="rq"></param>
         /// <returns></returns>
         ResultDto<bool> ModifyUserInfo(string uid, ModifyUserInfoRQ rq);
+        /// <summary>
+        /// 获取收货地址
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <returns></returns>
+        ResultDto<List<UserShoppingAddressRP>> GetUserShoppingAddress(string uid);
+        /// <summary>
+        /// 添加或修改收货地址
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="rq"></param>
+        /// <returns></returns>
+        ResultDto<bool> AddOrUpdateUserShoppingAddress(string uid, UserShoppingAddressRQ rq);
     }
 }
