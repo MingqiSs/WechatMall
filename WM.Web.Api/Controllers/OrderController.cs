@@ -19,57 +19,74 @@ using WM.Web.Api.Configurations;
 
 namespace WM.Web.Api.Controllers
 {
-
+    [Authorize]
     [ApiController]
     [Route("[controller]")]
-    public class InfoController : ControllerBase
+    public class OrderController : ControllerBase
     {
-
-        private readonly ILogger<UserController> _logger;
+       
         private readonly IInfoService _infoService;
-        public InfoController(ILogger<UserController> logger, IInfoService infoService)
+        public OrderController( IInfoService infoService)
         {
-            _logger = logger;
             _infoService = infoService;
         }
         /// <summary>
-        /// 获取地区列表(省市)
+        /// 查看购物车
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M201")]
-        [ProducesResponseType(typeof(ResultDto<UserLoginRP>), 200)]
-        public IActionResult GetDistrictList()
-        {
-          var r=  _infoService.GetDistrictList();
-            return Ok(r);
-        }
-        /// <summary>
-        /// 获取商品列表
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost, Route("M202")]
+        [HttpPost, Route("M301")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult GetproductPageList()
+        public IActionResult GetOrderCard()
         {
             return Ok();
         }
         /// <summary>
-        /// 获取商品分类
+        ///商品添加到购物车
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M203")]
+        [HttpPost, Route("M302")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult GetProductType()
+        public IActionResult AddOrderCard()
         {
             return Ok();
         }
         /// <summary>
-        /// 获取商品标签
+        ///商品移除购物车
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M204")]
+        [HttpPost, Route("M303")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult GetProductTag()
+        public IActionResult RemoveOrderCard()
+        {
+            return Ok();
+        }
+        /// <summary>
+        ///订单列表
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, Route("M304")]
+        [ProducesResponseType(typeof(ResultDto<object>), 200)]
+        public IActionResult GetOrderPageList()
+        {
+            return Ok();
+        }
+        /// <summary>
+        ///创建订单
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, Route("M305")]
+        [ProducesResponseType(typeof(ResultDto<object>), 200)]
+        public IActionResult CreateOrder()
+        {
+            return Ok();
+        }
+        /// <summary>
+        ///删除订单
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, Route("M306")]
+        [ProducesResponseType(typeof(ResultDto<object>), 200)]
+        public IActionResult RemoveOrder()
         {
             return Ok();
         }
