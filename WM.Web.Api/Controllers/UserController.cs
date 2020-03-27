@@ -70,7 +70,7 @@ namespace WM.Web.Api.Controllers
             return Ok(r);
         }
         /// <summary>
-        /// 微信登录/注册 （未实现）
+        /// 微信登录
         /// </summary>
         /// <returns></returns>
         [AllowAnonymous]

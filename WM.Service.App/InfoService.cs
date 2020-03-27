@@ -14,7 +14,7 @@ namespace WM.Service.App
     {
         private readonly X.IRespository.DBSession.IWMDBSession _ibll;
         private readonly IUserDomainService _userDomainService;
-        public InfoService(X.IRespository.DBSession.IWMDBSession ibll, IUserDomainService userDomainService)
+        public InfoService(X.IRespository.DBSession.IWMDBSession ibll , IUserDomainService userDomainService)
         {
             _ibll = ibll;
             _userDomainService = userDomainService;

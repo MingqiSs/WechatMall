@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using WM.Infrastructure.DEncrypt;
 using WM.Infrastructure.Models;
@@ -173,7 +174,9 @@ namespace WM.Service.App
             var user = _userDomainService.GetUserByUID(uid);
             if (user == null) return Result<List<UserShoppingAddressRP>>(ResponseCode.sys_token_invalid, "获取用户信息错误");
 
-           var list= _ibll.wm_user_shopping_address.Where(q => q.UID ==uid && q.DataStatus == (byte)DataStatus.Enable)
+          
+
+            var list= _ibll.wm_user_shopping_address.Where(q => q.UID ==uid && q.DataStatus == (byte)DataStatus.Enable)
                                            .Select(q=>new UserShoppingAddressRP { 
                                            AddressID=q.ID,
                                            isDef=q.Isdef,
@@ -185,7 +188,11 @@ namespace WM.Service.App
                                            ProvinceID=q.ProvinceID,
                                            }).OrderBy(q=>q.AddressID,SqlSugar.OrderByType.Desc).ToList();
 
-            list.ForEach(q => q.Receiver_Address = q.Receiver_Address);//拼接省市区
+            var citys = _ibll.cm_city.ToList();
+
+            var provinces = _ibll.cm_province.ToList();
+
+            list.ForEach(q => q.Receiver_Address =$"{provinces.Where(j=>j.ID==q.ProvinceID).Select(q=>q.Name).FirstOrDefault()}{citys.Where(j => j.ID == q.CityID).Select(q => q.Name).FirstOrDefault()}{q.Receiver_Address}");//拼接省市区
             return Result(list);
         }
         /// <summary>

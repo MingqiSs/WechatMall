@@ -33,8 +33,8 @@ namespace WM.Web.Api.Configurations
                 options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = false,//是否验证Issuer
-                    ValidateAudience = false,//是否验证Audience
+                    ValidateIssuer = true,//是否验证Issuer
+                    ValidateAudience = true,//是否验证Audience
                     ValidateLifetime = false,//是否验证失效时间
                     ValidateIssuerSigningKey = true,//是否验证SecurityKey
                     IssuerSigningKey = new SymmetricSecurityKey(key),//拿到SecurityKey

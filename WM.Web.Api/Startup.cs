@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using NLog.Extensions.Logging;
 using WM.Infrastructure.Config;
 using WM.Infrastructure.DI;
 using WM.Web.Api.Configurations;
@@ -35,29 +36,21 @@ namespace WM.Web.Api
 
             services.AddSwaggerSetup();
 
+            #region ×¢²á ÈÕÖ¾
+            services.AddLogging(t => t.AddNLog());
+            #endregion
 
-            #region ×¢²á TokenÑéÖ¤
-            services.AddJwtAuthSetup(Configuration);
-            //services.Configure<TokenManagement>(Configuration.GetSection("tokenManagement"));
-            //var token = Configuration.GetSection("tokenManagement").Get<TokenManagement>();
-            //services.AddAuthentication(x =>
+            #region ×¢²á »º´æ
+            services.AddMemoryCache();
+            //services.AddRedisCaching(options =>
             //{
-            //    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //}).AddJwtBearer(x =>
-            //{
-            //    x.RequireHttpsMetadata = false;
-            //    x.SaveToken = true;
-            //    x.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ValidateIssuerSigningKey = true,
-            //        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(token.Secret)),
-            //        ValidIssuer = token.Issuer,
-            //        ValidAudience = token.Audience,
-            //        ValidateIssuer = false,
-            //        ValidateAudience = false
-            //    };
+            //    options.ConnectionString = AppSetting.GetConfig("RedisConfig:ConnectionString");
+            //    options.DefaultKey = AppSetting.GetConfig("RedisConfig:DefaultKey");
+            //    options.DdIndex = AppSetting.GetConfigInt32("RedisConfig:DdIndex");
             //});
+            #endregion
+            #region ×¢²á TokenÑéÖ¤
+            services.AddJwtAuthSetup(Configuration);          
             #endregion
 
             #region ×¢²á Repositor
@@ -67,6 +60,7 @@ namespace WM.Web.Api
             #region ×¢²á Service
             services.RegisterAssembly("WM.Service.App", ServiceLifetime.Scoped);
             #endregion
+
             #region ×¢²á Service
             services.RegisterAssembly("WM.Service.Domain", ServiceLifetime.Scoped);
             #endregion
