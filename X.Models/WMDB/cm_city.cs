@@ -11,34 +11,6 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:0
-           /// Nullable:True
-           /// </summary>
-           public int? ProvinceID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Code { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:
            /// Default:A
            /// Nullable:False
            /// </summary>
@@ -64,6 +36,34 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:True
+           /// </summary>
+           public int? ProvinceID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Code { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
 
 
     }

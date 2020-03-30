@@ -10,6 +10,27 @@ namespace X.Models.WMDB
            public wm_order_card_info(){}
 
            /// <summary>
+           /// Desc:数据状态
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:创建时间
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:商品价格
+           /// Default:0.00
+           /// Nullable:False
+           /// </summary>
+           public decimal ProductPrice { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
@@ -36,20 +57,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int Product_Num { get; set; }
-
-           /// <summary>
-           /// Desc:数据状态
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:创建时间
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
 
 
     }

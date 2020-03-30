@@ -36,30 +36,43 @@ namespace WM.Web.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M401")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult GetOrderPageList()
+        [ProducesResponseType(typeof(ResultDto<PageDto<OrderRP>>), 200)]
+        public IActionResult GetOrderPageList(OrderPageListRQ rq)
         {
-            return Ok();
+            var r = _orderService.GetOrderPageList(User.GetToken().UID, rq);
+            return Ok(r);
         }
         /// <summary>
         ///创建订单
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M402")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult CreateOrder()
+        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
+        public IActionResult CreateOrder(CreateOrderRQ rq)
         {
-            return Ok();
+            var r = _orderService.CreatePayOrder(User.GetToken().UID, rq);
+            return Ok(r);
         }
         /// <summary>
-        ///删除订单
+        ///查看订单
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M403")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult RemoveOrder()
+        public IActionResult GetOrderInfo(OrderRQ rq)
         {
-            return Ok();
+            var r = _orderService.GetOrderInfo(User.GetToken().UID, rq);
+            return Ok(r);
         }
+        ///// <summary>
+        /////删除订单
+        ///// </summary>
+        ///// <returns></returns>
+        //[HttpPost, Route("M404")]
+        //[ProducesResponseType(typeof(ResultDto<object>), 200)]
+        //public IActionResult DelOrder()
+        //{
+        //    return Ok();
+        //}
     }
 }

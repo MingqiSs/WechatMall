@@ -12,6 +12,34 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string HeadImg { get; set; }
+
+           /// <summary>
+           /// Desc:手机号
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Mobile { get; set; }
+
+           /// <summary>
+           /// Desc:密码
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Pwd { get; set; }
+
+           /// <summary>
+           /// Desc:邮箱
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Email { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:False
            /// </summary>
            public string UID { get; set; }
@@ -64,34 +92,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string HeadImg { get; set; }
-
-           /// <summary>
-           /// Desc:手机号
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Mobile { get; set; }
-
-           /// <summary>
-           /// Desc:密码
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Pwd { get; set; }
-
-           /// <summary>
-           /// Desc:邮箱
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Email { get; set; }
 
 
     }

@@ -36,5 +36,26 @@ namespace WM.Service.App.Interface
         /// <param name="rq"></param>
         /// <returns></returns>
         ResultDto<bool> RemoveShoppingCar(string uid, RemoveShoppingCarRQ rq);
+        /// <summary>
+        /// 获取订单列表
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="rq"></param>
+        /// <returns></returns>
+        ResultDto<PageDto<OrderRP>> GetOrderPageList(string uid, OrderPageListRQ rq);
+        /// <summary>
+        /// 创建订单
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="rq"></param>
+        /// <returns></returns>
+        ResultDto<bool> CreatePayOrder(string uid, CreateOrderRQ rq);
+        /// <summary>
+        /// 查看订单
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <param name="rq"></param>
+        /// <returns></returns>
+        ResultDto<OrderinfoRP> GetOrderInfo(string uid, OrderRQ rq);
     }
 }

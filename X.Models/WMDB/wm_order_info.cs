@@ -14,7 +14,42 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public decimal Product_Price { get; set; }
+
+           /// <summary>
+           /// Desc:数量
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Product_Num { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStauts { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string ProductID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -36,27 +71,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Product_Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public decimal Product_Price { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStauts { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
 
 
     }
