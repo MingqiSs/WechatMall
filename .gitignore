@@ -6,14 +6,11 @@
 /WM.Api.Manager/bin
 /WM.Api.Manager/obj
 /WM.Api.Manager/Properties
-/WM.Infrastructure/bin
-/WM.Infrastructure/obj
 /WM.Service.App/bin
 /WM.Service.App/obj
 /WM.Service.Domain
 /WM.Service.Domain/obj
 /WM.Web.Api/bin
-
 /WM.Web.Api/obj
 /WM.Web.Api/Properties
 /X.Common/bin
@@ -30,4 +27,6 @@
 /X.TConsole/obj
 /WM.Api.AuthCenter/bin
 /WM.Api.AuthCenter/obj
+/WM.Infrastructure/bin
+/WM.Infrastructure/obj
 /WM.Infrastructure/bin
