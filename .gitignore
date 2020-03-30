@@ -28,5 +28,6 @@
 /X.Respository/obj
 /X.TConsole/bin
 /X.TConsole/obj
-/WM.Api.AuthCenter/bin/Debug/netcoreapp3.1
+/WM.Api.AuthCenter/bin
 /WM.Api.AuthCenter/obj
+/WM.Infrastructure/bin

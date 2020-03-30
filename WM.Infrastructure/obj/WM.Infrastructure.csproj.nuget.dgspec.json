@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj": {}
+    "E:\\github\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj": {
+    "E:\\github\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj",
+        "projectUniqueName": "E:\\github\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj",
         "projectName": "WM.Infrastructure",
-        "projectPath": "D:\\GitHub\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\xiangmingqi\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\WechatMall\\WM.Infrastructure\\obj\\",
+        "projectPath": "E:\\github\\WechatMall\\WM.Infrastructure\\WM.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\adminair\\.nuget\\packages\\",
+        "outputPath": "E:\\github\\WechatMall\\WM.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\xiangmingqi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\adminair\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +25,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://tc.nugetserver.com/nuget": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -86,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

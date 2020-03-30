@@ -6,3 +6,12 @@ D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.A
 D:\demo\WeChatMall\WM.Infrastructure\bin\Debug\netcoreapp3.1\WM.Infrastructure.pdb
 D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.dll
 D:\demo\WeChatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.pdb
+E:\github\WechatMall\WM.Infrastructure\bin\Debug\netcoreapp3.1\WM.Infrastructure.deps.json
+E:\github\WechatMall\WM.Infrastructure\bin\Debug\netcoreapp3.1\WM.Infrastructure.dll
+E:\github\WechatMall\WM.Infrastructure\bin\Debug\netcoreapp3.1\WM.Infrastructure.pdb
+E:\github\WechatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.csprojAssemblyReference.cache
+E:\github\WechatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.csproj.CoreCompileInputs.cache
+E:\github\WechatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.AssemblyInfoInputs.cache
+E:\github\WechatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.AssemblyInfo.cs
+E:\github\WechatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.dll
+E:\github\WechatMall\WM.Infrastructure\obj\Debug\netcoreapp3.1\WM.Infrastructure.pdb

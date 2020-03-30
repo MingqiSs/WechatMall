@@ -31,7 +31,7 @@ namespace WM.Web.Api.Controllers
             _orderService = orderService;
         }
         /// <summary>
-        /// 查看购物车
+        /// 查看购物车商品
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M301")]
@@ -42,30 +42,43 @@ namespace WM.Web.Api.Controllers
             return Ok(r);
         }
         /// <summary>
-        ///商品添加到购物车
+        ///购物车-添加商品
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M302")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult AddOrderCard()
+        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
+        public IActionResult AddShoppingCard(AddShoppingCardRQ rq)
         {
-            return Ok();
+         var r=   _orderService.AddShoppingCard(User.GetToken().UID,rq);
+            return Ok(r);
         }
         /// <summary>
-        ///商品移除购物车
+        ///购物车-修改商品数量
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("M303")]
-        [ProducesResponseType(typeof(ResultDto<object>), 200)]
-        public IActionResult RemoveOrderCard()
+        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
+        public IActionResult ModifyShoppingCard(ModifyShoppingCardRQ rq)
         {
-            return Ok();
+            var r = _orderService.ModifyShoppingCard(User.GetToken().UID, rq);
+            return Ok(r);
+        }
+        /// <summary>
+        ///购物车-删除商品
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, Route("M304")]
+        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
+        public IActionResult RemoveShoppingCard(RemoveShoppingCardRQ rq)
+        {
+            var r = _orderService.RemoveShoppingCard(User.GetToken().UID, rq);
+            return Ok(r);
         }
         /// <summary>
         ///订单列表
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M304")]
+        [HttpPost, Route("M305")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
         public IActionResult GetOrderPageList()
         {

@@ -8,6 +8,7 @@ using WM.Service.App.Interface;
 using WM.Service.Domain.Interface;
 using System.Linq;
 using WM.Service.App.Dto.WebDto.RQ;
+using WM.Service.Domain.Entities;
 
 namespace WM.Service.App
 {
@@ -49,7 +50,7 @@ namespace WM.Service.App
         /// <returns></returns>
         public ResultDto<List<ProductTypeRP>> GetProductTypeList()
         {
-           var list= _ibll.wm_product_type.Where(q => q.DataStatus == (byte)EnumDataStatus.Enable)
+           var list= _ibll.wm_product_type.Where(q => q.DataStatus == (byte)DataStatus.Enable)
                          .Select(q=>new ProductTypeRP { 
                          ID=q.ID,
                          Name=q.Name,
@@ -63,7 +64,7 @@ namespace WM.Service.App
         /// <returns></returns>
         public ResultDto<List<ProductTagRP>> GetProductTagList()
         {
-            var list = _ibll.wm_product_tag.Where(q => q.DataStatus == (byte)EnumDataStatus.Enable)
+            var list = _ibll.wm_product_tag.Where(q => q.DataStatus == (byte)DataStatus.Enable)
                           .Select(q => new ProductTagRP
                           {
                               ID = q.ID,
