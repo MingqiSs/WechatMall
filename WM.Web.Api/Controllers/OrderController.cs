@@ -30,55 +30,12 @@ namespace WM.Web.Api.Controllers
         {
             _orderService = orderService;
         }
-        /// <summary>
-        /// 查看购物车商品
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost, Route("M301")]
-        [ProducesResponseType(typeof(ResultDto<OrderCradRP>), 200)]
-        public IActionResult GetOrderCardInfo()
-        {
-            var r=_orderService.GetOrderCardInfo(User.GetToken().UID);
-            return Ok(r);
-        }
-        /// <summary>
-        ///购物车-添加商品
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost, Route("M302")]
-        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
-        public IActionResult AddShoppingCard(AddShoppingCardRQ rq)
-        {
-         var r=   _orderService.AddShoppingCard(User.GetToken().UID,rq);
-            return Ok(r);
-        }
-        /// <summary>
-        ///购物车-修改商品数量
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost, Route("M303")]
-        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
-        public IActionResult ModifyShoppingCard(ModifyShoppingCardRQ rq)
-        {
-            var r = _orderService.ModifyShoppingCard(User.GetToken().UID, rq);
-            return Ok(r);
-        }
-        /// <summary>
-        ///购物车-删除商品
-        /// </summary>
-        /// <returns></returns>
-        [HttpPost, Route("M304")]
-        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
-        public IActionResult RemoveShoppingCard(RemoveShoppingCardRQ rq)
-        {
-            var r = _orderService.RemoveShoppingCard(User.GetToken().UID, rq);
-            return Ok(r);
-        }
+    
         /// <summary>
         ///订单列表
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M305")]
+        [HttpPost, Route("M401")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
         public IActionResult GetOrderPageList()
         {
@@ -88,7 +45,7 @@ namespace WM.Web.Api.Controllers
         ///创建订单
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M305")]
+        [HttpPost, Route("M402")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
         public IActionResult CreateOrder()
         {
@@ -98,7 +55,7 @@ namespace WM.Web.Api.Controllers
         ///删除订单
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M306")]
+        [HttpPost, Route("M403")]
         [ProducesResponseType(typeof(ResultDto<object>), 200)]
         public IActionResult RemoveOrder()
         {

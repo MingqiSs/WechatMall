@@ -14,27 +14,27 @@ namespace WM.Service.App.Interface
         /// </summary>
         /// <param name="uid"></param>
         /// <returns></returns>
-        ResultDto<OrderCradRP> GetOrderCardInfo(string uid);
+        ResultDto<OrderCradRP> GetOrderCarInfo(string uid);
         /// <summary>
         /// 添加购物车
         /// </summary>
         /// <param name="uid"></param>
         /// <param name="rq"></param>
         /// <returns></returns>
-        ResultDto<bool> AddShoppingCard(string uid, AddShoppingCardRQ rq);
+        ResultDto<bool> AddShoppingCar(string uid, AddShoppingCarRQ rq);
         /// <summary>
         /// 修改购物车商品数量
         /// </summary>
         /// <param name="uid"></param>
         /// <param name="rq"></param>
         /// <returns></returns>
-        ResultDto<bool> ModifyShoppingCard(string uid, ModifyShoppingCardRQ rq);
+        ResultDto<bool> ModifyShoppingCar(string uid, ModifyShoppingCarRQ rq);
         /// <summary>
         /// 商品移除购物车
         /// </summary>
         /// <param name="uid"></param>
         /// <param name="rq"></param>
         /// <returns></returns>
-        ResultDto<bool> RemoveShoppingCard(string uid, RemoveShoppingCardRQ rq);
+        ResultDto<bool> RemoveShoppingCar(string uid, RemoveShoppingCarRQ rq);
     }
 }

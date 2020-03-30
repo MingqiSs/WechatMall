@@ -31,7 +31,7 @@ namespace WM.Service.App
         /// 获取购物车信息
         /// </summary>
         /// <returns></returns>
-        public ResultDto<OrderCradRP> GetOrderCardInfo(string uid)
+        public ResultDto<OrderCradRP> GetOrderCarInfo(string uid)
         {
             var user = _userDomainService.GetUserByUID(uid);
             if (user == null) return Result<OrderCradRP>(ResponseCode.sys_token_invalid, "获取用户信息错误");
@@ -68,7 +68,7 @@ namespace WM.Service.App
         /// <param name="uid"></param>
         /// <param name="rq"></param>
         /// <returns></returns>
-        public ResultDto<bool> AddShoppingCard(string uid, AddShoppingCardRQ rq)
+        public ResultDto<bool> AddShoppingCar(string uid, AddShoppingCarRQ rq)
         {
             var user = _userDomainService.GetUserByUID(uid);
             if (user == null) return Result<bool>(ResponseCode.sys_token_invalid, "获取用户信息错误");
@@ -107,7 +107,7 @@ namespace WM.Service.App
         /// <param name="uid"></param>
         /// <param name="rq"></param>
         /// <returns></returns>
-        public ResultDto<bool> ModifyShoppingCard(string uid, ModifyShoppingCardRQ rq)
+        public ResultDto<bool> ModifyShoppingCar(string uid, ModifyShoppingCarRQ rq)
         {
             var user = _userDomainService.GetUserByUID(uid);
             if (user == null) return Result<bool>(ResponseCode.sys_token_invalid, "获取用户信息错误");
@@ -145,7 +145,7 @@ namespace WM.Service.App
         /// <param name="uid"></param>
         /// <param name="rq"></param>
         /// <returns></returns>
-        public ResultDto<bool> RemoveShoppingCard(string uid, RemoveShoppingCardRQ rq)
+        public ResultDto<bool> RemoveShoppingCar(string uid, RemoveShoppingCarRQ rq)
         {
             var user = _userDomainService.GetUserByUID(uid);
             if (user == null) return Result<bool>(ResponseCode.sys_token_invalid, "获取用户信息错误");

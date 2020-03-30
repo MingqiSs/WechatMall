@@ -36,7 +36,7 @@ namespace WM.Web.Api.Controllers
         /// 获取地区列表(省市)
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("M401")]
+        [HttpPost, Route("M501")]
         [ProducesResponseType(typeof(ResultDto<UserLoginRP>), 200)]
         public IActionResult GetDistrictList()
         {

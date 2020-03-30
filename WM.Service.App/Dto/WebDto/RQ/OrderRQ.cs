@@ -7,7 +7,7 @@ namespace WM.Service.App.Dto.WebDto.RQ
     /// <summary>
     /// 
     /// </summary>
-    public class AddShoppingCardRQ
+    public class AddShoppingCarRQ
     {
         /// <summary>
         /// 商品id
@@ -22,7 +22,7 @@ namespace WM.Service.App.Dto.WebDto.RQ
     /// <summary>
     /// 
     /// </summary>
-    public class ModifyShoppingCardRQ
+    public class ModifyShoppingCarRQ
     {
         /// <summary>
         /// 商品id
@@ -37,7 +37,7 @@ namespace WM.Service.App.Dto.WebDto.RQ
     /// <summary>
     /// 
     /// </summary>
-    public class RemoveShoppingCardRQ {
+    public class RemoveShoppingCarRQ {
         /// <summary>
         /// 商品列表
         /// </summary>
