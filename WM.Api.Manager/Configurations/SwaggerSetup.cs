@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WM.Web.Api.Configurations
+namespace WM.Api.Manager.Configurations
 {
     public static class SwaggerSetup
     {
@@ -22,10 +22,10 @@ namespace WM.Web.Api.Configurations
                     Version = "v1",
                     Title = "WeChatMall-Manager Project",
                     Description = "WeChatMall-Manager API Swagger surface",
-                    Contact = new OpenApiContact { Name = "Eduardo Pires", Email = "contato@eduardopires.net.br", Url = new Uri("http://www.eduardopires.net.br") },
-                    License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://github.com/EduardoPires/EquinoxProject/blob/master/LICENSE") }
+                   // Contact = new OpenApiContact { Name = "Eduardo Pires", Email = "contato@eduardopires.net.br", Url = new Uri("http://www.eduardopires.net.br") },
+                 //   License = new OpenApiLicense() { Name = "MIT", Url = new Uri("") }
                 });
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, "WM.Web.Api.xml");
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, "WM.Api.Manager.xml");
                 var xmlPath1 = Path.Combine(AppContext.BaseDirectory, "WM.Service.App.xml");
                 s.IncludeXmlComments(xmlPath);
                 s.IncludeXmlComments(xmlPath1);

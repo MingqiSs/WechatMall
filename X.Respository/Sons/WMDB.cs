@@ -45,6 +45,16 @@ namespace X.Respository.Sons.WMDB
                }
            }
     }
+    public partial class sys_manage:BaseRespository<X.Models.WMDB.sys_manage>,X.IRespository.Sons.WMDB.Isys_manage
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
     public partial class wm_order:BaseRespository<X.Models.WMDB.wm_order>,X.IRespository.Sons.WMDB.Iwm_order
     {
            public override SqlSugarClient db

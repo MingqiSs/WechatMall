@@ -10,20 +10,6 @@ namespace X.Models.WMDB
            public wm_user_shopping_address(){}
 
            /// <summary>
-           /// Desc:联系人详细地址
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Receiver_Address { get; set; }
-
-           /// <summary>
-           /// Desc:默认
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool Isdef { get; set; }
-
-           /// <summary>
            /// Desc:省
            /// Default:
            /// Nullable:False
@@ -92,6 +78,20 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:联系人详细地址
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Receiver_Address { get; set; }
+
+           /// <summary>
+           /// Desc:默认
+           /// Default:b'0'
+           /// Nullable:False
+           /// </summary>
+           public bool Isdef { get; set; }
 
 
     }

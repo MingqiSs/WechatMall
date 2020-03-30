@@ -10,20 +10,6 @@ namespace X.Models.WMDB
            public wm_order_logistics(){}
 
            /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:发货时间
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? DeliveryTime { get; set; }
-
-           /// <summary>
            /// Desc:收货时间
            /// Default:
            /// Nullable:True
@@ -57,6 +43,20 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string TrackingNumber { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:发货时间
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? DeliveryTime { get; set; }
 
 
     }

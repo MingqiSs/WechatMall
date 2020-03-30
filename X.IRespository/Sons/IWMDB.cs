@@ -16,6 +16,9 @@ namespace X.IRespository.Sons.WMDB
     public partial interface Ir_product_tag:IBaseRespository<X.Models.WMDB.r_product_tag>
     {
     }
+    public partial interface Isys_manage:IBaseRespository<X.Models.WMDB.sys_manage>
+    {
+    }
     public partial interface Iwm_order:IBaseRespository<X.Models.WMDB.wm_order>
     {
     }
