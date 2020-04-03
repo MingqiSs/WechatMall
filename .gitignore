@@ -30,3 +30,5 @@
 /WM.Infrastructure/bin
 /WM.Infrastructure/obj
 /WM.Infrastructure/bin
+/WM.Manager.Mvc/bin/Debug/netcoreapp3.1
+/WM.Manager.Mvc/obj
