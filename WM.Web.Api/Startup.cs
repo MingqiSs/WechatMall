@@ -28,7 +28,7 @@ namespace WM.Web.Api
         }
 
         public IConfiguration Configuration { get; }
-
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -40,6 +40,16 @@ namespace WM.Web.Api
             services.AddLogging(t => t.AddNLog());
             #endregion
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                });
+            });
             #region ×¢²á »º´æ
             services.AddMemoryCache();
             //services.AddRedisCaching(options =>
@@ -85,13 +95,7 @@ namespace WM.Web.Api
 
             app.UseAuthorization();
             // ¿çÓòÅäÖÃ
-            //app.UseCors(c =>
-            //{
-            //    c.AllowAnyOrigin();
-            //    c.AllowAnyHeader();
-            //    c.AllowAnyMethod();
-            //    c.AllowCredentials();
-            //});
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseSwaggerSetup();
 
 
