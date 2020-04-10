@@ -11,6 +11,10 @@ namespace WM.Api.Manager.Configurations
 {
     public static class SwaggerSetup
     {
+        /// <summary>
+        /// swagger配置
+        /// </summary>
+        /// <param name="services"></param>
         public static void AddSwaggerSetup(this IServiceCollection services)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));

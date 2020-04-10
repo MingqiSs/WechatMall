@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using WM.Api.Manager.Configurations;
+using WM.Api.Manager.Filter;
 using WM.Infrastructure.DI;
 
 namespace WM.Api.Manager
@@ -73,10 +74,13 @@ namespace WM.Api.Manager
             app.UseRouting();
 
             app.UseStaticFiles();
-            //token验证
-            app.UseAuthentication();
 
             app.UseAuthorization();
+            //token验证
+           // app.UseAuthentication();
+            
+            app.UseCheckTokenAuthentication();
+
             // 跨域配置
             //app.UseCors(c =>
             //{

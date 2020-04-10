@@ -16,6 +16,7 @@ using WM.Service.App.Interface;
 
 namespace WM.Api.Manager.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("v1")]
     public class ManagerController : ControllerBase
@@ -54,6 +55,18 @@ namespace WM.Api.Manager.Controllers
                 Response.Headers.Add("Authorization", new StringValues(token));
             }
             return Ok(r);
+        }
+        /// <summary>
+        ///查看用户资料
+        /// </summary>
+        /// <returns></returns>
+    
+        [HttpPost, Route("M102")]
+        [ProducesResponseType(typeof(ResultDto<bool>), 200)]
+        public IActionResult GetUserInfo()
+        {
+           var uid= User.GetToken().UID;
+            return Ok(uid);
         }
     }
 }

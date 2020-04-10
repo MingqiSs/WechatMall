@@ -13,6 +13,11 @@ namespace WM.Api.Manager.Configurations
 {
     public static class JwtSetup
     {
+        /// <summary>
+        /// jwt配置
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration"></param>
         public static void AddJwtAuthSetup(this IServiceCollection services, IConfiguration configuration)
         {
             if (services == null) throw new ArgumentNullException(nameof(services));
