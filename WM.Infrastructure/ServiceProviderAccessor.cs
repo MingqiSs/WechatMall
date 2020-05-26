@@ -6,12 +6,10 @@ namespace WM.Infrastructure
 {
     public class ServiceProviderAccessor
     {
-        private static IServiceProvider serviceProvider;
-
         public static void SetServiceProvider(IServiceProvider sp)
         {
-            serviceProvider = sp;
+            ServiceProvider = sp;
         }
-        public static IServiceProvider ServiceProvider => serviceProvider;
+        public static IServiceProvider ServiceProvider { get; private set; }
     }
 }

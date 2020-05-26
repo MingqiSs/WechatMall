@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WM.Infrastructure\WM.Infrastructure.csproj" />
     <ProjectReference Include="..\X.Common\X.Common.csproj" />
     <ProjectReference Include="..\X.Models\X.Models.csproj" />
     <ProjectReference Include="..\X.ORM\X.ORM.csproj" />

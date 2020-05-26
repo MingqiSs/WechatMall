@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using WM.Infrastructure.Extensions.AutofacManager;
 
 namespace X.IRespository
 {
-    public partial interface IRespositorySession
+    public partial interface IRespositorySession: IDependency
     {
         /// <summary>
         /// 开放所有Sugar操作对象

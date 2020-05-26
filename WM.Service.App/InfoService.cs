@@ -8,6 +8,8 @@ using WM.Service.App.Interface;
 using WM.Service.Domain.Interface;
 using System.Linq;
 using WM.Service.App.Dto.WebDto.RQ;
+using WM.Infrastructure.Extensions.AutofacManager;
+using WM.Infrastructure;
 
 namespace WM.Service.App
 {
@@ -28,6 +30,7 @@ namespace WM.Service.App
         public ResultDto<List<DistrictListRP>> GetDistrictList()
         {
             //  var result = new List<DistrictListRP>();
+           var aa= AutofacContainerModule.GetService<IUserService>().GetUserInfo("");
             var ctis = _ibll.cm_city.ToList();
             var province = _ibll.cm_province.ToList();
             var result = province.Select(q => new DistrictListRP

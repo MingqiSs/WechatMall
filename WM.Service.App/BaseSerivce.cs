@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Models;
 
 namespace WM.Service.App
@@ -8,7 +9,7 @@ namespace WM.Service.App
     /// <summary>
     /// 
     /// </summary>
-    public class BaseSerivce
+    public class BaseSerivce : IDependency
     {
         /// <summary>
         /// 

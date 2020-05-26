@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WM.Infrastructure.Extensions.AutofacManager;
 using X.Models.WMDB;
 
 namespace WM.Service.Domain.Interface
 {
-    public interface IUserDomainService
+    public interface IUserDomainService: IDependency
     {
         wm_user GetUserByUID(string uid);
 

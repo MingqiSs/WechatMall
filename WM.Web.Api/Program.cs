@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -29,7 +30,7 @@ namespace WM.Web.Api
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseUrls(config.GetValue<string>("urls"));
-                });
+                }).UseServiceProviderFactory(new AutofacServiceProviderFactory()); ;
 
         }
     }

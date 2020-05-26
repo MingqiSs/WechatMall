@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Autofac;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -16,6 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 using NLog.Extensions.Logging;
 using WM.Infrastructure.Config;
 using WM.Infrastructure.DI;
+using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Web.Api.Configurations;
 
 namespace WM.Web.Api
@@ -32,6 +35,8 @@ namespace WM.Web.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddControllers();
 
             services.AddSwaggerSetup();
@@ -63,20 +68,27 @@ namespace WM.Web.Api
             services.AddJwtAuthSetup(Configuration);          
             #endregion
 
-            #region ×¢²á Repositor
-            services.RegisterAssembly("X.IRespository", "X.Respository");
-            #endregion
+            //#region ×¢²á Repositor
+            //services.RegisterAssembly("X.IRespository", "X.Respository");
+            //#endregion
 
-            #region ×¢²á Service
-            services.RegisterAssembly("WM.Service.App", ServiceLifetime.Scoped);
-            #endregion
+            //#region ×¢²á Service
+            //services.RegisterAssembly("WM.Service.App", ServiceLifetime.Scoped);
+            //#endregion
 
-            #region ×¢²á Service
-            services.RegisterAssembly("WM.Service.Domain", ServiceLifetime.Scoped);
-            #endregion
+            //#region ×¢²á Service
+            //services.RegisterAssembly("WM.Service.Domain", ServiceLifetime.Scoped);
+            //#endregion
            
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="builder"></param>
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule();
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -96,13 +108,20 @@ namespace WM.Web.Api
             app.UseAuthorization();
             // ¿çÓòÅäÖÃ
             app.UseCors(MyAllowSpecificOrigins);
+
             app.UseSwaggerSetup();
 
+            WM.Infrastructure.ServiceProviderAccessor.SetServiceProvider(app.ApplicationServices);
+
+            //ÅäÖÃHttpContext
+            // WM.Infrastructure.Utilities.HttpContext.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
         }
+      
     }
+  
 }
