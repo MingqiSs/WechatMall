@@ -1,13 +1,13 @@
 using System;
 using System.Globalization;
-using MC.Common.Localization.Configuration;
-using MC.Common.Localization.Dictionaries;
-using MC.Common.Localization.Dictionaries.Xml;
-using MC.Common.Localization.Sources;
+using WM.Infrastructure.Localization.Configuration;
+using WM.Infrastructure.Localization.Dictionaries;
+using WM.Infrastructure.Localization.Dictionaries.Xml;
+using WM.Infrastructure.Localization.Sources;
 using WM.Infrastructure.Localization;
 using WM.Infrastructure.Models;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     /// <summary>
     /// 此静态类用于简化获取本地化字符串。
@@ -72,14 +72,14 @@ namespace MC.Common.Localization
                 new DictionaryBasedLocalizationSource(CurrentSourceName,
                     new XmlEmbeddedFileLocalizationDictionaryProvider(
                         typeof(LocalizationConfigurer).Assembly,
-                        "MC.Common.Localization.Sources.Files"
+                        "WM.Infrastructure.Localization.Sources.Files"
                     )
                 )
             );
             //localizationConfiguration.Sources.Add(
             //    new DictionaryBasedLocalizationSource("Xsmcfx-en",
-            //        //D:\Projects\MCFX.NET-2.0\MC.Common\Localization\Sources\Files
-            //        new XmlFileLocalizationDictionaryProvider("D://Projects/MCFX.NET-2.0/MC.Common/Localization/Sources/Files")
+            //        //D:\Projects\MCFX.NET-2.0\WM.Infrastructure\Localization\Sources\Files
+            //        new XmlFileLocalizationDictionaryProvider("D://Projects/MCFX.NET-2.0/WM.Infrastructure/Localization/Sources/Files")
             //    )
             //);
             return localizationConfiguration;

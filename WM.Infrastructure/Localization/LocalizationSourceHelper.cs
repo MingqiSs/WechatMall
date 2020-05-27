@@ -1,9 +1,9 @@
-﻿using MC.Common.Localization.Configuration;
+﻿using WM.Infrastructure.Localization.Configuration;
 using System;
 using System.Globalization;
 using WM.Infrastructure.Models;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     public static class LocalizationSourceHelper
     {

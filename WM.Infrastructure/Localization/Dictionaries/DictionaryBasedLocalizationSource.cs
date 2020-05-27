@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using MC.Common.Localization.Configuration;
+using WM.Infrastructure.Localization.Configuration;
 
-namespace MC.Common.Localization.Dictionaries
+namespace WM.Infrastructure.Localization.Dictionaries
 {
     /// <summary>
     /// This class is used to build a localization source

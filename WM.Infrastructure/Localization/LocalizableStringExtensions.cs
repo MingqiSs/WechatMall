@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     public static class LocalizableStringExtensions
     {

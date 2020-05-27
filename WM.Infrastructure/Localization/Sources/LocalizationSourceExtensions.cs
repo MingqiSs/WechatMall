@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace MC.Common.Localization.Sources
+namespace WM.Infrastructure.Localization.Sources
 {
     /// <summary>
     /// Extension methods for <see cref="ILocalizationSource"/>.

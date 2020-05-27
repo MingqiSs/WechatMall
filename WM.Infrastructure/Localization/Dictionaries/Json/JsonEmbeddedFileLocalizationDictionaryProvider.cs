@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace MC.Common.Localization.Dictionaries.Json
+namespace WM.Infrastructure.Localization.Dictionaries.Json
 {
     /// <summary>
     /// Provides localization dictionaries from JSON files embedded into an <see cref="Assembly"/>.

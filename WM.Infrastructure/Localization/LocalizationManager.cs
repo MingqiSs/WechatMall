@@ -1,12 +1,12 @@
-using MC.Common.Localization.Configuration;
-using MC.Common.Localization.Dictionaries;
-using MC.Common.Localization.Sources;
+using WM.Infrastructure.Localization.Configuration;
+using WM.Infrastructure.Localization.Dictionaries;
+using WM.Infrastructure.Localization.Sources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     public class LocalizationManager : ILocalizationManager
     {

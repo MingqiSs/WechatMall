@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Globalization;
-using MC.Common.Localization.Configuration;
+using WM.Infrastructure.Localization.Configuration;
 
-namespace MC.Common.Localization.Sources
+namespace WM.Infrastructure.Localization.Sources
 {
     /// <summary>
     /// Null object pattern for <see cref="ILocalizationSource"/>.

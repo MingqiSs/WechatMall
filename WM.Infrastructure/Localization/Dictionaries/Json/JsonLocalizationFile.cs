@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MC.Common.Localization.Dictionaries.Json
+namespace WM.Infrastructure.Localization.Dictionaries.Json
 {
     /// <summary>
     /// Use it to serialize json file

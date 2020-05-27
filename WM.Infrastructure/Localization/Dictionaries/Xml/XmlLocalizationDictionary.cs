@@ -5,7 +5,7 @@ using System.IO;
 using System.Xml;
 using WM.Infrastructure.Models;
 
-namespace MC.Common.Localization.Dictionaries.Xml
+namespace WM.Infrastructure.Localization.Dictionaries.Xml
 {
     /// <summary>
     /// This class is used to build a localization dictionary from XML.

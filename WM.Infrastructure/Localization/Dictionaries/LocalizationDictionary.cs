@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace MC.Common.Localization.Dictionaries
+namespace WM.Infrastructure.Localization.Dictionaries
 {
     /// <summary>
     /// Represents a simple implementation of <see cref="ILocalizationDictionary"/> interface.

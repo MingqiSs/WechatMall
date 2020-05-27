@@ -1,10 +1,10 @@
 ﻿using System.Globalization;
 using System.Reflection;
-using MC.Common.Localization.Configuration;
-using MC.Common.Localization.Dictionaries;
-using MC.Common.Localization.Dictionaries.Xml;
+using WM.Infrastructure.Localization.Configuration;
+using WM.Infrastructure.Localization.Dictionaries;
+using WM.Infrastructure.Localization.Dictionaries.Xml;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     public static class LocalizationConfigurer
     {
@@ -18,10 +18,10 @@ namespace MC.Common.Localization
         public static void Configure(ILocalizationConfiguration localizationConfiguration)
         {
             //localizationConfiguration.Sources.Add(
-            //    new DictionaryBasedLocalizationSource("MC.Common.Localization.Sources.Files",
+            //    new DictionaryBasedLocalizationSource("WM.Infrastructure.Localization.Sources.Files",
             //        new XmlEmbeddedFileLocalizationDictionaryProvider(
             //           Assembly.GetExecutingAssembly(),
-            //            "MC.Common.Localization.Sources.Files"
+            //            "WM.Infrastructure.Localization.Sources.Files"
             //        )
             //    )
             //);

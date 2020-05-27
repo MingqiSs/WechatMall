@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Resources;
-using MC.Common.Localization.Configuration;
+using WM.Infrastructure.Localization.Configuration;
 
-namespace MC.Common.Localization.Sources.Resource
+namespace WM.Infrastructure.Localization.Sources.Resource
 {
     /// <summary>
     /// This class is used to simplify to create a localization source that

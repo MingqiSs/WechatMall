@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Localization\Sources\Files\Xsmcfx-en.xml" />
+    <None Remove="Localization\Sources\Files\Xsmcfx-zh-CN.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\Sources\Files\Xsmcfx-en.xml" />
+    <EmbeddedResource Include="Localization\Sources\Files\Xsmcfx-zh-CN.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.1" />

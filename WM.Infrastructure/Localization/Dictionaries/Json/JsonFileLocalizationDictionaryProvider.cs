@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace MC.Common.Localization.Dictionaries.Json
+namespace WM.Infrastructure.Localization.Dictionaries.Json
 {
     /// <summary>
     ///     Provides localization dictionaries from json files in a directory.

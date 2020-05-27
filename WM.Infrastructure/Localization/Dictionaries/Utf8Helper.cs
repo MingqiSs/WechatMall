@@ -2,7 +2,7 @@
 using System.Text;
 using WM.Infrastructure.Models;
 
-namespace MC.Common.Localization.Dictionaries
+namespace WM.Infrastructure.Localization.Dictionaries
 {
     internal static class Utf8Helper
     {

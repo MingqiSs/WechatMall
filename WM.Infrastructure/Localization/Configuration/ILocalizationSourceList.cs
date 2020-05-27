@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using MC.Common.Localization.Sources;
+using WM.Infrastructure.Localization.Sources;
 
-namespace MC.Common.Localization.Configuration
+namespace WM.Infrastructure.Localization.Configuration
 {
     /// <summary>
     /// Defines a specialized list to store <see cref="ILocalizationSource"/> object.

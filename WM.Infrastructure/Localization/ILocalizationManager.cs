@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using MC.Common.Localization.Sources;
+using WM.Infrastructure.Localization.Sources;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     /// <summary>
     /// This interface is used to manage localization system.

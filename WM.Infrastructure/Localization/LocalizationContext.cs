@@ -1,4 +1,4 @@
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     /// <summary>
     /// Implements <see cref="ILocalizationContext"/>.

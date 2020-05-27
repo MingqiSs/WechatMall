@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using WM.Infrastructure.Models;
 
-namespace MC.Common.Localization.Dictionaries.Json
+namespace WM.Infrastructure.Localization.Dictionaries.Json
 {
     /// <summary>
     ///     This class is used to build a localization dictionary from json.

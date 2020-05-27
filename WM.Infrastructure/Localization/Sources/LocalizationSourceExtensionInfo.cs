@@ -1,6 +1,6 @@
-﻿using MC.Common.Localization.Dictionaries;
+﻿using WM.Infrastructure.Localization.Dictionaries;
 
-namespace MC.Common.Localization.Sources
+namespace WM.Infrastructure.Localization.Sources
 {
     /// <summary>
     /// Used to store a localization source extension information.

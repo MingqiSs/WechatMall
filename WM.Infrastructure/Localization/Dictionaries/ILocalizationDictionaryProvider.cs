@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MC.Common.Localization.Dictionaries
+namespace WM.Infrastructure.Localization.Dictionaries
 {
     public interface ILocalizationDictionaryProvider
     {

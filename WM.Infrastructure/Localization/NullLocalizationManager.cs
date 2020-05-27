@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Globalization;
-using MC.Common.Localization.Sources;
+using WM.Infrastructure.Localization.Sources;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     public class NullLocalizationManager : ILocalizationManager
     {

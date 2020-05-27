@@ -35,7 +35,7 @@ namespace WM.Web.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllers();
 
@@ -111,11 +111,10 @@ namespace WM.Web.Api
 
             app.UseSwaggerSetup();
 
-            WM.Infrastructure.ServiceProviderAccessor.SetServiceProvider(app.ApplicationServices);
-
             //≈‰÷√HttpContext
-            // WM.Infrastructure.Utilities.HttpContext.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
-
+            Infrastructure.Utilities.HttpContext.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
+            //≈‰÷√ServiceProvider
+            //ServiceProviderAccessor.SetServiceProvider(app.ApplicationServices);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

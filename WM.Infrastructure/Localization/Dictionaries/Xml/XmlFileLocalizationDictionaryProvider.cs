@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace MC.Common.Localization.Dictionaries.Xml
+namespace WM.Infrastructure.Localization.Dictionaries.Xml
 {
     /// <summary>
     /// Provides localization dictionaries from XML files in a directory.

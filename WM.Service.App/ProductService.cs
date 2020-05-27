@@ -79,7 +79,8 @@ namespace WM.Service.App
         /// <returns></returns>
         public ResultDto<PageDto<ProductRP>> GetProductPageList(ProductRQ rq)
         {
-            var result = new PageDto<ProductRP>(rq.pi, rq.ps) { lst = new List<ProductRP>() };
+            var aaa = L("OperationSucceeded");
+               var result = new PageDto<ProductRP>(rq.pi, rq.ps) { lst = new List<ProductRP>() };
             
             int totalCount = 0;
             var list = _ibll.wm_product.Where(q => q.DataStatus == (byte)EnumDataStatus.Enable)

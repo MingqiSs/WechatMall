@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     /// <summary>
     /// Represents a string that can be localized.

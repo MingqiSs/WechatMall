@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using WM.Infrastructure.Extensions.AutofacManager;
+using WM.Infrastructure.Localization;
 using WM.Infrastructure.Models;
 
 namespace WM.Service.App
@@ -68,9 +70,32 @@ namespace WM.Service.App
             return new ResultDto<T>(ResponseCode.sys_exception, errorMsg);
         }
 
+        /// <summary>
+        /// 获取 <paramref name="name"/> 对应的本地化字符串。
+        /// </summary>
+        /// <param name="name">本地化资源的名称。</param>
+        /// <returns>返回本地化字符串。</returns>
+        public static string L(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                return name;
+            try
+            {
+                var Language = WM.Infrastructure.Utilities.HttpContext.Current.Request.Headers["Language"].ToString();
+                LocalizationHelper.InitializeLanguage(Language);
+                var value = LocalizationHelper.GetString(name);
+                return value;
+            }
+            catch (Exception ex)
+            {
+                var logger = AutofacContainerModule.GetService<ILogger<BaseSerivce>>();
+                logger?.LogError(ex, $"多语言名称[{name}]未找到!");
+                //写日志
+            }
+            return name;
+        }
 
-      
-       
-       
+
+
     }
 }

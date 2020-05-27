@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace MC.Common.Localization.Configuration
+namespace WM.Infrastructure.Localization.Configuration
 {
     /// <summary>
     /// Used for localization configurations.

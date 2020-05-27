@@ -2,7 +2,7 @@ using System;
 using System.Reflection;
 using Newtonsoft.Json;
 
-namespace MC.Common.Localization
+namespace WM.Infrastructure.Localization
 {
     /// <summary>
     /// This class can be used to serialize <see cref="ILocalizableString"/> to <see cref="string"/> during serialization.

@@ -1,6 +1,6 @@
-using MC.Common.Localization.Sources;
+using WM.Infrastructure.Localization.Sources;
 
-namespace MC.Common.Localization.Dictionaries
+namespace WM.Infrastructure.Localization.Dictionaries
 {
     /// <summary>
     /// Interface for a dictionary based localization source.
