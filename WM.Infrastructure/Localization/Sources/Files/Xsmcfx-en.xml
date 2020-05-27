@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="en">
+  <texts>
+    <!--通用功能-->
+    <text name="OperationSucceeded" value="Operation Succeeded" />
+    <text name="OperationFailed" value="Operation Failed" />
+    <text name="AddSucceeded" value="Add Succeeded" />
+    <text name="AddFailed" value="Add Failed" />
+    <text name="ModifySucceeded" value="Modify Succeeded" />
+    <text name="ModifyFailed" value="Modify Failed" />
+    <text name="CreateSucceeded" value="Create Succeeded" />
+    <text name="CreateFailed" value="Create Failed" />
+    <text name="UpdateSucceeded" value="Update Succeeded" />
+    <text name="UpdateFailed" value="Update Failed" />
+    <text name="Success" value="Success" />
+    <text name="Failure" value="Failure" />
+    <text name="Yes" value="Yes" />
+    <text name="No" value="No" />
+    <text name="All" value="All" />
+    <text name="NoDataToSave">"No Data To Be Saved."</text>
+    <text name="NoDataToExport">"No Data To Be Exported."</text>
+    <text name="BindingSucceeded" value="Binding Succeeded" />
+    <text name="BindingFailed" value="Binding Failed" />
+    <text name="InvalidRequest" value="Invalid Request" />
+    <text name="SentFailed" value="Sent Failed" />
+    <text name="SentSucceeded" value="Sent Succeeded" />
+    <text name="PushFailed" value="Push Failed" />
+    <text name="PushFailedTryAgain" value="Push Failed!Try Again Later!" />
+    <text name="PushSucceeded" value="Push Succeeded" />
+    <text name="StorageSucceeded" value="Storage Succeeded" />
+    <text name="StorageFailed" value="Storage Failed" />
+    <text name="RegisterSucceeded" value="Register Succeeded!" />
+    <text name="RegisterFailed" value="Register Failed" />
+    <text name="RechargeFailed" value="Charge Failed!" />
+    <text name="RechargeFailedContactCustomerService" value="Charge Failed!Please Contact Customer Service!" />
+    <text name="RechargeSucceeded" value="Charge Succeeded!" />
+    <text name="Disabled" value="Disabled"/>
+    <text name="Enabled" value="Enabled"/>
+    <text name="Open" value="Open"/>
+    <text name="Close" value="Close"/>
+    <text name="Day" value="Day"/>
+    <text name="Hour" value="Hour"/>
+    <text name="Munite" value="Munite"/>
+    <text name="Processed" value="Processed"/>
+    <text name="Unprocessed" value="Unprocessed"/>
+    <text name="Male" value="Male"/>
+    <text name="Female" value="Female"/>
+    <text name="GenderTitleMale" value="Gentleman" />
+    <text name="GenderTitleFemale" value="Madam" />
+    <text name="LoginSucceeded" value="Login Succeeded!" />
+    <text name="LoginFailed" value="Login Failed!" />
+    <text name="Activated" value="Activated"/>
+    <text name="Inactivated" value="Inactivated"/>
+    <text name="Verified" value="Verified"/>
+    <text name="NotCertified" value="Unverified"/>
+    <text name="NotUpdates" value="No updates available"/>
+    <!--通用功能-->
+
+    <!--错误-->
+    <text name="DataError">Data Error!</text>
+    <text name="ParameterValueError">Parameter Value Error</text>
+    <text name="ParameterValueErrorFormat">The Value of Parameter{0} is Error</text>
+    <text name="UploadError">Upload Error</text>
+    <text name="UserDataError">User Data Error</text>
+    <!--错误-->
+
+    <!--异常-->
+    <text name="NetworkAnomaly">network exception!</text>
+    <text name="ServerAnomaly">Server exception!</text>
+    <text name="ExecutionScriptException">Execute script exception!</text>
+    <text name="ApplicationAnomaly">Program exception!</text>
+    <text name="UploadAnomaly">Upload exception!</text>
+    <text name="SystemAnomalyTryAgainLater" >System exception! Try Again Later.</text>
+    <text name="PaymentChannelAnomaly">Payment channel exception!</text>
+    <text name="MoveFileAnomaly">An exception occurred during the move of the file！</text>
+    
+    <!--异常-->
+
+    <!--数据验证-->
+    <text name="VerificationPassed">Verification Passed!</text>
+    <text name="VerificationFailed">Verification Failed!</text>
+    <text name="VerificationFailedAndMessage">Verification Failed：{0}</text>
+    <text name="PhoneNumberOrEmailNotFound">Phone Number/Email Not Found!</text>
+    <text name="PhoneOrEmailOrAccountNotFound">Phone Number/Email/Account  Not Found!</text>
+    <text name="PhoneNumberOrEmailAndNameNotMatch">Phone Number/Email Does Not Match with Name!</text>
+    <text name="ValueOfParameterTooSmall">The Value of Parameter must be more than zero!</text>
+    <text name="UserAlreadyExists">User Already Exists!</text>
+    <text name="AddBankCardForCertification">In order to guarantee the safety of your account and funds, please add your bank card as verification. Thank you for the understanding and supports!</text>
+    <text name="DepositOrRemittanceVoucherNumberAlreadyExists">Deposit Or Remittance Voucher Number Already Exists!</text>
+    <text name="RemittanceVoucherNumberAlreadyExists">Remittance Voucher Number Already Exists!</text>
+    <text name="TradingAccountNotMatchName">Trading Account Does Not Match with the Name!</text>
+    <text name="TradingAccountMatchName">Trading Account Match with Name!</text>
+    <text name="DidNotReceiveVoucherPicture">Did Not Receive Voucher Picture!</text>
+    <text name="SavingVoucherImageFailed">Saving Voucher Image Failed!</text>
+    <text name="RemittanceApplicationAlreadyExists">Remittance Application Already Existed!</text>
+    <text name="RemittanceApplicationNotExists">Remittance Application Does Not Exist!</text>
+    <text name="UnableToRevoke">Sorry, your action can not be revoked, please contact our customer service if you need assistance!</text>
+    <text name="WithdrawalAmountNotInCorrectFormat">The format of the withdrawal amount is incorrect!</text>
+    <text name="WithdrawalAmountTooSmall">The amount of withdrawal must be larger than {0}USD!</text>
+    <text name="InvalidWithdrawalAmountMsg1">Your transaction amount is smaller than 50% of overall amount of your account, you need to pay 5% fees of your transaction amount to proceed. And your withdraw amount is smaller than USD 50, you need to pay extra USD3 as fee to proceed. Confirm to withdraw and pay the fees？</text>
+    <text name="InvalidWithdrawalAmountMsg2">Your withdraw amount is smaller than USD50, you need to pay extra USD 3 as fees to withdraw. Confirm to withdraw and pay the fees?</text>
+    <text name="InvalidWithdrawalAmountMsg3">Your transaction amount is less than 50% of the total deposit amount, 5% of the amount will be deducted as the withdrawal fee;Confirm to withdraw and pay the fees?</text>
+    <text name="InvalidTradingAccountForGetInformation">Invalid Trading Account {0}. Unable to Get Relevant Information！</text>
+    <text name="FailedToSaveImage">Failed To Save Image!</text>
+    <text name="FailedToGetImage">Failed To Get Image!</text>
+    <text name="AccountUpgradeServiceHasStopped">Account Upgrade Service Has Stopped!</text>
+    <text name="FileFormatIsIncorrect">File Format Is Incorrect!</text>
+    <text name="UnfinishedUploadedFile">Unfinished uploaded file!</text>
+    <text name="DataStreamIsUnreadable">Data stream is unreadable!</text>
+    <text name="MaxFileSizeLength">The maximum file size is {0}!</text>
+    <text name="FileFormatInconsistentWithFileName">File format is inconsistent with file name！</text>
+    <text name="SFTPConnectionError">SFTP connection error!</text>
+    <text name="NotAllowedSendSmsVerificationCode">SMS is not available temporarily!</text>
+    <text name="EmailAddressIsIncorrect">Incorrect Email Address!</text>
+    <text name="TransactionAccountDoesNotExist">Trading Account Does Not Exist!</text>
+    <text name="TransactionAccountAlreadyExists">Trading Account Already Exists!</text>
+    <text name="PhoneNumberDoesNotExist">Phone Number Does Not Exist!</text>
+    <text name="AmountFormatIsIncorrect">Amount Format Is Incorrect！!</text>
+    <text name="AmountToolSmall">Amount Can Not Be Smaller Than USD50！</text>
+    <text name="PaymentChannelAnomaly">Payment Channel exception </text>
+    <text name="BindBankCard">Please Bind BankCards！</text>
+    <text name="ChannelDoesNotSupportBankCard">This Channel Does Not Support your BankCard!</text>
+    <text name="OrderNotFoundSoPaymentFailed">Payment Failed. The order cannot be found!</text>
+    <text name="ProhibitCreateAccountForAge">There are risks in the real trading. Your age is under 18, you are not allowed to open a real account according to the law. Please try our demo account!</text>
+    <text name="ProhibitCreateAccountForAmerican">
+      American Citizens or Residents are not allowed to open account on our platform!
+    </text>
+    <text name="ProhibitCreateAccountForPeopleCount">The amount of registered users are up to the limited!</text>
+    <text name="EmailAddressDoesNotMatch">Email Address Does Not Match!</text>
+    <text name="ActivationLinkHasExpired">Activation Link Has Expired!</text>
+    <text name="ActivationObjectDoesNotExist">Activation Object Does Not Exist!</text>
+    <text name="HasBeenActivated">Has been Activated!</text>
+    <text name="ActivateFailedContactCustomerService">Activation failed, please contact customer service!</text>
+    <text name="EnterBankCardNumber">Please enter the bank card number!</text>
+    <text name="BankCardNumberIncorrect">Bank card number is incorrect!</text>
+    <text name="EnterBankName">Please enter the bank name!</text>
+    <text name="CreditCardFundingNotSupported">Credit card funding is not supported at this time!</text>
+    <text name="BankCardNumberDoesNotSupportCapitalInjection">The bank card number does not support deposit at this time!</text>
+    <text name="AddInvalidAndBankCardNumberHasBeenUsed">Invalid Action! The bank card number has been used. Please check the card information!</text>
+    <text name="TradingAccountNumberIncorrect">Trading Account is Incorrect!</text>
+    <text name="DepositRateDoesNotExist">Deposit Rate Does Not Exist!</text>
+    <text name="UserDoesNotExist">User Does Not Exist!</text>
+    <text name="OrderNumberError">Wrong Order Number!</text>
+    <text name="GetOrderInformationFailed">Failed to get the order information!</text>
+    <text name="GetUserTotalDepositInformation">Failed to get the user’s total deposit information!</text>
+    <text name="GetContractUnitFailed">Failed to Get Contract Unit!</text>
+    <text name="MinimumAmountLimit"> The amount must be more than {0}!</text>
+    <text name="OrderAmountInconsistentWithOrderCreation">Order Amount is Inconsistent With the amount when crearted!</text>
+    <text name="CertificateNumberFormatIncorrect">Certificate Number Format is Incorrect!</text>
+    <text name="AdultAgeIncorrect">Under 18 years old!</text>
+    <text name="PassportFormatIncorrect">Passport Format Incorrect!</text>
+    <text name="ImageVerificationCodeVerificationAbnormal">Tencent Image Verification exception!</text>
+    <text name="Drivinglicensenumberisnotallowed">Driver license cannot be blank!</text>
+
+
+
+    <!--数据合法验证-->
+    <text name="NotLegal">{0} is Illegal!</text>
+    <text name="GenderIsNotLegal">Gender Is Not Legal!</text>
+    <text name="PhoneNumberIsNotLegal">Phone Number Is Not Legal!</text>
+    <text name="SourceTypeIsNotLegal">Source Type Is Not Legal!</text>
+    <text name="EmailHasBeenRegistered">Email Has Been Registered!</text>
+    <text name="PhoneNumberHasBeenRegistered">Phone Number Has Been Registered!</text>
+    <text name="CertificateNumberFormatError">Please enter a proper ID format!</text>
+    <text name="CertificateNumberMaxLengthTooLong">ID number must be less than 50 characteristics!</text>
+    <text name="PassportFormatError">Passport number must be 4-50 characteristics and only Number, Alphabet, and Blank Space are available!</text>
+    <text name="CertificateNumberAlreadyExists">Certificate Number Already Existed!</text>
+    <text name="AmountFormatIsIncorrect">Amount Format Is Incorrect!</text>
+    <text name="GetDepositRateFailed">Failed to get the Deposit rate!</text>
+    <text name="InvalidOrderNumber">Invalid Order Number!</text>
+    <text name="DateOfBirthIsIllegal">Date Of Birth Is Illegal!</text>
+    <text name="CredentialsNumberLengthNotIllegal">ID number must be 10 or 20 characteristics!!</text>
+    <text name="TradingAccountNumberFormatIncorrect">Trading Account Format Incorrect！!</text>
+    <text name="EmailAddressFormatIllegal">Email Address Format is Illegal!</text>
+    <!--数据合法验证-->
+
+    <!--非空验证-->
+    <text name="CanNotBeEmpty">{0}cannot be empty!</text>
+    <text name="SourceOfFundingCanNotBeEmpty">Source Of Funding Can Not Be Empty!</text>
+    <text name="RequestSourceCanNotBeEmpty">Request Source Can Not Be Empty!</text>
+    <text name="ProofAddressCanNotBeEmpty">Proof Address Can Not Be Empty!</text>
+    <text name="RequestDeviceCanNotBeEmpty">Request Device Can Not Be Empty!</text>
+    <text name="ParameterCannotBeEmpty">Parameter Cannot Be Empty!</text>
+    <text name="NameCanNotBeEmpty">Name Cannot Be Empty!</text>
+    <text name="SexCanNotBeEmpty">Sex Cannot Be Empty!</text>
+    <text name="CityCanNotBeEmpty">City Cannot Be Empty!</text>
+    <text name="Address1CanNotBeEmpty">Address 1 Cannot Be Empty!</text>
+    <text name="PhoneNumberCanNotBeEmpty">Phone Number Cannot Be Empty!</text>
+    <text name="EmailNumberCanNotBeEmpty">Email Cannot Be Empty!</text>
+    <text name="StartTimeCanNotBeEmpty">Start Time Cannot Be Empty!</text>
+    <text name="EndTimeCanNotBeEmpty">End Time Cannot Be Empty!</text>
+    <text name="TypeCanNotBeEmpty">Type Cannot Be Empty!</text>
+    <text name="DateTimeCanNotBeEmpty">Time Cannot Be Empty!</text>
+    <text name="CredentialsNumberCanNotBeEmpty">Certificate number cannot be empty!</text>
+    <text name="FirstNameCanNotBeEmpty">Surname cannot be empty!</text>
+    <text name="LastNameCanNotBeEmpty">Last Name cannot be empty!</text>
+    <text name="ValidatekeyCanNotBeEmpty">Validity name cannot be empty!</text>
+    <text name="TempNameNotIsNull">Template name cannot be empty!</text>
+    <text name="MailToNotIsNull">Receiver cannot be empty!</text>
+    <text name="AccountNumberCanNotBeEmpty">Account number cannot be empty!</text>
+    <text name="ContentCanNotBeEmpty">Content Cannot Be Empty!</text>
+    <text name="UserTypeCanNotBeEmpty">Please choose a user type!</text>
+    <text name="CountryOfCitizenshipCanNotBeEmpty">Please choose your nationality!</text>
+    <text name="PromotionCodeCanNotBeEmpty">Promotion Code Cannot Be Empty!</text>
+    <text name="CertificateTypeCanNotBeEmpty">Please choose the type of your certificate!</text>
+    <text name="IssuingCountryCanNotBeEmpty">Please choose issuing country!</text>
+    <text name="CertificateNumberCanNotBeEmpty">Certificate number cannot be empty!</text>
+    <text name="PassportCanNotBeEmpty">Passport Number Cannot Be Empty!</text>
+    <text name="CountryOfBankCanNotBeEmpty">Please choose the country of the bank!</text>
+    <text name="CurrencyCanNotBeEmpty">Please choose the currency!</text>
+    <text name="BankNameCanNotBeEmpty">Please choose the name of the bank!</text>
+    <text name="BankNumberMustBeLengthDigital">The bank account  number must be 16 to 19 digits!</text>
+    <text name="BankNumberMustBeDigital">Bank account number must be digital  numbers!</text>
+    <text name="BankCardNumberAlreadyExists">Bank Card Number Already Exists!</text>
+    <text name="BankCardNumberCanNotBeEmpty">Bank Card Number CanNot Be Empty!</text>
+    <text name="BankCardPictureCanNotBeEmpty">Please upload the picture of your bank card!</text>
+    <text name="IdentificationNumberCanNotBeEmpty">Identification Number CanNot Be Empty!</text>
+    <text name="CardNoCanNotBeEmpty">Bank/ Remittance Account number cannot be empty!</text>
+    <text name="LoginAccountCanNotBeEmpty">Login Account Cannot Be Empty!</text>
+    <text name="EmailOrPhoneNumberCanNotBeEmpty">Email Or Phone Number Cannot Be Empty!</text>
+    <text name="AccountTypeCanNotBeEmpty">Account Type CanNot Be Empty!</text>
+    <text name="QQCanNotBeEmpty">QQ CanNot Be Empty!</text>
+    <text name="TicketCanNotBeEmpty">Ticket Cannot Be Empty!</text>
+    <text name="RandomStringCanNotBeEmpty">Random String Cannot Be Empty!</text>
+    <text name="StatisticalItemCanNotBeEmpty">Statistical Item Cannot Be Empty!</text>
+    <!--非空验证-->
+    <!--数据验证-->
+
+    <!--密码-->
+    <text name="TransactionPasswordCannotBeEmpty">Transaction Password Cannot Be Empty!</text>
+    <text name="NewPasswordCanNotBeEmpty">New Password Cannot Be Empty!</text>
+    <text name="OriginalPasswordInputError">Original Password Is Incorrect!</text>
+    <text name="LoginPasswordCannotBeEmpty">Login Password Cannot Be Empty!</text>
+    <text name="TransactionPasswordIsIncorrect">Transaction Password Is Incorrect!</text>
+    <text name="UserPasswordChangedSuccessfully">Password Changed Successfully!</text>
+    <text name="UserPasswordModificationFailed1">Password Modification Failed!</text>
+    <text name="UserOriginalPasswordWasEnteredIncorrectly">User Original Password was wrong!</text>
+    <text name="ClickThisLinkToResetYourPassword">Click the link and reset your password!</text>
+    <text name="PasswordResetSucceeded">Password reset!</text>
+    <text name="PasswordResetFailed">Failed to reset your password!</text>
+    <text name="MtPasswordResetFailed">MT Password Reset Failed!</text>
+    <text name="ResetPassword">Reset Password</text>
+    <text name="TwoPasswordEntriesAreInconsistent">Two Password Entries Are Inconsistent!</text>
+    <text name="PasswordResetFailedAndLackEmailOrPhoneNumber">Failed to reset password. Lack of user’s email or phone number!</text>
+    <text name="WrongPasswordFormat">Password must contain numbers and alphabet and the length must be between 6 to 12!</text>
+    <text name="ResetPasswordAccountIncorrect">Reset Password Account Incorrect!</text>
+    <!--密码-->
+
+    <!--分页-->
+    <text name="PageNumberOfValueTooSmall">The value of page number cannot be smaller than 1</text>
+    <!--分页-->
+
+    <!--注册-->
+    <text name="RealAccountGenerationFailed">Real Account Generation Failed!</text>
+    <text name="SimulatedAccountGenerationFailure">Simulated Account Generation Failure!</text>
+    <text name="OpenIdAlreadyExist">OpenId already exist!</text>
+    <!--注册-->
+
+    <!--登录-->
+    <text name="LoginFailed">Login failed!</text>
+    <text name="TheAccountIsNotRegistered">No account exists!</text>
+    <text name="ErrorIncorrectUsernameOrPassword">Wrong password,please try again!</text>
+    <text name="Unbound">Unbound!</text>
+    <text name="UserInformationNotFound">User information not found!</text>
+    <text name="MailboxCanBeUsed">Mailbox can be used!</text>
+    <text name="MailboxAlreadyUsed">Mailbox already used!</text>
+    <text name="BindingFailedAccountBound">Binding failed account bound!</text>
+    <text name="BindingSuccess">Binding success!</text>
+    <text name="UntyingFailure">Untying failure!</text>
+    <text name="UntyingSuccess">Untying success!</text>
+    <text name="updateLiveAccountPasswordException">update live account password exception!</text>
+    <text name="updateDemoAccountPasswordException">update demo account password exception!</text>
+    <!--登录-->
+
+    <!--验证码-->
+    <text name="VerificationCodeHasExpired">Verification Code Has Expired!</text>
+    <text name="VerificationCodeIsCorrect">Verification Code Is Correct!</text>
+    <text name="VerificationCodeDoesNotExist">Verification Code Does Not Exist!</text>
+    <text name="VerificationCodeError">Verification Code Error!</text>
+    <text name="VerificationCodeCanNotBeEmpty">Verification Code Cannot Be Empty!</text>
+    <text name="GetVerificationCode">Get Verification Code!</text>
+    <text name="GenerateUniversalVerificationCodeFailed">Failed Generate Universal Verification Code!</text>
+    <text name="GenerateUniversalVerificationCodeException">Unable to generate the universal verification code!</text>
+    <text name="EnterVerificationCode">Enter Verification Code!</text>
+    <text name="VerificationCodeDoesNotBelong">Verification Code Does Not Belong to the receiver!</text>
+    <text name="SliderVerificationFailed">Slider verification failed！</text>
+    <text name="VerificationSendSuccessfully">Verification sent successfully！</text>
+    <text name="VerificationSendFailed">Verification sending failed！</text>
+    <text name="DoNotsendEmailRepeatedly">Do not send email repeatedly！</text>
+    <!--验证码-->
+
+    <!--审批-->
+    <text name="ReviewUnreviewed" value="Pending" />
+    <text name="ReviewAuditPassed" value="Approved" />
+    <text name="ReviewAuditFailed" value="Declined" />
+    <!--审批-->
+
+    <!--状态-->
+    <text name="StatusUnpaid" value="Unpaid" />
+    <text name="StatusWaitReview" value="Pending" />
+    <text name="StatusDepositSuccessful" value="Deposit success" />
+    <text name="StatusDepositFailure" value="deposit failure" />
+    <text name="StatusUnderReview" value="Pending" />
+    <text name="StatusUserCanceled" value="cancelled" />
+    <text name="StatusDisabledDescription" value="Disabled"/>
+    <text name="StatusEnabledDescription" value="Enabled"/>
+    <text name="StatusNotReturning" value="Not Returning"/>
+    <text name="StatusFollowingUp" value="Following"/>
+    <text name="StatusConverted" value="Converted"/>
+    <text name="StatusAbandoned" value="Abandoned"/>
+    <text name="StatusToBeCredited" value="Pending account"/>
+    <!--状态-->
+
+    <text name="NotFoundSmsCarrierConfiguration">The sending SMS function does not get proper Carrier Configuration.</text>
+    <text name="WithdrawalOfCard" value="Withdrawal Card" />
+    <text name="DepositOfCard" value="Deposit Card" />
+    <text name="UserUndoBySelf" value="User Cancelled" />
+    <text name="SystemAutomaticallyDowngrades" value="System Automatically Downgrades" />
+    <text name="ColumnWebsiteAnnouncement" value="Website Announcement"/>
+    <text name="ColumnAnnouncement" value="Announcement"/>
+    <text name="ColumnAllAppUsers" value="All App Users"/>
+    <text name="ColumnStationNotice" value="StationNotice"/>
+    <text name="ColumnPersonalMessage" value="PersonalMessage"/>
+    <text name="DevicePc" value="PC"/>
+    <text name="DeviceWap" value="WAP"/>
+    <text name="DeviceIos" value="IOS"/>
+    <text name="DeviceAndroid" value="Android"/>
+    <text name="DeviceLive" value="Live Device"/>
+    <text name="SaveUserMaterialException">Some Exception when saving user information！Procession failed!</text>
+    <text name="CreateAccountFailedContactCustomerService">Create Account Failed,Please Contact Customer Service!</text>
+    <text name="CreateAccountFailedContactAdministrator">Create Account Failed,Please Contact Administrator!</text>
+    <text name="MailActivationLink">email activation link!</text>
+    <text name="ActivationLinkIsIncorrect">Activation Link Is Incorrect!</text>
+    <text name="UserInformationCorrespondingMailboxNotFound">User Information matched with Mailbox is Not Found!</text>
+    <text name="UserMailboxDoesNotMatch">User Mailbox Does Not Match!</text>
+    <text name="EmailAddressDoesNotExist">User Mailbox Does Not Match!</text>
+    <text name="LinkIsValid">Link Is Valid!</text>
+    <text name="LinkHasExpiredAndReacquire">Link Has Expired, Please get again!</text>
+    <text name="UserNameIsIncorrect">User Name Is Incorrect!</text>
+    <text name="UserEmailDoesNotExist">User Email Does Not Exist!</text>
+    <text name="UserPhoneNumberDoesNotExist">User Phone Number Does Not Exist!</text>
+    <text name="SystemMessage" value="System Message"/>
+    <text name="PersonalMessage" value="Personal Message"/>
+    <text name="PlatformAnnouncement" value="Platform Announcement"/>
+    <text name="AnnouncementTitle" value="Announcement"/>
+    <text name="EmailAddressAlreadyExists">Email Address Already Exists!</text>
+    <text name="PhoneNumberAlreadyExists">Phone Number Already Exists!</text>
+    <text name="SimulationCreateAccountFailedContactCustomerService">Failed to open Demo Account, please contact customer service!</text>
+    <text name="ClickThisButtonToActivate" value="Click This Button To Activate"/>
+    <text name="SimulationTitle" value="Simulation"/>
+    <text name="NumberDoesNotMatch">Number Does Not Match!</text>
+    <text name="MailFailedToSend">Email Sending Failed</text>
+    <text name="MailSentSuccessfully">Mail Sent Successfully!</text>
+    <text name="ClickThisLinkToVerifyYourEmail">Click This Link To Verify Your Email!</text>
+    <text name="VerificationCodeMailboxBinding">Email bound successfully!</text>
+    <text name="IncorrectEmailAddress">Incorrect Email Address!</text>
+    <text name="InformationDoesNotExist">Information Does Not Exist!</text>
+    <text name="IncorrectInformation">Incorrect Information!</text>
+    <text name="BindingExceedsValidTime">Binding Time Out!</text>
+    <text name="BindingMailboxSuccessfully">Binding successfully!</text>
+    <text name="BindingMailboxFailed">Binding Failure!</text>
+    <text name="NoParametersReceived">No Parameters Received!</text>
+    <text name="TradingAccountInformationFailedToBeObtained">Failed To Get Trading Account!</text>
+    <text name="TransactionAccountAlreadyHasMedicalCheckAccount">Trading Account Already Exist!</text>
+    <text name="AcquisitionFailed">Failed to get!</text>
+    <text name="IncorrectTimeParameter">Incorrect Time Parameter!</text>
+    <text name="PinHasExpired">PIN Has Expired!</text>
+    <text name="PinVerificationSucceeded">PIN Verification Succeeded!</text>
+    <text name="VerificationSucceeded">Verification Succeeded!</text>
+    <text name="InvalidVerificationPin">Invalid Verification PIN!</text>
+    <text name="PinDoesNotExist">PIN Does Not Exist!</text>
+    <text name="EmailAddressIsOccupied">Email Address Is Occupied!</text>
+    <text name="InvalidLoginAccount">Invalid Login Account!</text>
+    <text name="ExperienceAccountLoginIsNotSupportedYet">Demo account is not supported yet!</text>
+    <text name="AccountHasBeenDisabled">Account Has Been Disabled!</text>
+    <text name="AccountOrPasswordIncorrect">Account Or Password Is Incorrect!</text>
+    <text name="LoginFailedContactCustomerService">Login Failed,Please Contact Customer Service!</text>
+    <text name="MailboxDoesNotExistAndRegisterFirst">Email address does not exist，Please register first!</text>
+    <text name="GetInformationFailedAndAnExceptionOccurred!">Unable to get the information!</text>
+    <text name="GetInformationFailedAndInvalidId">Unable to get the informationid And Invalid Id!</text>
+    <text name="AppUsers" value="All App Users"/>
+    <text name="IphoneUsers" value="IOS Users"/>
+    <text name="AndroidUsers" value="Android Users"/>
+    <text name="AccountNumber" value="Trading Account"/>
+    <text name="PushFailedAndAccountNotRegister">Push failed! The trading account was not registered in APP!</text>
+    <text name="PushSucceededAndModifyFailed">Push succeeded. Data Modify Failed!</text>
+    <text name="GetPushDataFailed">Get Push Data Failed!</text>
+    <text name="RegisterFailedAndAnExceptionOccurred">Register Failed And An Exception Occurred!</text>
+    <text name="AuroraPushLabelModificationFailed1">Aurora Push Label Modification Failed!-1</text>
+    <text name="AuroraPushLabelModificationFailed2">Aurora Push Label Modification Failed!-2</text>
+    <text name="CurrentRecordDoesNotExist">Current Record Does Not Exist!</text>
+    <text name="NoChannelParametersToMaintain">No Channel Parameters To be Maintained!</text>
+    <text name="ChannelParametersMaintainedSuccessfully">Channel Parameters Maintained Successfully!</text>
+    <text name="ChannelParametersMaintainedFailed">Channel Parameters Maintained Failed!</text>
+    <text name="TemplateAlreadyExists">Template named 【{0}】 Already Exists!</text>
+    <text name="FailedToGetBankListInformation">Failed To Get Bank List Information!</text>
+    <text name="ModifyReservedPhoneNumberFailed">Modify Reserved Phone Number Failed!</text>
+    <text name="FailedToGetBankInformation">Failed To Get Bank Information!</text>
+    <text name="InvalidDemoAccount">Invalid Demo Account!</text>
+    <text name="InvalidLiveAccount">Invalid Live Account!</text>
+    <text name="RechargeProhibitedForSecond">You are only allowed to charge once per day. Please come tommorow!</text>
+    <text name="GetDepositStatisticsFailed">Failed to Get Deposit Statistics!</text>
+    <text name="InsufficientFunds">Insufficient Funds!</text>
+    <text name="GetInformationFailed">Failed to get information!</text>
+    <text name="QueryTypeIncorrect">Query Type Incorrect!</text>
+    <text name="UnablMovePreviousOne">Unable to Move to Previous One!</text>
+    <text name="UnablMoveNextOne">Unable to Move to Next One!</text>
+    <text name="NotRepeating" value="NotRepeating"/>
+    <text name="EveryDay" value="EveryDay"/>
+    <text name="GettingSupportForBankFailure">Failed to get the supported bank!</text>
+    <text name="RoundingOff" value="RoundingOff"/>
+    <text name="Keep2DecimalPlaces" value="Keep 2 Decimal Places"/>
+    <text name="DataExceptionAndContactCustomerService">Data Exception And Contact Customer Service!</text>
+    <text name="UserApplyFor" value="Users Apply"/>
+    <text name="AutomaticGenerated" value="Automatically Generated"/>
+    <text name="CustomerServiceAdded" value="Customer Service Added"/>
+    <text name="NoReturnVisitHistory">No Return Visit History!</text>
+    <text name="QueryFailedDowngradeHistoricalData">Failed to find the downgrade historical data!</text>
+    <text name="CurrentlyNoCustomersWhoNeedToReturn">No customers need to return!</text>
+    <text name="FailedGetCustomersWhoNeedToReturn">Failed to Get Customers Who Need To Return!</text>
+    <text name="EnterTradingAccountNumber">Please enter trading account number!</text>
+    <text name="InvalidTradingAccount">Invalid Trading Account!</text>
+    <text name="InvalidTradingAccountAndNumber">{0} Invalid Trading Account!</text>
+    <text name="GetUserHistoryReturnRecordFailed">Failed to get users history record!</text>
+    <text name="CurrentlyNoCustomersWhoNeedToDowngrade">No users to downgrade currently!</text>
+    <text name="MobilePhone" value="MobilePhone"/>
+    <text name="Website" value="Website"/>
+    <text name="ErrorGettingMessageCenterListData">Failed to get message center list!</text>
+    <text name="GetMessageDetailsFailed">Get Message Details Failed!</text>
+    <text name="Suggestions" value="Suggestions"/>
+    <text name="SpecialPersonReturning" value="Special Person Returning"/>
+    <text name="EmailAddressFailedPassSecurityCertification">Email Address did not pass security verification!</text>
+    <text name="MobilePhoneNumberFailedPassSecurityCertification">Phone number did not pass the security verification!</text>
+    <text name="AccountInformationNotObtained">Did not get account information!</text>
+    <text name="UserInformationNotObtained">Did not get user’s information!</text>
+    <text name="AccountRestrictedLoginAndContactCustomerService">Your account was restricted, please contact customer service!</text>
+    <text name="GetUserInformationFailed">Failed to obtain user’s information!</text>
+    <text name="GetUserInformationAndExceptionOccurred">Get User Information Exception!</text>
+    <text name="PhoneNumber" value="PhoneNumber"/>
+    <text name="EmailAddress" value="EmailAddress"/>
+    <text name="BankCardNumber" value="BankCard Number"/>
+    <text name="CredentialNumber" value="Credential Number"/>
+    <text name="VerificationItem" value="Verification Item"/>
+    <text name="DebitCard" value="Debit Card"/>
+    <text name="CreditCard" value="Credit Card"/>
+    <text name="Withdrawal" value="Withdrawal"/>
+    <text name="OnlineDeposit" value="Online Deposit"/>
+    <text name="BankSavings" value="Wire Transfer"/>
+    <text name="DoeNotMatchName">{0}Does Not Match Name!</text>
+    <text name="DoesNotExist">{0}Does Not Exist!</text>
+    <text name="EnabledSuccessfully" value="Enabled Successfully"/>
+    <text name="DisabledSuccessfully" value="Disabled Successfully"/>
+    <text name="ModifiedObjectDoesNotExist">Modified Object Does Not Exist!</text>
+    <text name="DeleteObjectDoesNotExist">Delete Object Does Not Exist!</text>
+    <text name="AccountDeleteSuccessfully">Account【{0}】Delete Successfully!</text>
+    <text name="ResidentIdentityCardTitle" value="Resident Identity Card"/>
+    <text name="PassportTitle" value="Passport"/>
+    <text name="Employed" value="Employed"/>
+    <text name="SelfEmployed" value="SelfEmployed"/>
+    <text name="Retired" value="Retired"/>
+    <text name="Unemployed" value="Unemployed"/>
+    <text name="Student" value="Student"/>
+    <text name="CapitalAppreciation" value="CapitalAppreciation"/>
+    <text name="Income" value="Income"/>
+    <text name="Speculation" value="Speculation"/>
+    <text name="Hedging" value="Hedging"/>
+    <text name="Other" value="Other"/>
+    <text name="TradingAccountQueriedDoesNotExist"> The enquired account does not exist!</text>
+    <text name="SomethingVerificationPassed">{0}Verification Passed!</text>
+    <text name="Somethingexisted">{0}existed!</text>
+    <text name="NoValidTradingAccountIsProvided">Did not provide valid account!</text>
+    <text name="GetRealAccountInformationFailed">Did not obtain the live account information of account number:{0} !</text>
+    <text name="GetSimulationAccountInformationFailed">Did not obtain the demo account information of account number:{0}!</text>
+    <text name="NumberDoesNotMeetSendingConditions">Number Does Not Meet Sending Conditions!</text>
+    <text name="BankCardInformationIsNotBound">Bank Card Information Is Not Bound!</text>
+    <text name="WithdrawalAmountIsNotEnoughToDeductHandlingFee">Withdrawal Amount Is Not Enough To Cover Deduction Fees!</text>
+    <text name="WithdrawalRecordDoesNotExist">Withdrawal Record Does Not Exist!</text>
+    <text name="WithdrawalRequestIsForbidden">Sorry, your withdrawal application is on process, the action cannot be canceled!</text>
+    <text name="WithdrawalRequestSubmittedAndWait">Application submitted. Please wait!</text>
+    <text name="WithdrawalRequestnotsubmitIdentityaddressbank">You did not submit identity materials/proof of address or did not upload your bank card in wallet. Please upload all of the relevant materials and withdraw after you pass the review.</text>
+    <text name="ProhibitionDeductingAdvanceDeposit">Because you are joining our activity and holding a position, your withdrawal account will not be enough after deducting the deposit paid in advance!</text>
+    <text name="DollarAccountWithdrawalAmountTooSmall">Withdrawal Account must be larger than {0}!</text>
+    <!--<text name="UnsubmittedIdentityReviewRequest">You did not summit identity materials or your identity materials are under review. Please withdrawal after you pass the review!</text>-->
+    <text name="UnsubmittedIdentityReviewRequest">You did not submit identity materials/proof of address or did not upload your bank card in wallet. Please upload all of the relevant materials and withdraw after you pass the review.</text>
+    <text name="WithdrawalFundsBeingReviewed">Your current withdrawal is under process, please wait till the current one finished!</text>
+    <text name="YouHaveDepositAfterEarlyHours">You have an amount of deposit after 0:00 today, so you cannot apply to withdrawal temporarily!</text>
+    <text name="UnsubmittedBankCardReviewRequest">You did not summit bank materials or your bank materials are under review. Please withdrawal after you pass the review!</text>
+    <text name="UnsubmittedAddressReviewRequest">You did not summit address proof materials or your address proof materials materials are under review. Please withdrawal after you pass the review!</text>
+    <text name="AccountPasswordDoesNotMatch">Account Password Does Not Match!</text>
+    <text name="MustContainNumbersAndEnglishCharacters">Must Contain Numbers And English Characters, and the length must between 6 and 12 characteristics!</text>
+    <text name="NoPaymentStatus">No Payment Status!</text>
+    <text name="OrderHasBeenProcessed">Order {0} Has Been Processed!</text>
+    <text name="DepositStatusDescription">{0} Deposit Status Description：{1}!</text>
+    <text name="DataAcquisitionFailed">Data Acquisition Failed!</text>
+    <text name="OrderInformationNotQueried">Order Information Not Found !</text>
+    <text name="CalculationResultCanNotBeEmpty">Calculation Result Cannot Be Empty!</text>
+    <text name="ArithmeticVerificationCodeHasExpired">Arithmetic Verification Code Has Expired, please try again!</text>
+    <text name="EnterCorrectCalculationResult">Enter Correct Calculation Result!</text>
+    <text name="ValueHasBeenUsed">[{0}] Has Been Used!</text>
+    <text name="CanNotBeEmpty">Can Not Be Empty!</text>
+    <text name="BankInformationInputIncomplete">Bank Information Input Incomplete!</text>
+    <text name="GetAccountInformationFailed">Get Account Information Failed!</text>
+    <text name="BindingEntryDoesNotExist">Binding Item Does Not Exist!</text>
+    <text name="SecurityAuthenticationFailed">Security Authentication Failed!</text>
+    <text name="LinkHasExpired">Link Has Expired， Please try again!</text>
+
+
+    <!--用户出金银行卡相关-->
+    <text name="AddBankFailedOfExpiryDate">Information Added Failure, incorrect expiry date</text>
+    <text name="AddBankFailedOfWallet">Information Added Failure, incorrect card type</text>
+    <text name="AddBankFailedOfCardNo">Information Added Failure,bank account number cannot be empty</text>
+    <text name="AddBankFailedOfCountryId">Information Added Failure,the issuing country of bank card is wrong</text>
+    <text name="AddBankFailedOfSide">Information Added Failure,the front/back picture cannot be empty.</text>
+    <text name="AddBankFailedOfIBAN">Information Added Failure,the IBAN cannot be empty</text>
+    <text name="AddBankFailedOfBankName">Information Added Failure,the bank name cannot be empty</text>
+    <text name="AddBankFailedOfBankAddress">Information Added Failure,the bank address cannot be empty</text>
+    <text name="AddBankFailedOfSwift">Information Added Failure,the Swift cannot be empty</text>
+    <text name="AddBankFailedOfAccount">Information Added Failure,failed to get user information</text>
+    <text name="AddBankFailed">Failed to add new withdrawal card</text>
+    <text name="AddBankSuccess">Succeeded to add new withdrawal card</text>
+    <text name="GetUserBankFailed">Failed the get the card information</text>
+    <text name="DeleteUserBankFailed">Failed to delete the card information</text>
+    <text name="DeleteUserBankSuccess">Succeeded to delete card information</text>
+    <text name="AddBankFailedCardNoIsExist">Failed to add new information, the bank account has already existed.</text>
+    <text name="AddBankFailedIBANIsExist"> Failed to add new information, IBAN has already existed.</text>
+    <text name="NoAddBank">Please add a bank card!</text>
+    <!--其它-->
+    <text name="ExitProMayResultInFundsPositions">Exiting the promotion may result in insufficient funds and change of positions.</text>
+  </texts>
+</localizationDictionary>

@@ -1,0 +1,527 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="zh-CN">
+  <texts>
+    <!--通用功能-->
+    <text name="OperationSucceeded" value="操作成功！" />
+    <text name="OperationFailed" value="操作失败！" />
+    <text name="AddSucceeded" value="添加成功！" />
+    <text name="AddFailed" value="添加失败！" />
+    <text name="ModifySucceeded" value="修改成功！" />
+    <text name="ModifyFailed" value="修改失败！" />
+    <text name="CreateSucceeded" value="创建成功！" />
+    <text name="CreateFailed" value="创建失败！" />
+    <text name="UpdateSucceeded" value="更新成功！" />
+    <text name="UpdateFailed" value="更新失败！" />
+    <text name="Success" value="成功" />
+    <text name="Failure" value="失败" />
+    <text name="Yes" value="是" />
+    <text name="No" value="否" />
+    <text name="All" value="全部" />
+    <text name="NoDataToSave">没有要保存的数据。</text>
+    <text name="NoDataToExport">没有要导出的数据。</text>
+    <text name="BindingSucceeded" value="绑定成功！" />
+    <text name="BindingFailed" value="绑定失败！" />
+    <text name="InvalidRequest" value="无效的请求！" />
+    <text name="SentFailed" value="发送失败！" />
+    <text name="SentSucceeded" value="发送成功！" />
+    <text name="PushFailed" value="推送失败！" />
+    <text name="PushFailedTryAgain" value="推送失败！请稍后重试！" />
+    <text name="PushSucceeded" value="推送成功！" />
+    <text name="StorageSucceeded" value="入库成功！" />
+    <text name="StorageFailed" value="入库失败！" />
+    <text name="RegisterSucceeded" value="注册成功！" />
+    <text name="RegisterFailed" value="注册失败！" />
+    <text name="RechargeFailed" value="充值失败！" />
+    <text name="RechargeFailedContactCustomerService" value="充值失败！请联系客服！" />
+    <text name="RechargeSucceeded" value="充值成功！" />
+    <text name="Disabled" value="禁用"/>
+    <text name="Enabled" value="启用"/>
+    <text name="Open" value="开启"/>
+    <text name="Close" value="关闭"/>
+    <text name="Day" value="天"/>
+    <text name="Hour" value="小时"/>
+    <text name="Munite" value="分钟"/>
+    <text name="Processed" value="已处理"/>
+    <text name="Unprocessed" value="未处理"/>
+    <text name="Male" value="男"/>
+    <text name="Female" value="女"/>
+    <text name="GenderTitleMale" value="先生" />
+    <text name="GenderTitleFemale" value="女士" />
+    <text name="LoginSucceeded" value="登录成功！" />
+    <text name="LoginFailed" value="登录失败！" />
+    <text name="Activated" value="已激活"/>
+    <text name="Inactivated" value="未激活"/>
+    <text name="Verified" value="已认证"/>
+    <text name="NotCertified" value="未认证"/>
+    <text name="NotUpdates" value="无可用更新"/>
+    <!--通用功能-->
+
+    <!--错误-->
+    <text name="DataError">数据错误!</text>
+    <text name="ParameterValueError">参数值错误！</text>
+    <text name="ParameterValueErrorFormat">参数{0}的值是错误的！</text>
+    <text name="UploadError">上传错误！</text>
+    <text name="UserDataError">用户数据错误！</text>
+    <!--错误-->
+
+    <!--异常-->
+    <text name="NetworkAnomaly">网络异常！</text>
+    <text name="ServerAnomaly">服务端异常！</text>
+    <text name="ExecutionScriptException">执行脚本异常！</text>
+    <text name="ApplicationAnomaly">程序异常！</text>
+    <text name="UploadAnomaly">上传异常！</text>
+    <text name="SystemAnomalyTryAgainLater" >系统异常，请稍候重试！</text>
+    <text name="PaymentChannelAnomaly">支付通道异常！</text>
+    <text name="MoveFileAnomaly">移动文件期间发生了一个异常！</text>
+
+    <!--异常-->
+
+    <!--数据验证-->
+    <text name="VerificationPassed">验证通过!</text>
+    <text name="VerificationFailed">验证失败!</text>
+    <text name="VerificationFailedAndMessage">验证失败：{0}</text>
+    <text name="PhoneNumberOrEmailNotFound">手机/邮箱不存在！</text>
+    <text name="PhoneOrEmailOrAccountNotFound">手机号码/邮箱/交易账号 不存在！</text>
+    <text name="PhoneNumberOrEmailAndNameNotMatch">手机/邮箱和姓名不匹配！</text>
+    <text name="ValueOfParameterTooSmall">参数的值必须大于0！</text>
+    <text name="UserAlreadyExists">用户已经存在！</text>
+    <text name="AddBankCardForCertification">为了您的账户和资金安全，请添加银行卡进行认证，感谢您的支持与理解！</text>
+    <text name="DepositOrRemittanceVoucherNumberAlreadyExists">存/汇款凭证号已存在！</text>
+    <text name="RemittanceVoucherNumberAlreadyExists">汇款凭证号已存在！</text>
+    <text name="TradingAccountNotMatchName">交易帐号与姓名不匹配！</text>
+    <text name="TradingAccountMatchName">交易帐号与姓名匹配！</text>
+    <text name="DidNotReceiveVoucherPicture">未收到凭证图片！</text>
+    <text name="SavingVoucherImageFailed">保存凭证图片失败！</text>
+    <text name="RemittanceApplicationAlreadyExists">已存在汇款申请！</text>
+    <text name="RemittanceApplicationNotExists">未存在汇款申请！</text>
+    <text name="UnableToRevoke">抱歉，您当前已无法撤销，如需帮助，请联系客服专员！</text>
+    <text name="WithdrawalAmountNotInCorrectFormat">取款金额格式不正确！</text>
+    <text name="WithdrawalAmountTooSmall">取款金额不能小于等于{0}美元！</text>
+    <text name="InvalidWithdrawalAmountMsg1">您的交易额小于账户总额的50%，申请取款需要支付取款金额的5%手续费，并且您的取款金额小于50美元，还需支付3美元的手续费，您是否确认继续取款并支付手续费？</text>
+    <text name="InvalidWithdrawalAmountMsg2">您的取款金额小于50美元，申请取款需要支付3美元的手续费，您是否确认继续取款并支付手续费？</text>
+    <text name="InvalidWithdrawalAmountMsg3">您的交易额小于账户总额的50%，申请取款需要支付取款金额的5%手续费，您是否确认继续取款并支付手续费？</text>
+    <text name="InvalidTradingAccountForGetInformation">提供的交易账号 {0} 是无效的，无法获取到该交易账号信息！</text>
+    <text name="FailedToSaveImage">保存图片失败！</text>
+    <text name="FailedToGetImage">获取图片失败！</text>
+    <text name="AccountUpgradeServiceHasStopped">账户升级服务已停止！</text>
+    <text name="FileFormatIsIncorrect">文件格式不正确！</text>
+    <text name="UnfinishedUploadedFile">未获取到上传的文件！</text>
+    <text name="DataStreamIsUnreadable">数据流不可读！</text>
+    <text name="MaxFileSizeLength">最大文件大小为 {0}！</text>
+    <text name="FileFormatInconsistentWithFileName">文件格式与文件名不一致！</text>
+    <text name="SFTPConnectionError">SFTP 连接错误！</text>
+    <text name="NotAllowedSendSmsVerificationCode">暂时不支持发送短信验证码！</text>
+    <text name="EmailAddressIsIncorrect">邮箱地址不正确！</text>
+    <text name="TransactionAccountDoesNotExist">此交易帐号不存在！</text>
+    <text name="TransactionAccountAlreadyExists">此交易帐号已存在！</text>
+    <text name="PhoneNumberDoesNotExist">手机号码不存在！</text>
+    <text name="AmountFormatIsIncorrect">金额格式不正确！</text>
+    <text name="AmountToolSmall">金额不能小于50美元！</text>
+    <text name="PaymentChannelAnomaly">支付通道异常！</text>
+    <text name="BindBankCard">请绑定银行卡！</text>
+    <text name="ChannelDoesNotSupportBankCard">该通道不支持您的银行卡！</text>
+    <text name="OrderNotFoundSoPaymentFailed">支付失败，找不到该订单！</text>
+    <text name="ProhibitCreateAccountForAge">真实交易存在风险，您尚未满18周岁，根据法律规定，不能开立真实账户。先用模拟账户演练一下吧！</text>
+    <text name="ProhibitCreateAccountForAmerican">本公司现不接受美国公民或居民开立账户！</text>
+    <text name="ProhibitCreateAccountForPeopleCount">注册人数超过当天限制！</text>
+    <text name="EmailAddressDoesNotMatch">邮箱地址不匹配！</text>
+    <text name="ActivationLinkHasExpired">激活链接已过期失效！</text>
+    <text name="ActivationObjectDoesNotExist">不存在该激活对象！</text>
+    <text name="HasBeenActivated">已被激活！</text>
+    <text name="ActivateFailedContactCustomerService">激活失败，请联系客服！</text>
+    <text name="EnterBankCardNumber">请输入银行卡号！</text>
+    <text name="BankCardNumberIncorrect">银行卡号不正确！</text>
+    <text name="EnterBankName">请输入银行名称！</text>
+    <text name="CreditCardFundingNotSupported">暂不支持信用卡注资！</text>
+    <text name="BankCardNumberDoesNotSupportCapitalInjection">该银行卡号暂不支持注资！</text>
+    <text name="AddInvalidAndBankCardNumberHasBeenUsed">添加无效！该银行卡号已被使用，请核对银行卡信息！</text>
+    <text name="TradingAccountNumberIncorrect">交易账号不正确！</text>
+    <text name="DepositRateDoesNotExist">入金汇率不存在！</text>
+    <text name="UserDoesNotExist">用户不存在！</text>
+    <text name="OrderNumberError">订单号码错误！</text>
+    <text name="GetOrderInformationFailed">获取订单信息失败！</text>
+    <text name="GetUserTotalDepositInformation">获取用户总入金信息失败！</text>
+    <text name="GetContractUnitFailed">获取合约单位失败！</text>
+    <text name="MinimumAmountLimit">金额不能小于{0}美元！</text>
+    <text name="OrderAmountInconsistentWithOrderCreation">订单金额与创建订单时不一致！</text>
+    <text name="CertificateNumberFormatIncorrect">证件号码格式不正确！</text>
+    <text name="AdultAgeIncorrect">未满18周岁！</text>
+    <text name="PassportFormatIncorrect">护照格式不正确！</text>
+    <text name="ImageVerificationCodeVerificationAbnormal">腾讯图片滑动验证码进行验证期间，发生了异常！</text>
+    <text name="Drivinglicensenumberisnotallowed">驾驶证编号不允许未空！</text>
+
+
+
+    <!--数据合法验证-->
+    <text name="NotLegal">{0}不合法！</text>
+    <text name="GenderIsNotLegal">性别不合法！</text>
+    <text name="PhoneNumberIsNotLegal">手机号码不合法！</text>
+    <text name="SourceTypeIsNotLegal">来源类型错误！</text>
+    <text name="EmailHasBeenRegistered">此邮箱已经注册过！</text>
+    <text name="PhoneNumberHasBeenRegistered">此手机号码已经注册过！</text>
+    <text name="CertificateNumberFormatError">请输入正确的身份证格式！</text>
+    <text name="CertificateNumberMaxLengthTooLong">身份证不能超过50个字符！</text>
+    <text name="PassportFormatError">护照长度必须为4到50位且只能输入数字、字母和空格符！</text>
+    <text name="CertificateNumberAlreadyExists">证件号码已存在！</text>
+    <text name="AmountFormatIsIncorrect">金额格式不正确！</text>
+    <text name="GetDepositRateFailed">获取入金汇率失败！</text>
+    <text name="InvalidOrderNumber">订单号无效！</text>
+    <text name="DateOfBirthIsIllegal">出生日期不合法！</text>
+    <text name="CredentialsNumberLengthNotIllegal">身份证号码应为15或者18位长度！</text>
+    <text name="TradingAccountNumberFormatIncorrect">交易账号格式不正确！</text>
+    <text name="EmailAddressFormatIllegal">邮件地址不合法！</text>
+    <!--数据合法验证-->
+
+    <!--非空验证-->
+    <text name="CanNotBeEmpty">{0}不能为空！</text>
+    <text name="SourceOfFundingCanNotBeEmpty">参数[注资来源]不能为空！</text>
+    <text name="RequestSourceCanNotBeEmpty">请求来源不能为空！</text>
+    <text name="ProofAddressCanNotBeEmpty">证明地址不能为空！</text>
+    <text name="RequestDeviceCanNotBeEmpty">请求设备不能为空！</text>
+    <text name="ParameterCannotBeEmpty">参数不能为空！</text>
+    <text name="NameCanNotBeEmpty">姓名不能为空！</text>
+    <text name="SexCanNotBeEmpty">性别不能为空！</text>
+    <text name="CityCanNotBeEmpty">城市不能为空！</text>
+    <text name="Address1CanNotBeEmpty">地址1不能为空！</text>
+    <text name="PhoneNumberCanNotBeEmpty">手机号码不能为空！</text>
+    <text name="EmailNumberCanNotBeEmpty">邮箱地址不能为空！</text>
+    <text name="StartTimeCanNotBeEmpty">开始时间不能为空！</text>
+    <text name="EndTimeCanNotBeEmpty">结束时间不能为空！</text>
+    <text name="TypeCanNotBeEmpty">类型不能为空！</text>
+    <text name="DateTimeCanNotBeEmpty">时间不能为空！</text>
+    <text name="CredentialsNumberCanNotBeEmpty">证件号码不能为空！</text>
+    <text name="FirstNameCanNotBeEmpty">姓不能为空！</text>
+    <text name="LastNameCanNotBeEmpty">名不能为空！</text>
+    <text name="ValidatekeyCanNotBeEmpty">验证名称不能为空！</text>
+    <text name="TempNameNotIsNull">模板名称不允许为空！</text>
+    <text name="MailToNotIsNull">收件方不允许为空！</text>
+    <text name="AccountNumberCanNotBeEmpty">交易账号不能为空！</text>
+    <text name="ContentCanNotBeEmpty">内容不能为空！</text>
+    <text name="UserTypeCanNotBeEmpty">请选择用户类型！</text>
+    <text name="CountryOfCitizenshipCanNotBeEmpty">请选择国籍！</text>
+    <text name="PromotionCodeCanNotBeEmpty">推广码不允许为空！</text>
+    <text name="CertificateTypeCanNotBeEmpty">请选择证件类型！</text>
+    <text name="IssuingCountryCanNotBeEmpty">请选择签发国家！</text>
+    <text name="CertificateNumberCanNotBeEmpty">证件号码不能为空！</text>
+    <text name="PassportCanNotBeEmpty">护照不能为空！</text>
+    <text name="CountryOfBankCanNotBeEmpty">请选择银行所属国家！</text>
+    <text name="CurrencyCanNotBeEmpty">请选择币种！</text>
+    <text name="BankNameCanNotBeEmpty">请选择银行名称！</text>
+    <text name="BankNumberMustBeLengthDigital">银行卡号必须为16到19位数字！</text>
+    <text name="BankNumberMustBeDigital">银行卡号必须为纯数字！</text>
+    <text name="BankCardNumberAlreadyExists">银行卡号已存在！</text>
+    <text name="BankCardNumberCanNotBeEmpty">银行卡号不能为空！</text>
+    <text name="BankCardPictureCanNotBeEmpty">请上传银行卡照片！</text>
+    <text name="IdentificationNumberCanNotBeEmpty">身份证号码不能为空！</text>
+    <text name="CardNoCanNotBeEmpty">银行/汇款账号不能为空！</text>
+    <text name="LoginAccountCanNotBeEmpty">登录账号不能为空！</text>
+    <text name="EmailOrPhoneNumberCanNotBeEmpty">邮箱/手机号码不能为空！</text>
+    <text name="AccountTypeCanNotBeEmpty">账户类型不能为空！</text>
+    <text name="QQCanNotBeEmpty">QQ不能为空！</text>
+    <text name="TicketCanNotBeEmpty">票据不能为空！</text>
+    <text name="RandomStringCanNotBeEmpty">随机串不能为空！</text>
+    <text name="StatisticalItemCanNotBeEmpty">统计项不能为空！</text>
+    <!--非空验证-->
+    <!--数据验证-->
+
+    <!--密码-->
+    <text name="TransactionPasswordCannotBeEmpty">交易密码不能为空！</text>
+    <text name="NewPasswordCanNotBeEmpty">新密码不能为空！</text>
+    <text name="OriginalPasswordInputError">原始密码错误！</text>
+    <text name="LoginPasswordCannotBeEmpty">登录密码不能为空！</text>
+    <text name="TransactionPasswordIsIncorrect">交易密码不正确！</text>
+    <text name="UserPasswordChangedSuccessfully">用户密码修改成功！</text>
+    <text name="UserPasswordModificationFailed1">用户密码修改失败！</text>
+    <text name="UserOriginalPasswordWasEnteredIncorrectly">用户原密码输入有误！</text>
+    <text name="ClickThisLinkToResetYourPassword">点击此链接重置密码！</text>
+    <text name="PasswordResetSucceeded">密码重置成功！</text>
+    <text name="PasswordResetFailed">密码重置失败！</text>
+    <text name="MtPasswordResetFailed">MT密码重置失败！</text>
+    <text name="ResetPassword">重置密码</text>
+    <text name="TwoPasswordEntriesAreInconsistent">两次密码输入不一致！</text>
+    <text name="PasswordResetFailedAndLackEmailOrPhoneNumber">密码重置失败，用户缺少邮箱、手机信息！</text>
+    <text name="WrongPasswordFormat">必须包含数字和英文字符且不低于6位，不多于12位！</text>
+    <text name="ResetPasswordAccountIncorrect">重置密码账号有误！</text>
+    <!--密码-->
+
+    <!--分页-->
+    <text name="PageNumberOfValueTooSmall">提供的页码的值不能小于1。</text>
+    <!--分页-->
+
+    <!--注册-->
+    <text name="RealAccountGenerationFailed">真实账号生成失败！</text>
+    <text name="SimulatedAccountGenerationFailure">体验账号生成失败！</text>
+    <text name="OpenIdAlreadyExist">OpenId已存在！</text>
+    <!--注册-->
+
+    <!--登录-->
+    <text name="LoginFailed">登录失败！</text>
+    <text name="TheAccountIsNotRegistered">账号不存在！</text>
+    <text name="ErrorIncorrectUsernameOrPassword">账号或密码错误！</text>
+    <text name="Unbound">未绑定！</text>
+    <text name="UserInformationNotFound">用户信息不存在！</text>
+    <text name="MailboxCanBeUsed">邮箱可以使用！</text>
+    <text name="MailboxAlreadyUsed">邮箱已使用！</text>
+    <text name="BindingFailedAccountBound">账号绑定失败！</text>
+    <text name="BindingSuccess">账号绑定成功！</text>
+    <text name="UntyingFailure">解绑失败！</text>
+    <text name="UntyingSuccess">解绑成功！</text>
+    <text name="updateLiveAccountPasswordException">更新真实账号出现异常！</text>
+    <text name="updateDemoAccountPasswordException">更新模拟账号出现异常！</text>
+    <!--登录-->
+
+    <!--验证码-->
+    <text name="VerificationCodeHasExpired">验证码已过期！</text>
+    <text name="VerificationCodeIsCorrect">验证码正确！</text>
+    <text name="VerificationCodeDoesNotExist">验证码不存在！</text>
+    <text name="VerificationCodeError">验证码错误!</text>
+    <text name="VerificationCodeCanNotBeEmpty">验证码不能为空！</text>
+    <text name="GetVerificationCode">请获取验证码！</text>
+    <text name="GenerateUniversalVerificationCodeFailed">生成万能验证码失败！</text>
+    <text name="GenerateUniversalVerificationCodeSuccessful">生成万能验证码成功！</text>
+    <text name="GenerateUniversalVerificationCodeException">生成万能验证码异常！</text>
+    <text name="EnterVerificationCode">请输入验证码！</text>
+    <text name="VerificationCodeDoesNotBelong">验证码不属于该接收方！</text>
+    <text name="SliderVerificationFailed">滑块验证失败！</text>
+    <text name="VerificationSendSuccessfully">验证码发送成功！</text>
+    <text name="VerificationSendFailed">验证码发送失败！</text>
+    <text name="DoNotsendEmailRepeatedly">请勿重复发送邮件！</text>
+    <!--验证码-->
+
+    <!--审批-->
+    <text name="ReviewUnreviewed" value="待审核" />
+    <text name="ReviewAuditPassed" value="审核通过" />
+    <text name="ReviewAuditFailed" value="审核未通过" />
+    <!--审批-->
+
+    <!--状态-->
+    <text name="StatusUnpaid" value="未支付" />
+    <text name="StatusWaitReview" value="待审核" />
+    <text name="StatusDepositSuccessful" value="存款成功" />
+    <text name="StatusDepositFailure" value="存款失败" />
+    <text name="StatusUnderReview" value="审核中" />
+    <text name="StatusUserCanceled" value="用户已取消" />
+    <text name="StatusDisabledDescription" value="已禁用"/>
+    <text name="StatusEnabledDescription" value="已启用"/>
+    <text name="StatusNotReturning" value="未回访"/>
+    <text name="StatusFollowingUp" value="跟进中"/>
+    <text name="StatusConverted" value="已转化"/>
+    <text name="StatusAbandoned" value="已放弃"/>
+    <text name="StatusToBeCredited" value="待入账"/>
+    <!--状态-->
+
+    <text name="NotFoundSmsCarrierConfiguration">发送短信功能，未获取到有效的短信运营商配置。</text>
+    <text name="WithdrawalOfCard" value="出金卡" />
+    <text name="DepositOfCard" value="入金卡" />
+    <text name="UserUndoBySelf" value="用户自主撤消" />
+    <text name="SystemAutomaticallyDowngrades" value="系统自动降级" />
+    <text name="ColumnWebsiteAnnouncement" value="网站公告"/>
+    <text name="ColumnAnnouncement" value="公告"/>
+    <text name="ColumnAllAppUsers" value="所有APP用户"/>
+    <text name="ColumnStationNotice" value="站内通知"/>
+    <text name="ColumnPersonalMessage" value="个人消息"/>
+    <text name="DevicePc" value="PC电脑"/>
+    <text name="DeviceWap" value="WAP设备"/>
+    <text name="DeviceIos" value="IOS设备"/>
+    <text name="DeviceAndroid" value="Android设备"/>
+    <text name="DeviceLive" value="Live设备"/>
+    <text name="SaveUserMaterialException">保存用户资料，发生异常，处理失败！</text>
+    <text name="CreateAccountFailedContactCustomerService">开户失败，请联系客服！</text>
+    <text name="CreateAccountFailedContactAdministrator">开户失败，请联系管理员！</text>
+    <text name="MailActivationLink">邮件激活链接！</text>
+    <text name="ActivationLinkIsIncorrect">激活链接不正确！</text>
+    <text name="UserInformationCorrespondingMailboxNotFound">未找到该邮箱对应的用户信息！</text>
+    <text name="UserMailboxDoesNotMatch">用户邮箱不匹配!</text>
+    <text name="EmailAddressDoesNotExist">邮箱地址不存在!</text>
+    <text name="LinkIsValid">链接有效！</text>
+    <text name="LinkHasExpiredAndReacquire">链接已失效，请重新获取！</text>
+    <text name="UserNameIsIncorrect">用户姓名有误！</text>
+    <text name="UserEmailDoesNotExist">用户邮箱不存在！</text>
+    <text name="UserPhoneNumberDoesNotExist">用户手机号码不存在！</text>
+    <text name="SystemMessage" value="系统消息"/>
+    <text name="PersonalMessage" value="个人消息"/>
+    <text name="PlatformAnnouncement" value="平台公告"/>
+    <text name="AnnouncementTitle" value="公告"/>
+    <text name="EmailAddressAlreadyExists">邮箱地址已存在！</text>
+    <text name="PhoneNumberAlreadyExists">手机号码已存在！</text>
+    <text name="SimulationCreateAccountFailedContactCustomerService">模拟帐号开户失败，请联系客服！</text>
+    <text name="ClickThisButtonToActivate" value="点此按钮激活"/>
+    <text name="SimulationTitle" value="模拟"/>
+    <text name="NumberDoesNotMatch">号码不匹配！</text>
+    <text name="MailFailedToSend">邮件发送失败！</text>
+    <text name="MailSentSuccessfully">邮件发送成功！</text>
+    <text name="ClickThisLinkToVerifyYourEmail">点击此链接进行邮箱验证！</text>
+    <text name="VerificationCodeMailboxBinding">验证码邮箱绑定！</text>
+    <text name="IncorrectEmailAddress">邮件地址有误！</text>
+    <text name="InformationDoesNotExist">信息不存在！</text>
+    <text name="IncorrectInformation">信息有误！</text>
+    <text name="BindingExceedsValidTime">绑定超过有效时间！</text>
+    <text name="BindingMailboxSuccessfully">绑定邮箱成功！</text>
+    <text name="BindingMailboxFailed">绑定邮箱失败！</text>
+    <text name="NoParametersReceived">未接收到参数！</text>
+    <text name="TradingAccountInformationFailedToBeObtained">交易账号信息获取失败！</text>
+    <text name="TransactionAccountAlreadyHasMedicalCheckAccount">该交易账号已存在！</text>
+    <text name="AcquisitionFailed">获取失败！</text>
+    <text name="IncorrectTimeParameter">时间参数有误！</text>
+    <text name="PinHasExpired">pin已经过期！</text>
+    <text name="PinVerificationSucceeded">pin验证成功！</text>
+    <text name="VerificationSucceeded">验证成功！</text>
+    <text name="InvalidVerificationPin">无效的pin！</text>
+    <text name="PinDoesNotExist">pin不存在！</text>
+    <text name="EmailAddressIsOccupied">电子邮件地址被占用！</text>
+    <text name="InvalidLoginAccount">无效的登录帐号！</text>
+    <text name="ExperienceAccountLoginIsNotSupportedYet">还不支持体验帐户登录！</text>
+    <text name="AccountHasBeenDisabled">此账户已被禁用！</text>
+    <text name="AccountOrPasswordIncorrect">账号或密码错误！</text>
+    <text name="LoginFailedContactCustomerService">登录失败，请联系客服！</text>
+    <text name="MailboxDoesNotExistAndRegisterFirst">邮箱不存在，请先注册！</text>
+    <text name="GetInformationFailedAndAnExceptionOccurred!">获取信息失败，发生了异常！</text>
+    <text name="GetInformationFailedAndInvalidId">获取信息失败：id 无效！</text>
+    <text name="AppUsers" value="所有App用户"/>
+    <text name="IphoneUsers" value="Iphone用户"/>
+    <text name="AndroidUsers" value="Android用户"/>
+    <text name="AccountNumber" value="交易账号"/>
+    <text name="PushFailedAndAccountNotRegister">推送失败！该交易账号未在APP注册！</text>
+    <text name="PushSucceededAndModifyFailed">推送到客户端成功，库表数据修改失败！</text>
+    <text name="GetPushDataFailed">获取推送数据失败！</text>
+    <text name="RegisterFailedAndAnExceptionOccurred">注册失败！发生了异常！</text>
+    <text name="AuroraPushLabelModificationFailed1">极光推送标签修改失败！-1</text>
+    <text name="AuroraPushLabelModificationFailed2">极光推送标签修改失败！-2</text>
+    <text name="CurrentRecordDoesNotExist">当前记录不存在！</text>
+    <text name="NoChannelParametersToMaintain">没有需要维护的通道参数！</text>
+    <text name="ChannelParametersMaintainedSuccessfully">通道参数维护成功！</text>
+    <text name="ChannelParametersMaintainedFailed">通道参数维护失败！</text>
+    <text name="TemplateAlreadyExists">已存在名称为【{0}】的内容模板！</text>
+    <text name="FailedToGetBankListInformation">获取银行列表信息失败！</text>
+    <text name="ModifyReservedPhoneNumberFailed">修改预留手机号码失败！</text>
+    <text name="FailedToGetBankInformation">获取银行信息失败！</text>
+    <text name="InvalidDemoAccount">无效的模拟账户！</text>
+    <text name="InvalidLiveAccount">无效的真实账户！</text>
+    <text name="RechargeProhibitedForSecond">每天只允许充值一次，请明天再来！</text>
+    <text name="GetDepositStatisticsFailed">获取入金统计数据失败！</text>
+    <text name="InsufficientFunds">资金不足！</text>
+    <text name="GetInformationFailed">获取信息失败！</text>
+    <text name="QueryTypeIncorrect">查询类型不正确！</text>
+    <text name="UnablMovePreviousOne">无法移动到上一位！</text>
+    <text name="UnablMoveNextOne">无法移动到下一位！</text>
+    <text name="NotRepeating" value="不重复"/>
+    <text name="EveryDay" value="每天"/>
+    <text name="GettingSupportForBankFailure">获取支持银行失败！</text>
+    <text name="RoundingOff" value="四舍五入取整"/>
+    <text name="Keep2DecimalPlaces" value="保留2位小数"/>
+    <text name="DataExceptionAndContactCustomerService">数据异常，请联系客服！</text>
+    <text name="UserApplyFor" value="用户申请"/>
+    <text name="AutomaticGenerated" value="自动生成"/>
+    <text name="CustomerServiceAdded" value="客服添加"/>
+    <text name="NoReturnVisitHistory">没有查询到回访历史记录！</text>
+    <text name="QueryFailedDowngradeHistoricalData">查询降级历史数据失败！</text>
+    <text name="CurrentlyNoCustomersWhoNeedToReturn">目前没有需要回访的客户！</text>
+    <text name="FailedGetCustomersWhoNeedToReturn">获取需要回访的客户失败！</text>
+    <text name="EnterTradingAccountNumber">请输入交易账号！</text>
+    <text name="InvalidTradingAccount">交易账号无效！</text>
+    <text name="InvalidTradingAccountAndNumber">交易账号 {0} 无效！</text>
+    <text name="GetUserHistoryReturnRecordFailed">获取用户历史回访记录失败！</text>
+    <text name="CurrentlyNoCustomersWhoNeedToDowngrade">目前没有需要降级的客户！</text>
+    <text name="MobilePhone" value="手机"/>
+    <text name="Website" value="网站"/>
+    <text name="ErrorGettingMessageCenterListData">获取消息中心列表数据出错！</text>
+    <text name="GetMessageDetailsFailed">获取消息详情失败！</text>
+    <text name="Suggestions" value="投诉建议"/>
+    <text name="SpecialPersonReturning" value="专人回访"/>
+    <text name="EmailAddressFailedPassSecurityCertification">邮箱地址未通过安全认证！</text>
+    <text name="MobilePhoneNumberFailedPassSecurityCertification">手机号码未通过安全认证！</text>
+    <text name="AccountInformationNotObtained">未获取到账户信息！</text>
+    <text name="UserInformationNotObtained">未获取到用户信息！</text>
+    <text name="AccountRestrictedLoginAndContactCustomerService">您的账户被限制登录，请联系客服！</text>
+    <text name="GetUserInformationFailed">获取用户信息失败！</text>
+    <text name="GetUserInformationAndExceptionOccurred">获取用户信息期间发生异常！</text>
+    <text name="PhoneNumber" value="手机号码"/>
+    <text name="EmailAddress" value="邮件地址"/>
+    <text name="BankCardNumber" value="银行卡号"/>
+    <text name="CredentialNumber" value="证件号码"/>
+    <text name="VerificationItem" value="验证项"/>
+    <text name="DebitCard" value="储蓄卡"/>
+    <text name="CreditCard" value="信用卡"/>
+    <text name="Withdrawal" value="取款"/>
+    <text name="OnlineDeposit" value="网上存款"/>
+    <text name="BankSavings" value="银行存款"/>
+    <text name="DoeNotMatchName">{0}和姓名不匹配！</text>
+    <text name="DoesNotExist">{0}不存在！</text>
+    <text name="EnabledSuccessfully" value="启用成功"/>
+    <text name="DisabledSuccessfully" value="禁用成功"/>
+    <text name="ModifiedObjectDoesNotExist">修改对象不存在！</text>
+    <text name="DeleteObjectDoesNotExist">删除对象不存在！</text>
+    <text name="AccountDeleteSuccessfully">交易账号：【{0}】 删除成功！</text>
+    <text name="ResidentIdentityCardTitle" value="居民身份证"/>
+    <text name="PassportTitle" value="护照"/>
+    <text name="Employed" value="受雇"/>
+    <text name="SelfEmployed" value="自雇"/>
+    <text name="Retired" value="已退休"/>
+    <text name="Unemployed" value="待业"/>
+    <text name="Student" value="学生"/>
+    <text name="CapitalAppreciation" value="资本增值"/>
+    <text name="Income" value="收入"/>
+    <text name="Speculation" value="投机"/>
+    <text name="Hedging" value="对冲"/>
+    <text name="Other" value="其他"/>
+    <text name="TradingAccountQueriedDoesNotExist">要查询的交易账号不存在！</text>
+    <text name="SomethingVerificationPassed">{0}验证通过！</text>
+    <text name="Somethingexisted">{0}已存在！</text>
+    <text name="NoValidTradingAccountIsProvided">未提供有效的交易账号！</text>
+    <text name="GetRealAccountInformationFailed">未获取到交易账号为 {0} 的真实账户信息！</text>
+    <text name="GetSimulationAccountInformationFailed">未获取到交易账号为 {0} 的模拟账户信息！</text>
+    <text name="NumberDoesNotMeetSendingConditions">该号码不符合发送条件！</text>
+    <text name="BankCardInformationIsNotBound">银行卡资料未绑定！</text>
+    <text name="WithdrawalAmountIsNotEnoughToDeductHandlingFee">出金金额不足以抵扣手续费！</text>
+    <text name="WithdrawalRecordDoesNotExist">该取款记录不存在！</text>
+    <text name="WithdrawalRequestIsForbidden">抱歉,您的取款申请正在处理中，暂不能执行撤销操作！</text>
+    <text name="WithdrawalRequestSubmittedAndWait">您的出金申请已成功提交，请等待审核！</text>
+    <text name="ProhibitionDeductingAdvanceDeposit">因您当前正在参与活动，并且当前有持仓，扣除预赠保证金后您本次取款资金不足！</text>
+    <text name="DollarAccountWithdrawalAmountTooSmall">美元账户出金金额必须大于{0}美元！</text>
+    <text name="UnsubmittedIdentityReviewRequest">您未提交身份资料审核申请或身份资料审核申请待审批，请在通过身份资料审核后再申请取款！</text>
+    <text name="WithdrawalFundsBeingReviewed">您当前有正在审核的出金，无法再次进行出金，请等待上一次的出金完成！</text>
+    <text name="YouHaveDepositAfterEarlyHours">您今日凌晨后有入金，暂不能申请出金。请明日再试，谢谢！</text>
+    <text name="UnsubmittedBankCardReviewRequest">取款银行卡需通过审核后，才能进行取款！</text>
+    <text name="UnsubmittedAddressReviewRequest">您未提交地址证明审核申请或地址证明审核申请待审批，请在通过地址证明审核后再申请取款！</text>
+    <text name="AccountPasswordDoesNotMatch">账号密码不匹配！</text>
+    <text name="MustContainNumbersAndEnglishCharacters">必须包含数字和英文字符且不低于6位，不多于12位！</text>
+    <text name="NoPaymentStatus">未获取到支付状态！</text>
+    <text name="OrderHasBeenProcessed">订单 {0} 已被处理！</text>
+    <text name="DepositStatusDescription">{0} 存款状态为：{1}！</text>
+    <text name="DataAcquisitionFailed">数据获取失败！</text>
+    <text name="OrderInformationNotQueried">未查询到定阅信息！</text>
+    <text name="CalculationResultCanNotBeEmpty">计算结果不能为空！</text>
+    <text name="ArithmeticVerificationCodeHasExpired">算术验证码已失效，请重新获取！</text>
+    <text name="EnterCorrectCalculationResult">请输入正确的计算结果！</text>
+    <text name="ValueHasBeenUsed">[{0}] 已被使用！</text>
+    <text name="CanNotBeEmpty">不能为空！</text>
+    <text name="BankInformationInputIncomplete">银行信息输入不完整！</text>
+    <text name="GetAccountInformationFailed">获取账号信息失败！</text>
+    <text name="BindingEntryDoesNotExist">绑定项不存在！</text>
+    <text name="SecurityAuthenticationFailed">安全认证失败！</text>
+    <text name="LinkHasExpired">该链接已失效，请重新操作！</text>
+
+
+    <!--用户出金银行卡相关-->
+    <text name="AddBankFailedOfExpiryDate">新增信息出错，有效期错误。</text>
+    <text name="AddBankFailedOfWallet">新增信息出错，卡类型错误。</text>
+    <text name="AddBankFailedOfCardNo">新增信息出错，银行卡号不能为空。</text>
+    <text name="AddBankFailedOfCountryId">新增信息出错，银行卡发行国家错误。</text>
+    <text name="AddBankFailedOfSide">新增信息出错，银行卡正面/背面照片不能为空。</text>
+    <text name="AddBankFailedOfIBAN">新增信息出错，汇款银行账户不能为空。</text>
+    <text name="AddBankFailedOfBankName">新增信息出错，汇款银行名称不能为空。</text>
+    <text name="AddBankFailedOfBankAddress">新增信息出错，汇款银行地址不能为空。</text>
+    <text name="AddBankFailedOfSwift">新增信息出错，汇款银行代码不能为空。</text>
+    <text name="AddBankFailedOfAccount">新增信息出错，用户信息获取失败。</text>
+    <text name="AddBankFailed">新增出金卡失败。</text>
+    <text name="AddBankSuccess">新增出金卡成功。</text>
+    <text name="GetUserBankFailed">获取卡片信息失败。</text>
+    <text name="DeleteUserBankFailed">删除卡片信息失败。</text>
+    <text name="DeleteUserBankSuccess">删除卡片信息成功。</text>
+    <text name="AddBankFailedCardNoIsExist">新增信息出错，银行卡号已存在。</text>
+    <text name="AddBankFailedIBANIsExist">新增信息出错，IBAN已存在。</text>
+    <text name="NoAddBank">请先添加银行卡!</text>
+    <!--其它-->
+    <text name="ExitProMayResultInFundsPositions">退出活动产生的资金异动可能会导致爆仓</text>
+  </texts>
+</localizationDictionary>
