@@ -95,7 +95,5 @@ namespace WM.Service.App
             return name;
         }
 
-
-
     }
 }

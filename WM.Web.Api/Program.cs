@@ -30,7 +30,7 @@ namespace WM.Web.Api
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseUrls(config.GetValue<string>("urls"));
-                }).UseServiceProviderFactory(new AutofacServiceProviderFactory()); ;
+                }).UseServiceProviderFactory(new AutofacServiceProviderFactory());
 
         }
     }

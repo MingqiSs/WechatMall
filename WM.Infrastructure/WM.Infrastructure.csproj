@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Extensions\ObjectExtension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Localization\Sources\Files\Xsmcfx-en.xml" />
     <None Remove="Localization\Sources\Files\Xsmcfx-zh-CN.xml" />
   </ItemGroup>
@@ -15,8 +19,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Extensions\ObjectExtension.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.1" />

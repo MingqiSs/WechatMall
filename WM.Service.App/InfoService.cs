@@ -10,6 +10,7 @@ using System.Linq;
 using WM.Service.App.Dto.WebDto.RQ;
 using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure;
+using X.Models.WMDB;
 
 namespace WM.Service.App
 {

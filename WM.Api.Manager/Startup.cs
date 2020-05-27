@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -9,10 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
 using WM.Api.Manager.Configurations;
 using WM.Api.Manager.Filter;
 using WM.Infrastructure.DI;
-
+using WM.Infrastructure.Extensions.AutofacManager;
 namespace WM.Api.Manager
 {
     public class Startup
@@ -32,35 +34,24 @@ namespace WM.Api.Manager
             services.AddSwaggerSetup();
 
             #region ×¢²á ÈÕÖ¾
-            //services.AddLogging(t => t.AddNLog());
+            services.AddLogging(t => t.AddNLog());
             #endregion
 
             #region ×¢²á »º´æ
             services.AddMemoryCache();
-            //services.AddRedisCaching(options =>
-            //{
-            //    options.ConnectionString = AppSetting.GetConfig("RedisConfig:ConnectionString");
-            //    options.DefaultKey = AppSetting.GetConfig("RedisConfig:DefaultKey");
-            //    options.DdIndex = AppSetting.GetConfigInt32("RedisConfig:DdIndex");
-            //});
             #endregion
             #region ×¢²á TokenÑéÖ¤
             services.AddJwtAuthSetup(Configuration);
             #endregion
-
-            #region ×¢²á Repositor
-            services.RegisterAssembly("X.IRespository", "X.Respository");
-            #endregion
-
-            #region ×¢²á Service
-            services.RegisterAssembly("WM.Service.App", ServiceLifetime.Scoped);
-            #endregion
-
-            #region ×¢²á Service
-            services.RegisterAssembly("WM.Service.Domain", ServiceLifetime.Scoped);
-            #endregion
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="builder"></param>
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterModule();
+        }
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

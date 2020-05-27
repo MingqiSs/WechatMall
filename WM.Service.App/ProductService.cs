@@ -106,6 +106,6 @@ namespace WM.Service.App
             result.pg.tc = totalCount;
             result.lst = list;
             return Result(result);
-        }
+        }      
     }
 }

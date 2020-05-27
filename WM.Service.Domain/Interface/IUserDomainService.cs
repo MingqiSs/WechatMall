@@ -6,7 +6,7 @@ using X.Models.WMDB;
 
 namespace WM.Service.Domain.Interface
 {
-    public interface IUserDomainService: IDependency
+    public interface IUserDomainService
     {
         wm_user GetUserByUID(string uid);
 
