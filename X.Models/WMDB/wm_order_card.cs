@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,13 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_order_card
     {
            public wm_order_card(){}
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -50,6 +44,14 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int ID { get; set; }
 
 
     }

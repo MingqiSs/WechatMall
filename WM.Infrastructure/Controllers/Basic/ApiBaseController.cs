@@ -26,7 +26,7 @@ namespace WM.Infrastructure.Controllers.Basic
         /// <returns></returns>
         //[ApiActionPermission(Enums.ActionPermissionOptions.Delete)]
         [HttpPost, Route("Del")]
-        public new async Task<ActionResult> Del([FromBody] object[] keys)
+        public new async Task<ActionResult> Del( KeyOptions keys)
         {
             return await base.Del(keys);
         }
@@ -37,7 +37,7 @@ namespace WM.Infrastructure.Controllers.Basic
         /// <returns></returns>
         //    [ApiActionPermission(Enums.ActionPermissionOptions.Search)]
         [HttpPost, Route("GetPageData")]
-        public new async Task<ActionResult> GetPageData([FromBody] PageDataOptions loadData)
+        public new async Task<ActionResult> GetPageData( PageDataOptions loadData)
         {
             return await base.GetPageData(loadData);
         }

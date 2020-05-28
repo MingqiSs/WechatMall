@@ -104,6 +104,7 @@ namespace X.Common
 
         public static string UsingTemplate = "using System;\r\n" +
                                                "using System.Linq;\r\n" +
+                                               "using System.ComponentModel.DataAnnotations;\r\n" +
                                                "using System.Text;" + "\r\n";
         #endregion
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,34 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_user
     {
            public wm_user(){}
-
-           /// <summary>
-           /// Desc:密码
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Pwd { get; set; }
-
-           /// <summary>
-           /// Desc:邮箱
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Email { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:昵称
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Nickname { get; set; }
 
            /// <summary>
            /// Desc:
@@ -92,6 +65,35 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Mobile { get; set; }
+
+           /// <summary>
+           /// Desc:密码
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Pwd { get; set; }
+
+           /// <summary>
+           /// Desc:邮箱
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Email { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:昵称
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Nickname { get; set; }
 
 
     }

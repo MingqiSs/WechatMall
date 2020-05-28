@@ -29,7 +29,7 @@ namespace X.IRespository
         /// <typeparam name="T"></typeparam>
         /// <param name="sql"></param>
         /// <returns></returns>
-       // List<T> SqlQueryWithPage<T>(MT.Infrastructure.Models.PageModel page, ref int totalCount) where T : class, new();
+        List<T> SqlQueryWithPage<T>(WM.Infrastructure.Models.PageModel page, ref int totalCount);
         /// <summary>
         /// 执行SQL,返回首行首列
         /// </summary>

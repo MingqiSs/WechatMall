@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,34 +9,6 @@ namespace X.Models.WMDB
     public partial class sys_manage
     {
            public sys_manage(){}
-
-           /// <summary>
-           /// Desc:创建时间
-           /// Default:CURRENT_TIMESTAMP
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:是否启用
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:newid()
-           /// Nullable:False
-           /// </summary>
-           public string ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int RoleId { get; set; }
 
            /// <summary>
            /// Desc:用户名
@@ -71,6 +44,35 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string IP { get; set; }
+
+           /// <summary>
+           /// Desc:创建时间
+           /// Default:CURRENT_TIMESTAMP
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:是否启用
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:newid()
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public string ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int RoleId { get; set; }
 
 
     }

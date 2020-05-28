@@ -37,6 +37,8 @@ namespace X.Common
                         .Replace(XClassTemplate.KeyDefaultValue, p.DefaultValue)
                         .Replace(XClassTemplate.KeyIsNullable, $"{p.IsNullable}"));
 
+                    if (p.IsPrimarykey) columnStr.Append(XClassTemplate.PropertySpace + "[Key]\r\n");
+                    
                     columnStr.Append(XClassTemplate.PropertyTemplate
                         .Replace(XClassTemplate.KeyPropertyType, GetStringByType(p.DataType, p.IsNullable))
                         .Replace(XClassTemplate.KeyPropertyName, p.DbColumnName));

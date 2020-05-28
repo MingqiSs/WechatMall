@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,20 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_order_pay_history
     {
            public wm_order_pay_history(){}
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int BillNo { get; set; }
 
            /// <summary>
            /// Desc:支付方式(1:微信)
@@ -57,6 +44,21 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string Remark { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int BillNo { get; set; }
 
 
     }

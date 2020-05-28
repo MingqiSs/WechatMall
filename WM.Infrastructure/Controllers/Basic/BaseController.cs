@@ -26,10 +26,10 @@ namespace WM.Infrastructure.Controllers.Basic
         {
             Service = service;
         }
-        [ApiExplorerSettings(IgnoreApi = true)]//
-        public virtual async Task<ActionResult> Del(object[] keys)
+        [ApiExplorerSettings(IgnoreApi = true)]//todo: 打上标记 swagger不会报错
+        public virtual async Task<ActionResult> Del(KeyOptions keys)
         {
-            var r = await Task.FromResult(InvokeService("Del", new object[] { keys, true }));
+            var r = await Task.FromResult(InvokeService("Del", new object[] { keys }));
           
             return Ok(r);
         }

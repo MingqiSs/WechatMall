@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,20 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_order_logistics
     {
            public wm_order_logistics(){}
-
-           /// <summary>
-           /// Desc:收货时间
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ReceivingTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string OrderID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -57,6 +44,21 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public DateTime? DeliveryTime { get; set; }
+
+           /// <summary>
+           /// Desc:收货时间
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ReceivingTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public string OrderID { get; set; }
 
 
     }

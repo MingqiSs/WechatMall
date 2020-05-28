@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,34 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_user_shopping_address
     {
            public wm_user_shopping_address(){}
-
-           /// <summary>
-           /// Desc:省
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ProvinceID { get; set; }
-
-           /// <summary>
-           /// Desc:市
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int CityID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:区
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int DistrictID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -92,6 +65,35 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public bool Isdef { get; set; }
+
+           /// <summary>
+           /// Desc:省
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ProvinceID { get; set; }
+
+           /// <summary>
+           /// Desc:市
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int CityID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:区
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int DistrictID { get; set; }
 
 
     }

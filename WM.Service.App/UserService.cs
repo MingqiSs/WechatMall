@@ -14,15 +14,23 @@ using X.Models.WMDB;
 
 namespace WM.Service.App
 {
-    public class UserService : BaseSerivce , IUserService
+    public class UserService : BaseSerivce<X.IRespository.DBSession.IWMDBSession> , IUserService
     {
-        private readonly X.IRespository.DBSession.IWMDBSession _ibll;
         private readonly IUserDomainService _userDomainService;
-        public UserService(X.IRespository.DBSession.IWMDBSession ibll, IUserDomainService userDomainService)
+       /// <summary>
+       /// 
+       /// </summary>
+       /// <param name="userDomainService"></param>
+       /// <param name="repository"></param>
+        public UserService(IUserDomainService userDomainService, X.IRespository.DBSession.IWMDBSession repository) : base(repository)
         {
-            _ibll = ibll;
             _userDomainService = userDomainService;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="uid"></param>
+        /// <returns></returns>
         public ResultDto<UserInfoRP> GetUserInfo(string uid)
         {
             var user = _userDomainService.GetUserByUID(uid);
@@ -45,7 +53,7 @@ namespace WM.Service.App
         {
             var result = new ResultDto<UserLoginRP>(ResponseCode.sys_fail, "登录失败(-1)");
             var pwd = AESEncrypt.Encrypt(rq.Password, AESEncrypt.pwdKey);
-            var r = _ibll.wm_user.Where(q => q.Mobile == rq.Name && q.Pwd == pwd)
+            var r = repository.wm_user.Where(q => q.Mobile == rq.Name && q.Pwd == pwd)
                 .Select(q => new UserLoginRP
                 {
                     uid = q.UID,
@@ -118,7 +126,7 @@ namespace WM.Service.App
             //    result.Msg = "请输入正确的验证码";
             //    return result;
             //}
-            if (_ibll.wm_user.Where(q => q.Mobile == rq.Name).Any())
+            if (repository.wm_user.Where(q => q.Mobile == rq.Name).Any())
             {
                 result.Msg = "该手机号码已注册!";
                 return result;
@@ -136,7 +144,7 @@ namespace WM.Service.App
                 Email = "",
                 WeChatAppID = "",
             };
-            var isSave = _ibll.wm_user.Add(user);
+            var isSave = repository.wm_user.Add(user);
             return Result(isSave);
         }
         /// <summary>
@@ -161,7 +169,7 @@ namespace WM.Service.App
             if (!string.IsNullOrWhiteSpace(rq.NickName)) user.Name = rq.NickName;
             if (rq.BirthDate.HasValue) user.BirthDate = rq.BirthDate;
 
-           var isSave=  _ibll.wm_user.Update(user);
+           var isSave=  repository.wm_user.Update(user);
             return Result(isSave);
         }
         /// <summary>
@@ -176,7 +184,7 @@ namespace WM.Service.App
 
           
 
-            var list= _ibll.wm_user_shopping_address.Where(q => q.UID ==uid && q.DataStatus == (byte)DataStatus.Enable)
+            var list= repository.wm_user_shopping_address.Where(q => q.UID ==uid && q.DataStatus == (byte)DataStatus.Enable)
                                            .Select(q=>new UserShoppingAddressRP { 
                                            AddressID=q.ID,
                                            isDef=q.Isdef,
@@ -188,9 +196,9 @@ namespace WM.Service.App
                                            ProvinceID=q.ProvinceID,
                                            }).OrderBy(q=>q.AddressID,SqlSugar.OrderByType.Desc).ToList();
 
-            var citys = _ibll.cm_city.ToList();
+            var citys = repository.cm_city.ToList();
 
-            var provinces = _ibll.cm_province.ToList();
+            var provinces = repository.cm_province.ToList();
 
             list.ForEach(q => q.Receiver_Address =$"{provinces.Where(j=>j.ID==q.ProvinceID).Select(q=>q.Name).FirstOrDefault()}{citys.Where(j => j.ID == q.CityID).Select(q => q.Name).FirstOrDefault()}{q.Receiver_Address}");//拼接省市区
             return Result(list);
@@ -219,7 +227,7 @@ namespace WM.Service.App
             if (rq.isDef)
             {
                 var tranSql = $"update {nameof(wm_user_shopping_address)} set Isdef=0 where UID='{uid}'";
-                 _ibll.Sql_ExecuteCommand(tranSql);
+                 repository.Sql_ExecuteCommand(tranSql);
             }
             if (rq.AddressID == 0)
             {
@@ -237,11 +245,11 @@ namespace WM.Service.App
                     CreateTime = DateTime.Now,
                 };
                 //新增
-                isSave = _ibll.wm_user_shopping_address.Add(model);
+                isSave = repository.wm_user_shopping_address.Add(model);
 
             }
             else {
-                var addressModel = _ibll.wm_user_shopping_address.Where(q => q.UID == uid && q.ID == rq.AddressID).First();
+                var addressModel = repository.wm_user_shopping_address.Where(q => q.UID == uid && q.ID == rq.AddressID).First();
                 if(addressModel==null) return Result<bool>(ResponseCode.sys_param_format_error, "未找到修改的地址信息");
                 addressModel.Receiver_Address = rq.Receiver_Address;
                 addressModel.Receiver_Name = rq.Receiver_Name;
@@ -252,7 +260,7 @@ namespace WM.Service.App
                 addressModel.DistrictID = rq.DistrictID;
                 addressModel.ModifyTime = DateTime.Now;
                 //新增
-                isSave = _ibll.wm_user_shopping_address.Update(addressModel);
+                isSave = repository.wm_user_shopping_address.Update(addressModel);
             }
 
 

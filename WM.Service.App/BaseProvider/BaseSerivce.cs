@@ -11,8 +11,17 @@ namespace WM.Service.App
     /// <summary>
     /// 
     /// </summary>
-    public class BaseSerivce : IDependency
+    public class BaseSerivce<TRepository> : IDependency
+        where TRepository : X.IRespository.DBSession.IWMDBSession //orm对象
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        protected X.IRespository.DBSession.IWMDBSession repository;
+        public BaseSerivce(TRepository repository)
+        {
+            this.repository = repository;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -88,7 +97,7 @@ namespace WM.Service.App
             }
             catch (Exception ex)
             {
-                var logger = AutofacContainerModule.GetService<ILogger<BaseSerivce>>();
+                var logger = AutofacContainerModule.GetService<ILogger<BaseSerivce<TRepository>>>();
                 logger?.LogError(ex, $"多语言名称[{name}]未找到!");
                 //写日志
             }

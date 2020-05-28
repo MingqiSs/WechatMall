@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,27 +9,6 @@ namespace X.Models.WMDB
     public partial class cm_city
     {
            public cm_city(){}
-
-           /// <summary>
-           /// Desc:
-           /// Default:100
-           /// Nullable:False
-           /// </summary>
-           public byte Sort { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:CURRENT_TIMESTAMP
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -64,6 +44,28 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public bool IsHot { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:100
+           /// Nullable:False
+           /// </summary>
+           public byte Sort { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:CURRENT_TIMESTAMP
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int ID { get; set; }
 
 
     }

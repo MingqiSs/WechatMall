@@ -14,26 +14,20 @@ using X.Models.WMDB;
 
 namespace WM.Service.App
 {
-  public class InfoService: BaseSerivce , IInfoService
+  public class InfoService : BaseSerivce<X.IRespository.DBSession.IWMDBSession>, IInfoService
     {
-        private readonly X.IRespository.DBSession.IWMDBSession _ibll;
-        private readonly IUserDomainService _userDomainService;
-        public InfoService(X.IRespository.DBSession.IWMDBSession ibll , IUserDomainService userDomainService)
+        public InfoService(X.IRespository.DBSession.IWMDBSession repository):base(repository)
         {
-            _ibll = ibll;
-            _userDomainService = userDomainService;
         }
-
         /// <summary>
         /// 获取省市区列表
         /// </summary>
         /// <returns></returns>
         public ResultDto<List<DistrictListRP>> GetDistrictList()
         {
-            //  var result = new List<DistrictListRP>();
-           var aa= AutofacContainerModule.GetService<IUserService>().GetUserInfo("");
-            var ctis = _ibll.cm_city.ToList();
-            var province = _ibll.cm_province.ToList();
+           //var test= AutofacContainerModule.GetService<IUserService>().GetUserInfo("");
+            var ctis = repository.cm_city.ToList();
+            var province = repository.cm_province.ToList();
             var result = province.Select(q => new DistrictListRP
             {
                 Label = q.Name,

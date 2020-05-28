@@ -18,18 +18,17 @@ namespace WM.Service.App
     /// <summary>
     /// 
     /// </summary>
-    public class OrderService : BaseSerivce, IOrderService
+    public class OrderService : BaseSerivce<X.IRespository.DBSession.IWMDBSession>, IOrderService
     {
         private readonly X.IRespository.DBSession.IWMDBSession _ibll;
         private readonly ILogger<OrderService> _logger;
         private readonly IUserDomainService _userDomainService;
         private readonly IProductDomainService _productDomainService;
-        public OrderService(X.IRespository.DBSession.IWMDBSession ibll, 
+        public OrderService(X.IRespository.DBSession.IWMDBSession repository,
             IUserDomainService userDomainService, 
             IProductDomainService productDomainService,
-            ILogger<OrderService> logger)
+            ILogger<OrderService> logger):base(repository)
         {
-            _ibll = ibll;
             _userDomainService = userDomainService;
             _productDomainService = productDomainService;
             _logger = logger;

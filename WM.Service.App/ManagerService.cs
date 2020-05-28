@@ -12,12 +12,10 @@ namespace WM.Service.App
     /// <summary>
     /// 
     /// </summary>
-    public class ManagerService : BaseSerivce, IManagerService
+    public class ManagerService : BaseSerivce<X.IRespository.DBSession.IWMDBSession>, IManagerService
     {
-        private readonly X.IRespository.DBSession.IWMDBSession _ibll;
-        public ManagerService(X.IRespository.DBSession.IWMDBSession ibll)
+        public ManagerService(X.IRespository.DBSession.IWMDBSession repository) :base(repository)
         {
-            _ibll = ibll;
         }
 
         public ResultDto<M_AdminUserRP> AdminLogin(string userName, string password, string ip)
@@ -28,7 +26,7 @@ namespace WM.Service.App
             }
             var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
 
-            var admin = _ibll.sys_manage.Where(q => q.DataStatus == (byte)DataStatus.Enable)
+            var admin = repository.sys_manage.Where(q => q.DataStatus == (byte)DataStatus.Enable)
                               .Where(q => q.UserName == userName && q.Pwd == encryptPwd).First();
             if (admin == null)
             {

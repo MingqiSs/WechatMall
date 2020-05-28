@@ -13,8 +13,4 @@
     <PackageReference Include="Microsoft.AspNetCore" Version="2.1.7" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="WMDB\" />
-  </ItemGroup>
-
 </Project>

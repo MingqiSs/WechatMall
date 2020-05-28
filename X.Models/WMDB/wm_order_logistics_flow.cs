@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,13 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_order_logistics_flow
     {
            public wm_order_logistics_flow(){}
-
-           /// <summary>
-           /// Desc:订单号
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string OrederID { get; set; }
 
            /// <summary>
            /// Desc:订单标号
@@ -36,6 +30,13 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Remark { get; set; }
+
+           /// <summary>
+           /// Desc:订单号
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string OrederID { get; set; }
 
 
     }

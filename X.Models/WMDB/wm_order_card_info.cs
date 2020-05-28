@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,20 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_order_card_info
     {
            public wm_order_card_info(){}
-
-           /// <summary>
-           /// Desc:商品价格
-           /// Default:0.00
-           /// Nullable:False
-           /// </summary>
-           public decimal ProductPrice { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
 
            /// <summary>
            /// Desc:购物车ID
@@ -57,6 +44,21 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:商品价格
+           /// Default:0.00
+           /// Nullable:False
+           /// </summary>
+           public decimal ProductPrice { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int ID { get; set; }
 
 
     }

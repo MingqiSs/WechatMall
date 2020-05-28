@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace X.Models.WMDB
@@ -8,41 +9,6 @@ namespace X.Models.WMDB
     public partial class wm_order
     {
            public wm_order(){}
-
-           /// <summary>
-           /// Desc:订单价格
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public decimal OrderPrice { get; set; }
-
-           /// <summary>
-           /// Desc:数据状态
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
 
            /// <summary>
            /// Desc:
@@ -113,6 +79,42 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public byte PayStatus { get; set; }
+
+           /// <summary>
+           /// Desc:订单价格
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public decimal OrderPrice { get; set; }
+
+           /// <summary>
+           /// Desc:数据状态
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
 
 
     }

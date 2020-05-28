@@ -37,18 +37,19 @@ namespace X.Respository
         /// <typeparam name="T"></typeparam>
         /// <param name="sql"></param>
         /// <returns></returns>
-        //public List<T> SqlQueryWithPage<T>(MT.Infrastructure.Models.PageModel page, ref int totalCount) where T : class, new()
-        //{
-           
-        //    string sql = $"Select COUNT(1) From {page.Table} Where {page.Where}";
-        //    totalCount = DB.Ado.SqlQuerySingle<int>(sql);
-        //    if (totalCount > 0)
-        //    {
-        //        sql = $"Select {page.Query} From {page.Table} Where {page.Where} Order BY {page.Order} LIMIT {(page.Pageindex>0? page.Pageindex - 1 : 0 ) * page.PageSize},{page.PageSize}";
-        //        return DB.Ado.SqlQuery<T>(sql);
-        //    }
-        //    return null;
-        //}
+        public List<T> SqlQueryWithPage<T>(WM.Infrastructure.Models.PageModel page,ref int totalCount)
+        {
+
+            string sql = $"Select COUNT(1) From {page.Table} Where {page.Where}";
+            totalCount = DB.Ado.SqlQuerySingle<int>(sql);
+            if (totalCount > 0)
+            {
+                sql = $"Select {page.Query} From {page.Table} Where {page.Where} Order BY {page.Order} LIMIT {(page.Pageindex > 0 ? page.Pageindex - 1 : 0) * page.PageSize},{page.PageSize}";
+               var list= DB.Ado.SqlQuery<T>(sql);
+                return list;
+            }
+            return null;
+        }
         /// <summary>
         /// 执行SQL,返回首行首列
         /// </summary>
