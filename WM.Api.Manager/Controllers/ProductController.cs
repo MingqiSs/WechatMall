@@ -35,7 +35,7 @@ namespace WM.Api.Manager.Controllers
         [HttpPost, Route("GetProductByName")]
         public ActionResult GetProductByName([FromBody] string name)
         {
-            return Ok();
+            return Ok(1);
         }
     }
 }
