@@ -31,9 +31,25 @@ public partial class WMDBSession : X.Respository.RespositorySession, X.IResposit
            {
                get { return new X.Respository.Sons.WMDB.r_product_tag(); }
            }
-           public X.IRespository.Sons.WMDB.Isys_manage sys_manage
+           public X.IRespository.Sons.WMDB.Isys_log sys_log
            {
-               get { return new X.Respository.Sons.WMDB.sys_manage(); }
+               get { return new X.Respository.Sons.WMDB.sys_log(); }
+           }
+           public X.IRespository.Sons.WMDB.Isys_menu sys_menu
+           {
+               get { return new X.Respository.Sons.WMDB.sys_menu(); }
+           }
+           public X.IRespository.Sons.WMDB.Isys_role sys_role
+           {
+               get { return new X.Respository.Sons.WMDB.sys_role(); }
+           }
+           public X.IRespository.Sons.WMDB.Isys_roleauth sys_roleauth
+           {
+               get { return new X.Respository.Sons.WMDB.sys_roleauth(); }
+           }
+           public X.IRespository.Sons.WMDB.Isys_user sys_user
+           {
+               get { return new X.Respository.Sons.WMDB.sys_user(); }
            }
            public X.IRespository.Sons.WMDB.Iwm_order wm_order
            {

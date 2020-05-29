@@ -20,23 +20,9 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Key { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
            /// Nullable:True
            /// </summary>
            public string Value { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
 
            /// <summary>
            /// Desc:
@@ -47,11 +33,25 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
            [Key]
            public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Key { get; set; }
 
 
     }

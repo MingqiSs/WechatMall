@@ -15,13 +15,6 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
-           public int OrderId { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
            public string Product_Icon { get; set; }
 
            /// <summary>
@@ -32,13 +25,6 @@ namespace X.Models.WMDB
            public string Product_Name { get; set; }
 
            /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public decimal Product_Price { get; set; }
-
-           /// <summary>
            /// Desc:数量
            /// Default:0
            /// Nullable:False
@@ -47,10 +33,10 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
-           /// Default:1
+           /// Default:
            /// Nullable:False
            /// </summary>
-           public byte DataStauts { get; set; }
+           public decimal Product_Price { get; set; }
 
            /// <summary>
            /// Desc:
@@ -58,6 +44,20 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string ProductID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStauts { get; set; }
 
            /// <summary>
            /// Desc:
@@ -72,7 +72,7 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
-           public string ProductID { get; set; }
+           public int OrderId { get; set; }
 
 
     }

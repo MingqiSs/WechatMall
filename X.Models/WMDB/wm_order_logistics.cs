@@ -13,16 +13,17 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:True
+           /// Nullable:False
            /// </summary>
-           public int? Logistics_CompanyID { get; set; }
+           [Key]
+           public string OrderID { get; set; }
 
            /// <summary>
-           /// Desc:
+           /// Desc:收货时间
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string Logistics_CompanyCode { get; set; }
+           public DateTime? ReceivingTime { get; set; }
 
            /// <summary>
            /// Desc:快递单号
@@ -46,19 +47,18 @@ namespace X.Models.WMDB
            public DateTime? DeliveryTime { get; set; }
 
            /// <summary>
-           /// Desc:收货时间
+           /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public DateTime? ReceivingTime { get; set; }
+           public string Logistics_CompanyCode { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:False
+           /// Nullable:True
            /// </summary>
-           [Key]
-           public string OrderID { get; set; }
+           public int? Logistics_CompanyID { get; set; }
 
 
     }

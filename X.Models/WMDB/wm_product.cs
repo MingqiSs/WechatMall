@@ -11,6 +11,77 @@ namespace X.Models.WMDB
            public wm_product(){}
 
            /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Icon { get; set; }
+
+           /// <summary>
+           /// Desc:备注
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Remark { get; set; }
+
+           /// <summary>
+           /// Desc:商品ID
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public string ID { get; set; }
+
+           /// <summary>
+           /// Desc:销量
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Sales { get; set; }
+
+           /// <summary>
+           /// Desc:图片
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Image { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Sort { get; set; }
+
+           /// <summary>
+           /// Desc:库存
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Inventory { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CrateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
            /// Desc:商品名称
            /// Default:
            /// Nullable:False
@@ -32,55 +103,6 @@ namespace X.Models.WMDB
            public decimal Price { get; set; }
 
            /// <summary>
-           /// Desc:备注
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Remark { get; set; }
-
-           /// <summary>
-           /// Desc:图片
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Image { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:销量
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int Sales { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CrateTime { get; set; }
-
-           /// <summary>
-           /// Desc:库存
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int Inventory { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
            /// Desc:
            /// Default:b'0'
            /// Nullable:False
@@ -93,28 +115,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ProductTypeID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Icon { get; set; }
-
-           /// <summary>
-           /// Desc:商品ID
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public string ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int Sort { get; set; }
 
 
     }

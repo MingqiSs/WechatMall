@@ -6,58 +6,37 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class cm_city
+    public partial class sys_roleauth
     {
-           public cm_city(){}
-
-           /// <summary>
-           /// Desc:
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool IsHot { get; set; }
+           public sys_roleauth(){}
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
-           public string Name { get; set; }
+           public int Menu_Id { get; set; }
 
            /// <summary>
            /// Desc:
-           /// Default:0
+           /// Default:
            /// Nullable:True
            /// </summary>
-           public int? ProvinceID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:100
-           /// Nullable:False
-           /// </summary>
-           public byte Sort { get; set; }
+           public string Modifier { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:False
+           /// Nullable:True
            /// </summary>
-           public string Code { get; set; }
+           public DateTime? ModifyDate { get; set; }
 
            /// <summary>
            /// Desc:
-           /// Default:CURRENT_TIMESTAMP
-           /// Nullable:False
+           /// Default:
+           /// Nullable:True
            /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:A
-           /// Nullable:False
-           /// </summary>
-           public string FirstChar { get; set; }
+           public int? Role_Id { get; set; }
 
            /// <summary>
            /// Desc:
@@ -65,7 +44,35 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            [Key]
-           public int ID { get; set; }
+           public int Auth_Id { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string AuthValue { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? CreateDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Creator { get; set; }
 
 
     }

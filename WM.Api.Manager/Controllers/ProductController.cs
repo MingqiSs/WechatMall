@@ -27,15 +27,5 @@ namespace WM.Api.Manager.Controllers
         {
 
         }
-        /// <summary>
-        /// 获取商品
-        /// </summary>
-        /// <param name="name"></param>
-        /// <returns></returns>
-        [HttpPost, Route("GetProductByName")]
-        public ActionResult GetProductByName([FromBody] string name)
-        {
-            return Ok(1);
-        }
     }
 }

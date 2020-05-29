@@ -13,6 +13,13 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:False
            /// </summary>
            public string UID { get; set; }
@@ -29,21 +36,14 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
-           public byte DataStatus { get; set; }
+           public DateTime CreateTime { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
+           public byte DataStatus { get; set; }
 
            /// <summary>
            /// Desc:

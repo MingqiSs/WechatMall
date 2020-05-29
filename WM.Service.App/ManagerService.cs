@@ -17,27 +17,32 @@ namespace WM.Service.App
         public ManagerService(X.IRespository.DBSession.IWMDBSession repository) :base(repository)
         {
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <param name="password"></param>
+        /// <param name="ip"></param>
+        /// <returns></returns>
         public ResultDto<M_AdminUserRP> AdminLogin(string userName, string password, string ip)
         {
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(password))
             {
                 return Result<M_AdminUserRP>(ResponseCode.sys_param_format_error, "登录失败");
             }
-            var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
+           // var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
 
-            var admin = repository.sys_manage.Where(q => q.DataStatus == (byte)DataStatus.Enable)
-                              .Where(q => q.UserName == userName && q.Pwd == encryptPwd).First();
+            var admin = repository.sys_user.Where(q => q.DataStatus == (byte)DataStatus.Enable)
+                              .Where(q => q.UserName == userName && q.UserPwd == password).First();
             if (admin == null)
             {
                 return Result<M_AdminUserRP>(ResponseCode.sys_param_format_error, "账号或密码错误");
             }
             return Result(new M_AdminUserRP
             {
-                id = admin.ID,
-                Name = admin.TrueName,
-                RoleId = admin.RoleId,
-                RoleCode = "",
+                id = admin.UID,
+                Name = admin.UserName,
+                RoleId = admin.Role_Id,
                 Email = admin.Email,
                 Menus =new List<M_AdminRoleMenuRP> { },
             });

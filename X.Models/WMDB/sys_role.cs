@@ -6,72 +6,72 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class wm_user
+    public partial class sys_role
     {
-           public wm_user(){}
+           public sys_role(){}
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string HeadImg { get; set; }
-
-           /// <summary>
-           /// Desc:手机号
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Mobile { get; set; }
+           public string DeptName { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public DateTime? ModifyTime { get; set; }
+           public byte? Enable { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string Name { get; set; }
+           public string Modifier { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public DateTime? BirthDate { get; set; }
-
-           /// <summary>
-           /// Desc:昵称
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Nickname { get; set; }
+           public DateTime? ModifyDate { get; set; }
 
            /// <summary>
            /// Desc:
-           /// Default:CURRENT_TIMESTAMP
-           /// Nullable:False
+           /// Default:
+           /// Nullable:True
            /// </summary>
-           public DateTime CreateTime { get; set; }
+           public DateTime? CreateDate { get; set; }
 
            /// <summary>
-           /// Desc:密码
+           /// Desc:
            /// Default:
-           /// Nullable:False
+           /// Nullable:True
            /// </summary>
-           public string Pwd { get; set; }
+           public int? OrderNo { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Creator { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
-           public byte DataStatus { get; set; }
+           public int ParentId { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string DeleteBy { get; set; }
 
            /// <summary>
            /// Desc:
@@ -79,21 +79,21 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            [Key]
-           public string UID { get; set; }
+           public int Role_Id { get; set; }
 
            /// <summary>
-           /// Desc:邮箱
+           /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string Email { get; set; }
+           public int? Dept_Id { get; set; }
 
            /// <summary>
-           /// Desc:微信appID
+           /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string WeChatAppID { get; set; }
+           public string RoleName { get; set; }
 
 
     }

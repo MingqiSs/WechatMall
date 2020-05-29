@@ -17,7 +17,19 @@ namespace X.IRespository.Sons.WMDB
     public partial interface Ir_product_tag:IBaseRespository<X.Models.WMDB.r_product_tag>
     {
     }
-    public partial interface Isys_manage:IBaseRespository<X.Models.WMDB.sys_manage>
+    public partial interface Isys_log:IBaseRespository<X.Models.WMDB.sys_log>
+    {
+    }
+    public partial interface Isys_menu:IBaseRespository<X.Models.WMDB.sys_menu>
+    {
+    }
+    public partial interface Isys_role:IBaseRespository<X.Models.WMDB.sys_role>
+    {
+    }
+    public partial interface Isys_roleauth:IBaseRespository<X.Models.WMDB.sys_roleauth>
+    {
+    }
+    public partial interface Isys_user:IBaseRespository<X.Models.WMDB.sys_user>
     {
     }
     public partial interface Iwm_order:IBaseRespository<X.Models.WMDB.wm_order>
