@@ -6,7 +6,7 @@ using WM.Service.App.Dto.ManagerDto.RP;
 
 namespace WM.Service.App.Interface
 {
-   public interface IManagerService
+   public interface Sys_UserService
     {
         /// <summary>
         /// 登录

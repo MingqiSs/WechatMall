@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WM.Infrastructure.Controllers.Basic;
@@ -25,7 +26,17 @@ namespace WM.Api.Manager.Controllers
         public ProductController(IProductDomainService service)
                  : base(service)
         {
-
+           var aa= this.Service.GetProductById("");
+        }
+        /// <summary>
+        ///登录
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost, Route("GetProductById"), AllowAnonymous]
+        public IActionResult GetProductById()
+        {
+            var aa = this.Service.GetProductById("d0f92fae-6ff6-11ea-abec-0242ac110002");
+            return Ok(aa);
         }
     }
 }

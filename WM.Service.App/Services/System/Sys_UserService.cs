@@ -1,20 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WM.Infrastructure.DEncrypt;
 using WM.Infrastructure.Models;
 using WM.Service.App.Dto.ManagerDto.RP;
-using WM.Service.App.Interface;
 using WM.Service.Domain.Entities;
 
-namespace WM.Service.App
+namespace WM.Service.App.Services
 {
     /// <summary>
     /// 
     /// </summary>
-    public class ManagerService : BaseSerivce<X.IRespository.DBSession.IWMDBSession>, IManagerService
+    public class Sys_UserService : BaseSerivce<X.IRespository.DBSession.IWMDBSession>, Interface.Sys_UserService
     {
-        public ManagerService(X.IRespository.DBSession.IWMDBSession repository) :base(repository)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="repository"></param>
+        public Sys_UserService(X.IRespository.DBSession.IWMDBSession repository) : base(repository)
         {
         }
         /// <summary>
@@ -30,7 +32,7 @@ namespace WM.Service.App
             {
                 return Result<M_AdminUserRP>(ResponseCode.sys_param_format_error, "登录失败");
             }
-           // var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
+            // var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
 
             var admin = repository.Sys_User.Where(q => q.DataStatus == (byte)DataStatus.Enable)
                               .Where(q => q.UserName == userName && q.UserPwd == password).First();
@@ -44,7 +46,7 @@ namespace WM.Service.App
                 Name = admin.UserName,
                 RoleId = admin.Role_Id,
                 Email = admin.Email,
-                Menus =new List<M_AdminRoleMenuRP> { },
+                Menus = new List<M_AdminRoleMenuRP> { },
             });
         }
     }
