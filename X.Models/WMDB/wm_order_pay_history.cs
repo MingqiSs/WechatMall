@@ -15,6 +15,20 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public decimal Order_Amount { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Pay_Json { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public string Payment_Amount { get; set; }
 
            /// <summary>
@@ -45,20 +59,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public decimal Order_Amount { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Pay_Json { get; set; }
 
 
     }

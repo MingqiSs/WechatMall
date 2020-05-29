@@ -239,9 +239,9 @@ namespace WM.Service.App
             var addr = _ibll.wm_user_shopping_address.Where(q => q.ID == rq.AddressID && q.UID == uid).First();
             if (addr == null) return Result<bool>(ResponseCode.sys_param_format_error, "收货地址错误！请重新提交");
 
-            var city = _ibll.cm_city.Where(q => q.ID == addr.CityID).Select(q => q.Name).First();
+            var city = _ibll.Sys_City.Where(q => q.ID == addr.CityID).Select(q => q.Name).First();
 
-            var province = _ibll.cm_province.Where(q => q.ID == addr.ProvinceID).Select(q => q.Name).First();
+            var province = _ibll.Sys_Province.Where(q => q.ID == addr.ProvinceID).Select(q => q.Name).First();
             var a = string.Empty;
             if (city == province) a = city;
             else a = $"{province}{city}";

@@ -6,16 +6,16 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class wm_order_card
+    public partial class Sys_City
     {
-           public wm_order_card(){}
+           public Sys_City(){}
 
            /// <summary>
            /// Desc:
-           /// Default:
+           /// Default:A
            /// Nullable:False
            /// </summary>
-           public byte DataStatus { get; set; }
+           public string FirstChar { get; set; }
 
            /// <summary>
            /// Desc:
@@ -27,28 +27,42 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:
            /// Default:b'0'
            /// Nullable:False
            /// </summary>
-           public bool Checked { get; set; }
+           public bool IsHot { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:True
+           /// </summary>
+           public int? ProvinceID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:100
+           /// Nullable:False
+           /// </summary>
+           public byte Sort { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Code { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:CURRENT_TIMESTAMP
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }

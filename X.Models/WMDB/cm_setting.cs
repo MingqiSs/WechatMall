@@ -13,13 +13,6 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
            /// Nullable:True
            /// </summary>
            public string Value { get; set; }
@@ -52,6 +45,13 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Key { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
 
 
     }

@@ -6,16 +6,44 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class sys_menu
+    public partial class Sys_Menu
     {
-           public sys_menu(){}
+           public Sys_Menu(){}
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public byte? Enable { get; set; }
+           public string Creator { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? OrderNo { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public byte? DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ParentId { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Description { get; set; }
 
            /// <summary>
            /// Desc:
@@ -80,34 +108,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public DateTime? ModifyDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Creator { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? OrderNo { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Description { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ParentId { get; set; }
 
 
     }

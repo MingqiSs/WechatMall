@@ -28,8 +28,8 @@ namespace WM.Service.App
         public ResultDto<List<DistrictListRP>> GetDistrictList()
         {
             //  var result = new List<DistrictListRP>();
-            var ctis = repository.cm_city.ToList();
-            var province = repository.cm_province.ToList();
+            var ctis = repository.Sys_City.ToList();
+            var province = repository.Sys_Province.ToList();
             var result = province.Select(q => new DistrictListRP
             {
                 Label = q.Name,

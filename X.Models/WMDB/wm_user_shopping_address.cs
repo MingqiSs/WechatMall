@@ -12,6 +12,34 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:联系人电话
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Receiver_Phone { get; set; }
+
+           /// <summary>
+           /// Desc:区
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int DistrictID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
@@ -66,34 +94,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Receiver_Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:联系人电话
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Receiver_Phone { get; set; }
-
-           /// <summary>
-           /// Desc:区
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int DistrictID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
 
 
     }

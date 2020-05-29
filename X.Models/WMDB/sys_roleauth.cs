@@ -6,9 +6,23 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class sys_roleauth
+    public partial class Sys_Roleauth
     {
-           public sys_roleauth(){}
+           public Sys_Roleauth(){}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? CreateDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Creator { get; set; }
 
            /// <summary>
            /// Desc:
@@ -59,20 +73,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string AuthValue { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? CreateDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Creator { get; set; }
 
 
     }

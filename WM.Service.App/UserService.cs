@@ -196,9 +196,9 @@ namespace WM.Service.App
                                            ProvinceID=q.ProvinceID,
                                            }).OrderBy(q=>q.AddressID,SqlSugar.OrderByType.Desc).ToList();
 
-            var citys = repository.cm_city.ToList();
+            var citys = repository.Sys_City.ToList();
 
-            var provinces = repository.cm_province.ToList();
+            var provinces = repository.Sys_Province.ToList();
 
             list.ForEach(q => q.Receiver_Address =$"{provinces.Where(j=>j.ID==q.ProvinceID).Select(q=>q.Name).FirstOrDefault()}{citys.Where(j => j.ID == q.CityID).Select(q => q.Name).FirstOrDefault()}{q.Receiver_Address}");//拼接省市区
             return Result(list);

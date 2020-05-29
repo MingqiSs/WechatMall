@@ -11,6 +11,34 @@ namespace X.Models.WMDB
            public wm_product(){}
 
            /// <summary>
+           /// Desc:商品描述
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Describe { get; set; }
+
+           /// <summary>
+           /// Desc:价格
+           /// Default:0.00
+           /// Nullable:False
+           /// </summary>
+           public decimal Price { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:b'0'
+           /// Nullable:False
+           /// </summary>
+           public bool Hot { get; set; }
+
+           /// <summary>
+           /// Desc:商品分类id
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int ProductTypeID { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
@@ -87,34 +115,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:商品描述
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Describe { get; set; }
-
-           /// <summary>
-           /// Desc:价格
-           /// Default:0.00
-           /// Nullable:False
-           /// </summary>
-           public decimal Price { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool Hot { get; set; }
-
-           /// <summary>
-           /// Desc:商品分类id
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int ProductTypeID { get; set; }
 
 
     }

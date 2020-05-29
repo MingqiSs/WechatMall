@@ -12,13 +12,6 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool IsHot { get; set; }
-
-           /// <summary>
-           /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
@@ -66,6 +59,13 @@ namespace X.Models.WMDB
            /// </summary>
            [Key]
            public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:b'0'
+           /// Nullable:False
+           /// </summary>
+           public bool IsHot { get; set; }
 
 
     }

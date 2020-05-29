@@ -6,7 +6,7 @@ using System.Text;
 using SqlSugar;
 namespace X.Respository.Sons.WMDB
 {
-    public partial class cm_city:BaseRespository<X.Models.WMDB.cm_city>,X.IRespository.Sons.WMDB.Icm_city
+    public partial class Sys_City:BaseRespository<X.Models.WMDB.Sys_City>,X.IRespository.Sons.WMDB.ISys_City
     {
            public override SqlSugarClient db
            {
@@ -16,7 +16,7 @@ namespace X.Respository.Sons.WMDB
                }
            }
     }
-    public partial class cm_province:BaseRespository<X.Models.WMDB.cm_province>,X.IRespository.Sons.WMDB.Icm_province
+    public partial class Sys_Log:BaseRespository<X.Models.WMDB.Sys_Log>,X.IRespository.Sons.WMDB.ISys_Log
     {
            public override SqlSugarClient db
            {
@@ -26,7 +26,57 @@ namespace X.Respository.Sons.WMDB
                }
            }
     }
-    public partial class cm_setting:BaseRespository<X.Models.WMDB.cm_setting>,X.IRespository.Sons.WMDB.Icm_setting
+    public partial class Sys_Menu:BaseRespository<X.Models.WMDB.Sys_Menu>,X.IRespository.Sons.WMDB.ISys_Menu
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
+    public partial class Sys_Province:BaseRespository<X.Models.WMDB.Sys_Province>,X.IRespository.Sons.WMDB.ISys_Province
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
+    public partial class Sys_Role:BaseRespository<X.Models.WMDB.Sys_Role>,X.IRespository.Sons.WMDB.ISys_Role
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
+    public partial class Sys_Roleauth:BaseRespository<X.Models.WMDB.Sys_Roleauth>,X.IRespository.Sons.WMDB.ISys_Roleauth
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
+    public partial class Sys_Setting:BaseRespository<X.Models.WMDB.Sys_Setting>,X.IRespository.Sons.WMDB.ISys_Setting
+    {
+           public override SqlSugarClient db
+           {
+               get
+               {
+                   return DBOperation.GetClient_WMDB();
+               }
+           }
+    }
+    public partial class Sys_User:BaseRespository<X.Models.WMDB.Sys_User>,X.IRespository.Sons.WMDB.ISys_User
     {
            public override SqlSugarClient db
            {
@@ -37,56 +87,6 @@ namespace X.Respository.Sons.WMDB
            }
     }
     public partial class r_product_tag:BaseRespository<X.Models.WMDB.r_product_tag>,X.IRespository.Sons.WMDB.Ir_product_tag
-    {
-           public override SqlSugarClient db
-           {
-               get
-               {
-                   return DBOperation.GetClient_WMDB();
-               }
-           }
-    }
-    public partial class sys_log:BaseRespository<X.Models.WMDB.sys_log>,X.IRespository.Sons.WMDB.Isys_log
-    {
-           public override SqlSugarClient db
-           {
-               get
-               {
-                   return DBOperation.GetClient_WMDB();
-               }
-           }
-    }
-    public partial class sys_menu:BaseRespository<X.Models.WMDB.sys_menu>,X.IRespository.Sons.WMDB.Isys_menu
-    {
-           public override SqlSugarClient db
-           {
-               get
-               {
-                   return DBOperation.GetClient_WMDB();
-               }
-           }
-    }
-    public partial class sys_role:BaseRespository<X.Models.WMDB.sys_role>,X.IRespository.Sons.WMDB.Isys_role
-    {
-           public override SqlSugarClient db
-           {
-               get
-               {
-                   return DBOperation.GetClient_WMDB();
-               }
-           }
-    }
-    public partial class sys_roleauth:BaseRespository<X.Models.WMDB.sys_roleauth>,X.IRespository.Sons.WMDB.Isys_roleauth
-    {
-           public override SqlSugarClient db
-           {
-               get
-               {
-                   return DBOperation.GetClient_WMDB();
-               }
-           }
-    }
-    public partial class sys_user:BaseRespository<X.Models.WMDB.sys_user>,X.IRespository.Sons.WMDB.Isys_user
     {
            public override SqlSugarClient db
            {

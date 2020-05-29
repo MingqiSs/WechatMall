@@ -6,9 +6,37 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class sys_log
+    public partial class Sys_Log
     {
-           public sys_log(){}
+           public Sys_Log(){}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? ElapsedTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string ServiceIP { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? EndDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? Success { get; set; }
 
            /// <summary>
            /// Desc:
@@ -94,34 +122,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public int? Role_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? ElapsedTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string ServiceIP { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? EndDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? Success { get; set; }
 
 
     }

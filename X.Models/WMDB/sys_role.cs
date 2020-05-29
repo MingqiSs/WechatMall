@@ -6,9 +6,45 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class sys_role
+    public partial class Sys_Role
     {
-           public sys_role(){}
+           public Sys_Role(){}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public byte? DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int Role_Id { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string DeleteBy { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string RoleName { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? Dept_Id { get; set; }
 
            /// <summary>
            /// Desc:
@@ -16,13 +52,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string DeptName { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public byte? Enable { get; set; }
 
            /// <summary>
            /// Desc:
@@ -65,35 +94,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ParentId { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string DeleteBy { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public int Role_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? Dept_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string RoleName { get; set; }
 
 
     }

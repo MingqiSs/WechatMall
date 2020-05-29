@@ -32,7 +32,7 @@ namespace WM.Service.App
             }
            // var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
 
-            var admin = repository.sys_user.Where(q => q.DataStatus == (byte)DataStatus.Enable)
+            var admin = repository.Sys_User.Where(q => q.DataStatus == (byte)DataStatus.Enable)
                               .Where(q => q.UserName == userName && q.UserPwd == password).First();
             if (admin == null)
             {

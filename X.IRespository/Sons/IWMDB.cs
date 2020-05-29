@@ -5,31 +5,31 @@ using System.Text;
 
 namespace X.IRespository.Sons.WMDB
 {
-    public partial interface Icm_city:IBaseRespository<X.Models.WMDB.cm_city>
+    public partial interface ISys_City:IBaseRespository<X.Models.WMDB.Sys_City>
     {
     }
-    public partial interface Icm_province:IBaseRespository<X.Models.WMDB.cm_province>
+    public partial interface ISys_Log:IBaseRespository<X.Models.WMDB.Sys_Log>
     {
     }
-    public partial interface Icm_setting:IBaseRespository<X.Models.WMDB.cm_setting>
+    public partial interface ISys_Menu:IBaseRespository<X.Models.WMDB.Sys_Menu>
+    {
+    }
+    public partial interface ISys_Province:IBaseRespository<X.Models.WMDB.Sys_Province>
+    {
+    }
+    public partial interface ISys_Role:IBaseRespository<X.Models.WMDB.Sys_Role>
+    {
+    }
+    public partial interface ISys_Roleauth:IBaseRespository<X.Models.WMDB.Sys_Roleauth>
+    {
+    }
+    public partial interface ISys_Setting:IBaseRespository<X.Models.WMDB.Sys_Setting>
+    {
+    }
+    public partial interface ISys_User:IBaseRespository<X.Models.WMDB.Sys_User>
     {
     }
     public partial interface Ir_product_tag:IBaseRespository<X.Models.WMDB.r_product_tag>
-    {
-    }
-    public partial interface Isys_log:IBaseRespository<X.Models.WMDB.sys_log>
-    {
-    }
-    public partial interface Isys_menu:IBaseRespository<X.Models.WMDB.sys_menu>
-    {
-    }
-    public partial interface Isys_role:IBaseRespository<X.Models.WMDB.sys_role>
-    {
-    }
-    public partial interface Isys_roleauth:IBaseRespository<X.Models.WMDB.sys_roleauth>
-    {
-    }
-    public partial interface Isys_user:IBaseRespository<X.Models.WMDB.sys_user>
     {
     }
     public partial interface Iwm_order:IBaseRespository<X.Models.WMDB.wm_order>

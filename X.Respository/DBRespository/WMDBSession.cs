@@ -15,41 +15,41 @@ public partial class WMDBSession : X.Respository.RespositorySession, X.IResposit
                    return DBOperation.GetClient_WMDB();
                }
            }
-           public X.IRespository.Sons.WMDB.Icm_city cm_city
+           public X.IRespository.Sons.WMDB.ISys_City Sys_City
            {
-               get { return new X.Respository.Sons.WMDB.cm_city(); }
+               get { return new X.Respository.Sons.WMDB.Sys_City(); }
            }
-           public X.IRespository.Sons.WMDB.Icm_province cm_province
+           public X.IRespository.Sons.WMDB.ISys_Log Sys_Log
            {
-               get { return new X.Respository.Sons.WMDB.cm_province(); }
+               get { return new X.Respository.Sons.WMDB.Sys_Log(); }
            }
-           public X.IRespository.Sons.WMDB.Icm_setting cm_setting
+           public X.IRespository.Sons.WMDB.ISys_Menu Sys_Menu
            {
-               get { return new X.Respository.Sons.WMDB.cm_setting(); }
+               get { return new X.Respository.Sons.WMDB.Sys_Menu(); }
+           }
+           public X.IRespository.Sons.WMDB.ISys_Province Sys_Province
+           {
+               get { return new X.Respository.Sons.WMDB.Sys_Province(); }
+           }
+           public X.IRespository.Sons.WMDB.ISys_Role Sys_Role
+           {
+               get { return new X.Respository.Sons.WMDB.Sys_Role(); }
+           }
+           public X.IRespository.Sons.WMDB.ISys_Roleauth Sys_Roleauth
+           {
+               get { return new X.Respository.Sons.WMDB.Sys_Roleauth(); }
+           }
+           public X.IRespository.Sons.WMDB.ISys_Setting Sys_Setting
+           {
+               get { return new X.Respository.Sons.WMDB.Sys_Setting(); }
+           }
+           public X.IRespository.Sons.WMDB.ISys_User Sys_User
+           {
+               get { return new X.Respository.Sons.WMDB.Sys_User(); }
            }
            public X.IRespository.Sons.WMDB.Ir_product_tag r_product_tag
            {
                get { return new X.Respository.Sons.WMDB.r_product_tag(); }
-           }
-           public X.IRespository.Sons.WMDB.Isys_log sys_log
-           {
-               get { return new X.Respository.Sons.WMDB.sys_log(); }
-           }
-           public X.IRespository.Sons.WMDB.Isys_menu sys_menu
-           {
-               get { return new X.Respository.Sons.WMDB.sys_menu(); }
-           }
-           public X.IRespository.Sons.WMDB.Isys_role sys_role
-           {
-               get { return new X.Respository.Sons.WMDB.sys_role(); }
-           }
-           public X.IRespository.Sons.WMDB.Isys_roleauth sys_roleauth
-           {
-               get { return new X.Respository.Sons.WMDB.sys_roleauth(); }
-           }
-           public X.IRespository.Sons.WMDB.Isys_user sys_user
-           {
-               get { return new X.Respository.Sons.WMDB.sys_user(); }
            }
            public X.IRespository.Sons.WMDB.Iwm_order wm_order
            {

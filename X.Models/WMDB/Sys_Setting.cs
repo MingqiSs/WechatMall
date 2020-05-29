@@ -6,16 +6,9 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class wm_order_card
+    public partial class Sys_Setting
     {
-           public wm_order_card(){}
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
+           public Sys_Setting(){}
 
            /// <summary>
            /// Desc:
@@ -28,30 +21,37 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Key { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:True
            /// </summary>
-           public DateTime? ModifyTime { get; set; }
+           public string Value { get; set; }
 
            /// <summary>
            /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool Checked { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
+           /// Default:CURRENT_TIMESTAMP
            /// Nullable:False
            /// </summary>
            public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
 
 
     }

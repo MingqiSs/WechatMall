@@ -13,6 +13,35 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:邮箱
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Email { get; set; }
+
+           /// <summary>
+           /// Desc:微信appID
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string WeChatAppID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:True
            /// </summary>
            public string HeadImg { get; set; }
@@ -65,35 +94,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Pwd { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:邮箱
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Email { get; set; }
-
-           /// <summary>
-           /// Desc:微信appID
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string WeChatAppID { get; set; }
 
 
     }

@@ -7,15 +7,15 @@ namespace X.IRespository.DBSession
 {
     public partial interface IWMDBSession:X.IRespository.IRespositorySession
     {
-           X.IRespository.Sons.WMDB.Icm_city cm_city {get;}
-           X.IRespository.Sons.WMDB.Icm_province cm_province {get;}
-           X.IRespository.Sons.WMDB.Icm_setting cm_setting {get;}
+           X.IRespository.Sons.WMDB.ISys_City Sys_City {get;}
+           X.IRespository.Sons.WMDB.ISys_Log Sys_Log {get;}
+           X.IRespository.Sons.WMDB.ISys_Menu Sys_Menu {get;}
+           X.IRespository.Sons.WMDB.ISys_Province Sys_Province {get;}
+           X.IRespository.Sons.WMDB.ISys_Role Sys_Role {get;}
+           X.IRespository.Sons.WMDB.ISys_Roleauth Sys_Roleauth {get;}
+           X.IRespository.Sons.WMDB.ISys_Setting Sys_Setting {get;}
+           X.IRespository.Sons.WMDB.ISys_User Sys_User {get;}
            X.IRespository.Sons.WMDB.Ir_product_tag r_product_tag {get;}
-           X.IRespository.Sons.WMDB.Isys_log sys_log {get;}
-           X.IRespository.Sons.WMDB.Isys_menu sys_menu {get;}
-           X.IRespository.Sons.WMDB.Isys_role sys_role {get;}
-           X.IRespository.Sons.WMDB.Isys_roleauth sys_roleauth {get;}
-           X.IRespository.Sons.WMDB.Isys_user sys_user {get;}
            X.IRespository.Sons.WMDB.Iwm_order wm_order {get;}
            X.IRespository.Sons.WMDB.Iwm_order_card wm_order_card {get;}
            X.IRespository.Sons.WMDB.Iwm_order_card_info wm_order_card_info {get;}
