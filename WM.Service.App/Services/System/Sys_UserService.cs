@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 using WM.Infrastructure.Models;
 using WM.Service.App.Dto.ManagerDto.RP;
+using WM.Service.App.Interface;
 using WM.Service.Domain.Entities;
+using X.Models.WMDB;
 
 namespace WM.Service.App.Services
 {
     /// <summary>
     /// 
     /// </summary>
-    public class Sys_UserService : BaseSerivce<X.IRespository.DBSession.IWMDBSession>, Interface.Sys_UserService
+    public class Sys_UserService : BaseSerivceDomain<Sys_User, X.IRespository.DBSession.IWMDBSession>, ISys_UserService
     {
         /// <summary>
         /// 
@@ -24,13 +26,14 @@ namespace WM.Service.App.Services
         /// </summary>
         /// <param name="userName"></param>
         /// <param name="password"></param>
-        /// <param name="ip"></param>
         /// <returns></returns>
-        public ResultDto<M_AdminUserRP> AdminLogin(string userName, string password, string ip)
+        public WebResponseContent AdminLogin(string userName, string password)
         {
+            WebResponseContent responseContent = new WebResponseContent();
             if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(password))
             {
-                return Result<M_AdminUserRP>(ResponseCode.sys_param_format_error, "登录失败");
+
+                return responseContent.Error("登录错误");
             }
             // var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
 
@@ -38,16 +41,16 @@ namespace WM.Service.App.Services
                               .Where(q => q.UserName == userName && q.UserPwd == password).First();
             if (admin == null)
             {
-                return Result<M_AdminUserRP>(ResponseCode.sys_param_format_error, "账号或密码错误");
+                return responseContent.Error("账户或密码错误");
             }
-            return Result(new M_AdminUserRP
+            return responseContent.OK("登录成功", new M_AdminUserRP
             {
                 id = admin.UID,
                 Name = admin.UserName,
                 RoleId = admin.Role_Id,
                 Email = admin.Email,
                 Menus = new List<M_AdminRoleMenuRP> { },
-            });
+            }) ;
         }
     }
 }

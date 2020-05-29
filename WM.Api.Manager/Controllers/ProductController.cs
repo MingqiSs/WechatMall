@@ -29,7 +29,7 @@ namespace WM.Api.Manager.Controllers
            var aa= this.Service.GetProductById("");
         }
         /// <summary>
-        ///登录
+        /// 获取商品
         /// </summary>
         /// <returns></returns>
         [HttpPost, Route("GetProductById"), AllowAnonymous]

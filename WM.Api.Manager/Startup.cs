@@ -68,7 +68,7 @@ namespace WM.Api.Manager
 
             app.UseAuthorization();
             //token—È÷§
-           // app.UseAuthentication();
+            app.UseAuthentication();
             
             app.UseCheckTokenAuthentication();
 

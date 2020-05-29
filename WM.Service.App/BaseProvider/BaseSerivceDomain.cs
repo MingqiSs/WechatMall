@@ -7,7 +7,7 @@ using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Models;
 using X.Models.WMDB;
 
-namespace WM.Service.App.BaseProvider
+namespace WM.Service.App
 {
     public abstract class BaseSerivceDomain<T, TRepository> : IDependency
         where TRepository : X.IRespository.DBSession.IWMDBSession

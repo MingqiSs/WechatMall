@@ -6,7 +6,10 @@ using WM.Service.App.Dto.ManagerDto.RP;
 
 namespace WM.Service.App.Interface
 {
-   public interface Sys_UserService
+    /// <summary>
+    /// 
+    /// </summary>
+   public interface ISys_UserService
     {
         /// <summary>
         /// 登录
@@ -15,6 +18,6 @@ namespace WM.Service.App.Interface
         /// <param name="password"></param>
         /// <param name="ip"></param>
         /// <returns></returns>
-        ResultDto<M_AdminUserRP> AdminLogin(string userName, string password, string ip);
+        WebResponseContent AdminLogin(string userName, string password);
     }
 }
