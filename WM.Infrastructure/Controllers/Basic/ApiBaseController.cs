@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using WM.Infrastructure.Filters;
 using WM.Infrastructure.Models;
 
 namespace WM.Infrastructure.Controllers.Basic
@@ -25,7 +26,7 @@ namespace WM.Infrastructure.Controllers.Basic
         /// </summary>
         /// <param name="keys"></param>
         /// <returns></returns>
-        //[ApiActionPermission(Enums.ActionPermissionOptions.Delete)]
+        [ApiActionPermission(Enums.ActionPermissionOptions.Delete)]
         [HttpPost, Route("Del")]
         public new async Task<ActionResult> Del( KeyOptions keys)
         {
@@ -36,7 +37,7 @@ namespace WM.Infrastructure.Controllers.Basic
         /// </summary>
         /// <param name="loadData"></param>
         /// <returns></returns>
-        //    [ApiActionPermission(Enums.ActionPermissionOptions.Search)]
+        [ApiActionPermission(Enums.ActionPermissionOptions.Search)]
         [HttpPost, Route("GetPageData")]
         public new async Task<ActionResult> GetPageData( PageDataOptions loadData)
         {

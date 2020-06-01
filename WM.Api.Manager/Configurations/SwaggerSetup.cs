@@ -63,7 +63,10 @@ namespace WM.Api.Manager.Configurations
 
             });
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="app"></param>
         public static void UseSwaggerSetup(this IApplicationBuilder app)
         {
             if (app == null) throw new ArgumentNullException(nameof(app));

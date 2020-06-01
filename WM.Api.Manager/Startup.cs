@@ -16,6 +16,8 @@ using WM.Api.Manager.Configurations;
 using WM.Api.Manager.Filter;
 using WM.Infrastructure.DI;
 using WM.Infrastructure.Extensions.AutofacManager;
+using WM.Infrastructure.Filters;
+
 namespace WM.Api.Manager
 {
     public class Startup
@@ -33,7 +35,11 @@ namespace WM.Api.Manager
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddControllers();
-
+            services.AddMvc(options =>
+            {
+                options.Filters.Add(typeof(ApiAuthorizeFilter));
+                //options.Filters.Add(typeof(ActionExecuteFilter));
+            });
             services.AddSwaggerSetup();
 
             #region ×¢²á ÈÕÖ¾
