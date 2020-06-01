@@ -17,26 +17,27 @@ namespace WM.Api.Manager.Controllers
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ApiBaseController<IProductDomainService>
+    public class ProductController : ApiBaseController<IProductService>
     {
         /// <summary>
         /// 
         /// </summary>
         /// <param name="service"></param>
-        public ProductController(IProductDomainService service)
+        public ProductController(IProductService service)
                  : base(service)
         {
-           var aa= this.Service.GetProductById("");
         }
         /// <summary>
-        /// 获取商品
+        ///获取商品类型
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("GetProductById"), AllowAnonymous]
-        public IActionResult GetProductById()
+        [Authorize]
+        [HttpPost, Route("GetProductTypeList")]
+        public IActionResult GetProductTypeList()
         {
-            var aa = this.Service.GetProductById("d0f92fae-6ff6-11ea-abec-0242ac110002");
-            return Ok(aa);
+            var r = Service.GetProductTypeList();
+           
+            return Ok(r);
         }
     }
 }

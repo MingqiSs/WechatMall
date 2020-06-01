@@ -9,10 +9,11 @@ using WM.Service.Domain.Interface;
 using System.Linq;
 using WM.Service.App.Dto.WebDto.RQ;
 using WM.Service.Domain.Entities;
+using X.Models.WMDB;
 
 namespace WM.Service.App
 {
-  public class ProductService : BaseSerivce<X.IRespository.DBSession.IWMDBSession>, IProductService
+  public class ProductService : BaseSerivceDomain<wm_product, X.IRespository.DBSession.IWMDBSession>, IProductService
     {
         
         private readonly IUserDomainService _userDomainService;
@@ -27,7 +28,6 @@ namespace WM.Service.App
         /// <returns></returns>
         public ResultDto<List<DistrictListRP>> GetDistrictList()
         {
-            //  var result = new List<DistrictListRP>();
             var ctis = repository.Sys_City.ToList();
             var province = repository.Sys_Province.ToList();
             var result = province.Select(q => new DistrictListRP

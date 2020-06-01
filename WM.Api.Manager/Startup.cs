@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,12 +24,14 @@ namespace WM.Api.Manager
         {
             Configuration = configuration;
         }
-
+       private readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             services.AddControllers();
 
             services.AddSwaggerSetup();
@@ -43,6 +46,17 @@ namespace WM.Api.Manager
             #region ◊¢≤· Token—È÷§
             services.AddJwtAuthSetup(Configuration);
             #endregion
+            //øÁ”Ú…Ë÷√
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.AllowAnyOrigin()
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                });
+            });
         }
         /// <summary>
         /// 
@@ -65,24 +79,18 @@ namespace WM.Api.Manager
             app.UseRouting();
 
             app.UseStaticFiles();
-
-            app.UseAuthorization();
             //token—È÷§
             app.UseAuthentication();
-            
-            app.UseCheckTokenAuthentication();
+
+            app.UseAuthorization();
 
             // øÁ”Ú≈‰÷√
-            //app.UseCors(c =>
-            //{
-            //    c.AllowAnyOrigin();
-            //    c.AllowAnyHeader();
-            //    c.AllowAnyMethod();
-            //    c.AllowCredentials();
-            //});
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseSwaggerSetup();
-
-
+            //≈‰÷√HttpContext
+            Infrastructure.Utilities.HttpContext.Configure(app.ApplicationServices.GetRequiredService<IHttpContextAccessor>());
+          
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

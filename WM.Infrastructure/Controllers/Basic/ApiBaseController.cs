@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,7 +8,7 @@ using WM.Infrastructure.Models;
 
 namespace WM.Infrastructure.Controllers.Basic
 {
-
+    [Authorize]
     [ApiController]
     public class ApiBaseController<IServiceBase> : BaseController<IServiceBase>
     {

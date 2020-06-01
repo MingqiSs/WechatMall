@@ -37,27 +37,27 @@ namespace WM.Api.Manager.Configurations
                 options.SaveToken = true;
                 options.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,//是否验证Issuer
-                    ValidateAudience = true,//是否验证Audience
-                    ValidateLifetime = true,//是否验证失效时间
+                    ValidateIssuer = false,//是否验证Issuer
+                    ValidateAudience = false,//是否验证Audience
+                    ValidateLifetime = false,//是否验证失效时间
                     ValidateIssuerSigningKey = true,//是否验证SecurityKey
                     IssuerSigningKey = new SymmetricSecurityKey(key),//拿到SecurityKey
                     ValidAudience = tokenManagement.Audience,
                     ValidIssuer = tokenManagement.Issuer
 
                 };
-                options.Events = new JwtBearerEvents()
-                {
-                    OnChallenge = context =>
-                    {
-                        context.HandleResponse();
-                        context.Response.Clear();
-                        context.Response.ContentType = "application/json";
-                        context.Response.StatusCode = 401;
-                        context.Response.WriteAsync(new { message = "授权未通过", status = false, code = 401 }.Serialize());
-                        return Task.CompletedTask;
-                    }
-                };
+                //options.Events = new JwtBearerEvents()
+                //{
+                //    OnChallenge = context =>
+                //    {
+                //        context.HandleResponse();
+                //        context.Response.Clear();
+                //        context.Response.ContentType = "application/json";
+                //        context.Response.StatusCode = 401;
+                //        context.Response.WriteAsync(new { message = "授权未通过", status = false, code = 401 }.Serialize());
+                //        return Task.CompletedTask;
+                //    }
+                //};
             });
 
         }

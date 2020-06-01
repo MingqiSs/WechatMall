@@ -19,17 +19,19 @@ using WM.Service.Domain.Interface;
 
 namespace WM.Api.Manager.Controllers.System
 {
+    /// <summary>
+    /// 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class Sys_UserController : ApiBaseController<ISys_UserService>
     {
         private readonly TokenManagement _tokenManagement;
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <param name="service"></param>
-       /// <param name="managerService"></param>
-       /// <param name="tokenManagement"></param>
+     /// <summary>
+     /// 
+     /// </summary>
+     /// <param name="service"></param>
+     /// <param name="tokenManagement"></param>
         public Sys_UserController(ISys_UserService service,IOptions<TokenManagement> tokenManagement)
                  : base(service)
         {
