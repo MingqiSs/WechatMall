@@ -7,8 +7,10 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using WM.Infrastructure.Enums;
 using WM.Infrastructure.Extensions;
 using WM.Infrastructure.Models;
+using WM.Infrastructure.UserManager;
 
 namespace WM.Infrastructure.Filters
 {
@@ -19,12 +21,20 @@ namespace WM.Infrastructure.Filters
     /// 4、SysController为true，通过httpcontext获取表名与action判断是否有权限
     /// 5、Roles对指定角色验证
     /// </summary>
-    public class ActionPermissionFilter : IAsyncActionFilter
+    public class ActionPermissionFilter :  IAsyncActionFilter
     {
         private WebResponseContent ResponseContent { get; set; }
-      //  private ActionPermissionRequirement ActionPermission;
+          private ActionPermissionRequirement ActionPermission;
+        private UserContext _userContext { get; set; }
+        public ActionPermissionFilter(ActionPermissionRequirement actionPermissionRequirement, UserContext userContext)
+        {
+            ResponseContent = new WebResponseContent();
+            ActionPermission = actionPermissionRequirement;
+            _userContext = userContext;
+        }
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
+           var aa= OnActionExecutionPermission(context);
             if (OnActionExecutionPermission(context).Status)
             {
                 await next();
@@ -48,61 +58,63 @@ namespace WM.Infrastructure.Filters
                 return ResponseContent.OK();
 
             ////演示环境除了admin帐号，其他帐号都不能增删改等操作
-            //if (!_userContext.IsSuperAdmin && AppSetting.GlobalFilter.Enable
-            //    && AppSetting.GlobalFilter.Actions.Contains(((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor).ActionName))
+            /// //if (!_userContext.IsSuperAdmin)
             //{
-            //    return ResponseContent.Error(AppSetting.GlobalFilter.Message);
+            //    return ResponseContent.Error("");
             //}
+
+            // var actName=((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor).ActionName;
+
 
             ////如果没有指定表的权限，则默认为代码生成的控制器，优先获取PermissionTableAttribute指定的表，如果没有数据则使用当前控制器的名作为表名权限
-            //if (ActionPermission.SysController)
-            //{
-            //    object[] permissionArray = ((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor)?.ControllerTypeInfo.GetCustomAttributes(typeof(PermissionTableAttribute), false);
-            //    if (permissionArray == null || permissionArray.Length == 0)
-            //    {
-            //        ActionPermission.TableName = ((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor).ControllerName;
-            //    }
-            //    else
-            //    {
-            //        ActionPermission.TableName = (permissionArray[0] as PermissionTableAttribute).Name;
-            //    }
-            //    if (string.IsNullOrEmpty(ActionPermission.TableName))
-            //    {
-            //        //responseType = ResponseType.ParametersLack;
-            //        return ResponseContent.Error(ResponseType.ParametersLack);
-            //    }
-            //}
+            if (ActionPermission.SysController)
+            {
+                object[] permissionArray = ((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor)?.ControllerTypeInfo.GetCustomAttributes(typeof(PermissionTableAttribute), false);
+                if (permissionArray == null || permissionArray.Length == 0)
+                {
+                    ActionPermission.TableName = ((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor).ControllerName;
+                }
+                else
+                {
+                    ActionPermission.TableName = (permissionArray[0] as PermissionTableAttribute).Name;
+                }
+                if (string.IsNullOrEmpty(ActionPermission.TableName))
+                {
+                    //responseType = ResponseType.ParametersLack;
+                    return ResponseContent.Error(ResponseType.ParametersLack);
+                }
+            }
 
             ////如果没有给定权限，不需要判断
-            //if (string.IsNullOrEmpty(ActionPermission.TableName)
-            //    && string.IsNullOrEmpty(ActionPermission.TableAction)
-            //    && (ActionPermission.RoleIds == null || ActionPermission.RoleIds.Length == 0))
-            //{
-            //    return ResponseContent.OK();
-            //}
+            if (string.IsNullOrEmpty(ActionPermission.TableName)
+                && string.IsNullOrEmpty(ActionPermission.TableAction)
+                && (ActionPermission.RoleIds == null || ActionPermission.RoleIds.Length == 0))
+            {
+                return ResponseContent.OK();
+            }
 
             ////是否限制的角色ID称才能访问
             ////权限判断角色ID,
-            //if (ActionPermission.RoleIds != null && ActionPermission.RoleIds.Length > 0)
-            //{
-            //    if (ActionPermission.RoleIds.Contains(_userContext.UserInfo.Role_Id)) return ResponseContent.OK();
-            //    //如果角色ID没有权限。并且也没控制器权限
-            //    if (string.IsNullOrEmpty(ActionPermission.TableAction))
-            //    {
-            //        return ResponseContent.Error(ResponseType.NoRolePermissions);
-            //    }
-            //}
+            if (ActionPermission.RoleIds != null && ActionPermission.RoleIds.Length > 0)
+            {
+                if (ActionPermission.RoleIds.Contains(_userContext.UserInfo.Role_Id)) return ResponseContent.OK();
+                //如果角色ID没有权限。并且也没控制器权限
+                if (string.IsNullOrEmpty(ActionPermission.TableAction))
+                {
+                    return ResponseContent.Error(ResponseType.NoRolePermissions);
+                }
+            }
             ////2020.05.05移除x.TableName.ToLower()转换,获取权限时已经转换成为小写
-            //var actionAuth = _userContext.GetPermissions(x => x.TableName == ActionPermission.TableName.ToLower())?.UserAuthArr;
+          //  var actionAuth = _userContext.GetPermissions(x => x.TableName == ActionPermission.TableName.ToLower())?.UserAuthArr;
 
             //if (actionAuth == null
             //     || actionAuth.Count() == 0
             //     || !actionAuth.Contains(ActionPermission.TableAction))
             //{
-            //    Logger.Info(LoggerType.Authorzie, $"没有权限操作," +
-            //        $"用户ID{_userContext.UserId}:{_userContext.UserTrueName}," +
-            //        $"角色ID:{_userContext.RoleId}:{_userContext.UserInfo.RoleName}," +
-            //        $"操作权限{ActionPermission.TableName}:{ActionPermission.TableAction}");
+            //    //Logger.Info(LoggerType.Authorzie, $"没有权限操作," +
+            //    //    $"用户ID{_userContext.UserId}:{_userContext.UserTrueName}," +
+            //    //    $"角色ID:{_userContext.RoleId}:{_userContext.UserInfo.RoleName}," +
+            //    //    $"操作权限{ActionPermission.TableName}:{ActionPermission.TableAction}");
             //    return ResponseContent.Error(ResponseType.NoPermissions);
             //}
             return ResponseContent.OK();

@@ -55,35 +55,30 @@ namespace WM.Infrastructure.Models
     }
 
 
-    public class AdminToken {
+    public class AdminUser
+    {
+        public string User_Id { get; set; }
         /// <summary>
-        /// 管理员Id
+        /// 多个角色ID
         /// </summary>
-        public string Id { get; set; }
-        /// <summary>
-        /// 电子邮箱
-        /// </summary>
+        public int Role_Id { get; set; }
+        public string RoleName { get; set; }
+        public string UserName { get; set; }
+        public string UserTrueName { get; set; }
+        public int Enable { get; set; }
         public string Email { get; set; }
-        /// <summary>
-        /// 手机号
-        /// </summary>
-        public string Mobile { get; set; }
-        /// <summary>
-        /// 角色
-        /// </summary>
-        public int Role { get; set; }
-        /// <summary>
-        /// 角色
-        /// </summary>
-        public string RoleCode { get; set; }
-        /// <summary>
-        /// 管理员名称
-        /// </summary>
-        public string Name { get; set; }
-        /// <summary>
-        /// ip
-        /// </summary>
-        public string IP { get; set; }
+        public string Token { get; set; }
     }
-
+    public class Permissions
+    {
+        public int Menu_Id { get; set; }
+        public int ParentId { get; set; }
+        public string TableName { get; set; }
+        public string MenuAuth { get; set; }
+        public string UserAuth { get; set; }
+        /// <summary>
+        /// 当前用户权限,存储的是权限的值，如:Add,Search等
+        /// </summary>
+        public string[] UserAuthArr { get; set; }
+    }
 }

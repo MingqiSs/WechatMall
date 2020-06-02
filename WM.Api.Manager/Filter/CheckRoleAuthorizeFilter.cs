@@ -15,7 +15,11 @@ namespace WM.Api.Manager.Filter
     /// </summary>
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = true, Inherited = true)]
     public class CheckRoleAuthorizeFilter : Attribute, IAsyncAuthorizationFilter
-    {
+    {   /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
             //  var _managerService = context.HttpContext.RequestServices.GetRequiredService<IManagerService>();

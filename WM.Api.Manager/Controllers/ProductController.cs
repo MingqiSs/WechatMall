@@ -18,6 +18,7 @@ namespace WM.Api.Manager.Controllers
     /// 
     /// </summary>
     [Route("api/[controller]")]
+    [PermissionTable(Name = "wm_product")]
     [ApiController]
     public class ProductController : ApiBaseController<IProductService>
     {
@@ -33,9 +34,10 @@ namespace WM.Api.Manager.Controllers
         ///获取商品类型
         /// </summary>
         /// <returns></returns>
-        [CheckRoleAuthorizeFilter]
+       // [CheckRoleAuthorizeFilter]
         [HttpPost, Route("GetProductTypeList")]
-       // [ApiActionPermission(Infrastructure.Enums.ActionPermissionOptions.Search)]
+        [ApiActionPermission(Infrastructure.Enums.ActionPermissionOptions.Search)]
+        //[ApiActionPermission]
         public IActionResult GetProductTypeList()
         {
             var r = Service.GetProductTypeList();

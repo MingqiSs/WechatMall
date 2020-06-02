@@ -75,7 +75,7 @@ namespace WM.Infrastructure.Filters
 
         private void SetActionPermissionRequirement(string tableName, ActionPermissionOptions tableAction, bool sysController = false, bool isApi = false, int? roleId = null)
         {
-           // SetActionPermissionRequirement(tableName, tableAction, roleId == null ? null : new int[] { (int)roleId }, sysController, isApi);
+           SetActionPermissionRequirement(tableName, tableAction, roleId == null ? null : new int[] { (int)roleId }, sysController, isApi);
         }
     }
 }

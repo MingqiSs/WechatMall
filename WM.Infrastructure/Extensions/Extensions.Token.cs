@@ -65,16 +65,16 @@ namespace WM.Infrastructure.Models
             return token;
         }
 
-        ///// <summary>
-        ///// 获取 User Token
-        ///// </summary>
-        ///// <param name="claimsPrincipal"></param>
-        ///// <returns></returns>
-        ////public static AdminToken GetAdminToken(this ClaimsPrincipal claimsPrincipal)
-        ////{
-        ////    var token = TokenHelper.GetAdminToken(claimsPrincipal);
-        ////    return token;
-        ////}
+        // <summary>
+        // 获取 User Token
+        // </summary>
+        // <param name = "claimsPrincipal" ></ param >
+       // < returns ></ returns >
+        public static AdminUser GetAdminToken(this ClaimsPrincipal claimsPrincipal)
+        {
+            var token = TokenHelper.GetAdminToken(claimsPrincipal);
+            return token;
+        }
 
         /// <summary>
         /// 序列化 User Token

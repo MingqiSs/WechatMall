@@ -41,22 +41,21 @@ namespace WM.Api.Manager.Controllers.System
         ///登录
         /// </summary>
         /// <returns></returns>
-        [HttpPost, Route("Login"), AllowAnonymous]
+        [HttpPost, Route("login"), AllowAnonymous]
         public IActionResult Login(M_AdminUserRQ rq)
         {
             var r = Service.AdminLogin(rq.UserName, rq.Password);
             if (r.Status)
             {
                 var data = (M_AdminUserRP)r.Data;
-                var adminToken = new AdminToken
+                var adminToken = new AdminUser
                 {
-                    Id = data.id,
+                    User_Id = data.id,
                     Email = data.Email,
-                    Mobile = data.Moblie,
-                    Role = data.RoleId,
-                    RoleCode = data.RoleCode,
-                    Name = data.Name,
+                    Role_Id = data.RoleId,
+                    UserName = data.Name,
                 };
+                  //var tokenManagement=AutofacContainerModule.GetService<IOptions<TokenManagement>>()?.Value;
                 var token = TokenHelper.CreateAdminToken(_tokenManagement, adminToken);
                 Response.Headers.Add("Authorization", new StringValues(token));
             }

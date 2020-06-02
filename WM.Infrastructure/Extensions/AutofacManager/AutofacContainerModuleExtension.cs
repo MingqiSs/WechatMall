@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Loader;
 using System.Text;
+using WM.Infrastructure.UserManager;
 
 namespace WM.Infrastructure.Extensions.AutofacManager
 {
@@ -39,6 +40,8 @@ namespace WM.Infrastructure.Extensions.AutofacManager
              .Where(type => baseType.IsAssignableFrom(type) && !type.IsAbstract)
              .AsSelf().AsImplementedInterfaces()
              .InstancePerLifetimeScope();
+            //注入用户
+            builder.RegisterType<UserContext>().InstancePerLifetimeScope();
         }
     }
 }

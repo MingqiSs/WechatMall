@@ -45,7 +45,7 @@ namespace MC.Infrastructure.Helpers
             };
             return userToken;
         }
-
+    
         /// <summary>
         /// 创建用户 Token
         /// </summary>
@@ -112,23 +112,22 @@ namespace MC.Infrastructure.Helpers
         /// <param name="securityKey">密钥(对称密钥)</param>
         /// <param name="userToken">Token</param>
         /// <returns></returns>
-        public static string CreateAdminToken(TokenManagement settings, AdminToken userToken)
+        public static string CreateAdminToken(TokenManagement settings, AdminUser userToken)
         {
             // 将用户的名字推入一个声明中，这样我们就可以稍后确定用户的身份。
             var claims = new[]
                 {
-                    new Claim(JwtRegisteredClaimNames.Sub, userToken.Email??""),
+                    new Claim(JwtRegisteredClaimNames.Sub, userToken.UserName??""),
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToUniversalTime().ToString(),ClaimValueTypes.Integer64),
 
-                    new Claim(JwtRegisteredClaimNames.UniqueName, userToken.Id.ToString()),
-                    new Claim("name",userToken.Name?? ""),
-                    new Claim("role", userToken.Role.ToString()?? ""),
+                    new Claim(JwtRegisteredClaimNames.UniqueName, userToken.User_Id),
+                    new Claim("name",userToken.UserName?? ""),
                     new Claim("email", userToken.Email ?? ""),
-                    new Claim("mobile", userToken.Mobile?? ""),
-                    new Claim("ip", userToken.IP??""),
+                    new Claim("usertruename", userToken.UserTrueName?? ""),
+                    new Claim("rolename", userToken.RoleName?? ""),
+                    new Claim(ClaimTypes.Role, userToken.Role_Id.ToString()),
                     new Claim(ClaimTypes.UserData, "UserData"),
-                    //new Claim(JwtRegisteredClaimNames.FamilyName, "哈哈哈"),
                 };
 
             // 创建一个密钥(对称密钥)
@@ -157,6 +156,26 @@ namespace MC.Infrastructure.Helpers
                 signingCredentials: creds               // 指定使用哪个安全密钥和什么算法来创建签名
                 );
             return $"Bearer {new JwtSecurityTokenHandler().WriteToken(token)}";
+        }
+        /// <summary>
+        /// 获取用户 Token
+        /// </summary>
+        /// <returns></returns>
+        public static AdminUser GetAdminToken(ClaimsPrincipal cp)
+        {
+            var claims = cp.Claims;
+
+            var id = claims.GetClaimsValue(ClaimTypes.Name);
+            var email = claims.GetClaimsValue(ClaimTypes.NameIdentifier);
+
+            var userToken = new AdminUser
+            {
+                User_Id = id,
+                Email = email,
+                UserName = claims.GetClaimsValue("name"),
+                Role_Id = claims.GetClaimsValue(ClaimTypes.Role).ToInt32(),
+            };
+            return userToken;
         }
 
     }
