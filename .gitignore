@@ -32,3 +32,4 @@
 /WM.Infrastructure/bin
 /WM.Manager.Mvc/bin/Debug/netcoreapp3.1
 /WM.Manager.Mvc/obj
+/WM.Api.Manager/ClientApp/Vue/node_modules
