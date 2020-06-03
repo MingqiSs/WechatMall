@@ -10,13 +10,13 @@ axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded
 
 //'application/json;charset=utf-8';//
 if (process.env.NODE_ENV == 'development') {
-    axios.defaults.baseURL = 'https://localhost:44318/';
+    axios.defaults.baseURL = 'http://localhost:61755/';
 }
 else if (process.env.NODE_ENV == 'debug') {
-    axios.defaults.baseURL = 'https://localhost:44318/';
+    axios.defaults.baseURL = 'http://localhost:61755/';
 }
 else if (process.env.NODE_ENV == 'production') {
-    axios.defaults.baseURL = 'https://localhost:44318/';
+    axios.defaults.baseURL = 'http://localhost:61755/';
 }
 let ipAddress = axios.defaults.baseURL;
 axios.interceptors.request.use((config) => {
@@ -61,7 +61,7 @@ axios.interceptors.response.use((res) => {
   return Promise.reject(error.response);
 });
 
-let $httpVue = null, currentToken = '';
+let $httpVue = null, currentToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6IjEyZjYyN2Q4LWIyMTQtNGFjYi1hMGNmLWMzNzE3ZmYwMjkwYyIsImlhdCI6IjIwMjAvNi8zIDY6Mzc6NTYiLCJ1bmlxdWVfbmFtZSI6IjNlNmVlMDNkLWExODMtMTFlYS04MzY4LTAyNDJhYzExMDAwMiIsIm5hbWUiOiJhZG1pbiIsImVtYWlsIjoiIiwidXNlcnRydWVuYW1lIjoiIiwicm9sZW5hbWUiOiIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy91c2VyZGF0YSI6IlVzZXJEYXRhIiwibmJmIjoxNTkxMTY2Mjc2LCJleHAiOjE1OTExNjgwNzYsImlzcyI6Ik1hbmFnZXIuY24iLCJhdWQiOiJNYW5hZ2VyIn0.NSgYhygRQq_O-KzkHXt_vphyZJCg1sP9avgl-y5qgpM';
 const _Authorization = 'Authorization', _Bearer = 'Bearer ';
 function init(vue) {
     $httpVue = vue;
@@ -88,7 +88,7 @@ let loading = {
 }
 function getToken() {
     if (currentToken) {
-        return _Bearer + currentToken;
+        return _Bearer+currentToken;
     }
     return $httpVue.$store.getters.getToken();
 }

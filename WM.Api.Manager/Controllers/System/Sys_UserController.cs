@@ -26,16 +26,15 @@ namespace WM.Api.Manager.Controllers.System
     [ApiController]
     public class Sys_UserController : ApiBaseController<ISys_UserService>
     {
-        private readonly TokenManagement _tokenManagement;
+      
      /// <summary>
      /// 
      /// </summary>
      /// <param name="service"></param>
-     /// <param name="tokenManagement"></param>
-        public Sys_UserController(ISys_UserService service,IOptions<TokenManagement> tokenManagement)
+        public Sys_UserController(ISys_UserService service)
                  : base(service)
         {
-            _tokenManagement = tokenManagement.Value;
+          
         }
         /// <summary>
         ///登录
@@ -45,19 +44,7 @@ namespace WM.Api.Manager.Controllers.System
         public IActionResult Login(M_AdminUserRQ rq)
         {
             var r = Service.Login(rq.UserName, rq.Password);
-            if (r.Status)
-            {
-                var data = (M_AdminUserRP)r.Data;
-                var adminToken = new AdminUser
-                {
-                    User_Id = data.id,
-                    Email = data.Email,
-                    Role_Id = data.RoleId,
-                    UserName = data.Name,
-                };
-                var token = TokenHelper.CreateAdminToken(_tokenManagement, adminToken);
-                Response.Headers.Add("Authorization", new StringValues(token));
-            }
+           
             return Ok(r);
         }
     }

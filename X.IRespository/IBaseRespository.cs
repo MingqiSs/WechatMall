@@ -1,6 +1,7 @@
 ﻿using SqlSugar;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace X.IRespository
 {
@@ -17,6 +18,12 @@ namespace X.IRespository
         /// <returns>bool</returns>
         bool Add(TEntity entity);
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<bool> AddAsync(TEntity entity);
+        /// <summary>
         /// 批量新增方法
         /// </summary>
         /// <param name="eitentitysity"></param>
@@ -29,6 +36,12 @@ namespace X.IRespository
         /// <param name="entity"></param>
         /// <returns></returns>
         bool Update(TEntity entity);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        Task<bool> UpdateAsync(TEntity entity);
         /// <summary>
         /// 以主键为条件更新某些列
         /// </summary>

@@ -3,7 +3,7 @@
     <!-- <div class="log-bg"></div> -->
     <div class="login-contianer">
       <div class="login-project">
-        <span class="project-name large">xxxx</span>
+        <span class="project-name large">通用</span>
         <span class="desc">后台管理系统</span>
       </div>
       <div class="login-form">
@@ -46,7 +46,6 @@
         <div style="loging-btn">
           <Button size="large" type="info" @click="login" long>登陆</Button>
         </div>
-        <div style="padding-top: 10px;text-align: right;">登陆帐号admin666,密码123456(本地帐号admin,密码123456)</div>
         <!-- <div class="action">
           <a @click="()=>{}">注册</a>
           <a @click="()=>{}">忘记密码</a>
@@ -78,7 +77,7 @@ export default {
 
       this.http
         .post(
-          "/api/user/login",
+          "/api/Sys_User/login",
           {
             userName: this.userInfo.userName,
             passWord: this.userInfo.passWord
@@ -86,6 +85,7 @@ export default {
           "正在登陆...."
         )
         .then(result => {
+          console.log(result);
           if (!result.status) return this.$Message.error(result.message);
           this.$Message.info("登陆成功,正在跳转!");
           this.$store.commit("setUserInfo", result.data);

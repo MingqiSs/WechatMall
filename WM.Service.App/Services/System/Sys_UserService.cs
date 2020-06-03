@@ -1,9 +1,14 @@
 ﻿using MC.Infrastructure.Helpers;
+using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Primitives;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using WM.Infrastructure.Config;
+using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Models;
 using WM.Infrastructure.UserManager;
+using WM.Infrastructure.Utilities;
 using WM.Service.App.Dto.ManagerDto.RP;
 using WM.Service.App.Interface;
 using WM.Service.Domain.Entities;
@@ -45,17 +50,33 @@ namespace WM.Service.App.Services
             {
                 return responseContent.Error("账户或密码错误");
             }
+            var adminToken = new AdminUser
+            {
+                User_Id = user.UID,
+                Email = user.Email,
+                Role_Id = user.Role_Id,
+                UserName = user.UserName,
+            };
+            //获取token配置
+           var tokenManagement= AutofacContainerModule.GetService<IOptions<TokenManagement>>().Value;
+
+            var token = TokenHelper.CreateAdminToken(tokenManagement, adminToken);
+          
+            //HttpContext.Current.Response.Headers.Add("Authorization", new StringValues(token));
 
             GetPermissions(user.Role_Id);
 
             return responseContent.OK("登录成功", new M_AdminUserRP
             {
                 id = user.UID,
-                Name = user.UserName,
+                UserName = user.UserName,
                 RoleId = user.Role_Id,
+                HeadImageUrl = user.HeadImageUrl,
+                Moblie = user.Mobile,
                 Email = user.Email,
-                Menus = new List<M_AdminRoleMenuRP> { },
-            }) ;
+                Token = token,
+              //  Menus = new List<M_AdminRoleMenuRP> { },
+            }); 
         }
         /// <summary>
         /// 获取权限

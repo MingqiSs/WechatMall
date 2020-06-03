@@ -11,24 +11,19 @@ namespace WM.Infrastructure.Models
     public enum EnumDataStatus
     {
         /// <summary>
-        /// 全部
+        ///未启用
         /// </summary>
-        [Description("全部")]
-        All = 0,
+        [Description("未启用")]
+        Disable = 0,
         /// <summary>
         /// 启用
         /// </summary>
         [Description("启用")]
         Enable = 1,
         /// <summary>
-        /// 停用
-        /// </summary>
-        [Description("停用")]
-        Disable = 2,
-        /// <summary>
         /// 删除
         /// </summary>
         [Description("删除")]
-        Delete = 3
+        Delete = 2
     }
 }

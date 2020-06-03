@@ -12,7 +12,7 @@
     </div>
     <div class="vol-container">
       <div class="vol-header">
-        <span class="header-text">xxx后台管理</span>
+        <span class="header-text">通用后台管理</span>
         <div class="header-info">
           <div class="h-link">
             <ul>
@@ -107,7 +107,7 @@ export default {
       date: "",
       theme: "blue",
       links: [
-        { text: "框架文档", path: "/document", id: -2 },
+        // { text: "框架文档", path: "/document", id: -2 },
         { text: "个人中心", path: "/UserInfo", id: -1 },
         { text: "安全退出", path: "/login", id: -4 }
       ],
@@ -130,8 +130,19 @@ export default {
     setInterval(function() {
       $vueIndex.showTime();
     }, 1000);
+        //   this.http.post("/api/menu/getTreeMenu", {}, true)
+        // .then(data => {
+        //      data.forEach(d => {             
+        //   if (!d.icon) d.icon = "ios-aperture";
+        //   d.path = (d.url || "").replace("/Manager", "");
+        //   d.to = (d.url || "").replace("/Manager", "");
+        // });
+        // $vueIndex.$store.dispatch("setPermission", data);
+        //  console.log(JSON.stringify(data))
+        // $vueIndex.menuOptions = data;
+        // });
     this.http.ajax({
-      url: "api/menu/getTreeMenu",
+      url: "/api/menu/getTreeMenu",
       json: true,
       success: function(data) {
         data.forEach(d => {

@@ -175,6 +175,8 @@ export default {
           this.fields.auth = "";
         }
         this.fields.icon = this.icon;
+        this.fields.sort=parseInt(this.fields.sort)
+        this.fields.parentId=parseInt(this.fields.parentId)
         this.http.post("/api/menu/save", this.fields, true).then(x => {
           if (!x.status) {
             this.$Message.error(x.message);
@@ -186,7 +188,7 @@ export default {
             this.tree.forEach(t => {
               if (t.id == this.fields.menu_Id) {
                 t.name = this.fields.menuName;
-                t.orderNo = this.fields.orderNo;
+                t.orderNo = this.fields.sort;
                 t.parentId = this.fields.parentId;
               }
             });
@@ -197,7 +199,7 @@ export default {
           this.tree.push({
             id: x.data.menu_Id,
             name: this.fields.menuName,
-            orderNo: this.fields.orderNo,
+            orderNo: this.fields.sort,
             parentId: this.fields.parentId
           });
         });
@@ -329,7 +331,7 @@ export default {
           },
           {
             title: "排序号",
-            field: "orderNo",
+            field: "sort",        
             type: "number",
             min: 0,
             required: true
@@ -338,14 +340,24 @@ export default {
         [
           {
             title: "是否启用",
-            field: "enable",
+            field: "dataStatus",
             dataType: "int",
             required: true,
             type: "switch",
             data: [
-              { key: "1", value: "是" },
-              { key: "是", value: "否" }
+              { key: "1", value: "1" },
+              { key: "2", value: "2" }
             ]
+          }
+        ]
+        ,
+        [
+          {
+            title: "创建人",
+            field: "creator",
+            dataType: "string",
+            displayType: "label",
+            disabled: true
           },
           {
             title: "创建时间",
@@ -354,31 +366,23 @@ export default {
             displayType: "label",
             disabled: true
           }
-          // {
-          //   title: "修改时间",
-          //   field: "modifyDate",
-          //   dataType: "datetime",
-          //   displayType: "label",
-          //   disabled: true
-          // }
+        ],
+        [
+          {
+            title: "修改人",
+            field: "modifier",
+            dataType: "string",
+            displayType: "label",
+            disabled: true
+          },
+          {
+            title: "修改时间",
+            field: "modifyDate",
+            dataType: "datetime",
+            displayType: "label",
+            disabled: true
+          }
         ]
-        // ,
-        // [
-        //   {
-        //     title: "创建人",
-        //     field: "creator",
-        //     dataType: "string",
-        //     displayType: "label",
-        //     disabled: true
-        //   },
-        //   {
-        //     title: "创建时间",
-        //     field: "createDate",
-        //     dataType: "datetime",
-        //     displayType: "label",
-        //     disabled: true
-        //   }
-        // ]
       ],
       fields: {
         menu_Id: 0,
@@ -388,11 +392,11 @@ export default {
         url: "",
         auth: "",
         icon: "",
-        orderNo: "",
-        enable: 1,
-        createDate: "",
-        creator: "",
-        modifyDate: ""
+        sort: 0,
+        dataStatus: 1,
+       // createDate: "",
+        //creator: "",
+       // modifyDate: ""
       },
       actionFields: {
         name: "",

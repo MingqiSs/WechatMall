@@ -17,27 +17,35 @@ namespace WM.Service.App.Dto.ManagerDto.RP
         /// <summary>
         /// 管理员名称
         /// </summary>
-        public string Name { get; set; }
+        public string UserName { get; set; }
         /// <summary>
         /// 电话
         /// </summary>
         public string Moblie { get; set; }
         /// <summary>
-        /// 角色Id 1:超级管理员,2:财务,3:运营
+        /// 
         /// </summary>
         public int RoleId { get; set; }
         /// <summary>
         /// 角色code
         /// </summary>
-        public string RoleCode { get; set; }
+       // public string RoleCode { get; set; }
         /// <summary>
         /// 邮箱
         /// </summary>
         public string Email { get; set; }
         /// <summary>
+        /// 
+        /// </summary>
+        public string Token { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string HeadImageUrl { get; set; }
+        /// <summary>
         /// 菜单集合
         /// </summary>
-        public List<M_AdminRoleMenuRP> Menus { get; set; }
+      //  public List<M_AdminRoleMenuRP> Menus { get; set; }
     }
 
     public class M_AdminRoleMenuRP

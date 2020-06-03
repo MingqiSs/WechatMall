@@ -1,6 +1,7 @@
 ﻿using SqlSugar;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using X.IRespository;
 
 
@@ -44,7 +45,14 @@ namespace X.Respository
         {
             return db.Insertable(entity).ExecuteCommand() > 0;
         }
-
+        /// <summary>
+        /// 新增方法
+        /// </summary>
+        /// <param name="eitity"></param>
+        public async Task<bool> AddAsync(TEntity entity)
+        {
+            return await db.Insertable(entity).ExecuteCommandAsync() > 0;
+        }
         /// <summary>
         /// 批量新增方法
         /// </summary>
@@ -69,6 +77,15 @@ namespace X.Respository
         public bool Update(TEntity entity)
         {
             return db.Updateable(entity).ExecuteCommand() > 0;
+        }
+        /// <summary>
+        /// 以主键为条件更新
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public async Task<bool> UpdateAsync(TEntity entity)
+        {
+            return await db.Updateable(entity).ExecuteCommandAsync() > 0;
         }
         /// <summary>
         /// 以主键为条件更新某些列
