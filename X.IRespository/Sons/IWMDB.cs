@@ -20,7 +20,7 @@ namespace X.IRespository.Sons.WMDB
     public partial interface ISys_Role:IBaseRespository<X.Models.WMDB.Sys_Role>
     {
     }
-    public partial interface ISys_Roleauth:IBaseRespository<X.Models.WMDB.Sys_Roleauth>
+    public partial interface ISys_RoleAuth:IBaseRespository<X.Models.WMDB.Sys_RoleAuth>
     {
     }
     public partial interface ISys_Setting:IBaseRespository<X.Models.WMDB.Sys_Setting>

@@ -12,6 +12,20 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:CURRENT_TIMESTAMP
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
@@ -38,20 +52,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string Value { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:CURRENT_TIMESTAMP
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
 
 
     }

@@ -18,6 +18,6 @@ namespace WM.Service.App.Interface
         /// <param name="password"></param>
         /// <param name="ip"></param>
         /// <returns></returns>
-        WebResponseContent AdminLogin(string userName, string password);
+        WebResponseContent Login(string userName, string password);
     }
 }

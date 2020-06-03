@@ -56,7 +56,7 @@ namespace X.Respository.Sons.WMDB
                }
            }
     }
-    public partial class Sys_Roleauth:BaseRespository<X.Models.WMDB.Sys_Roleauth>,X.IRespository.Sons.WMDB.ISys_Roleauth
+    public partial class Sys_RoleAuth:BaseRespository<X.Models.WMDB.Sys_RoleAuth>,X.IRespository.Sons.WMDB.ISys_RoleAuth
     {
            public override SqlSugarClient db
            {

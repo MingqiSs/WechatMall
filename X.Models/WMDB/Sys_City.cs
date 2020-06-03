@@ -12,6 +12,20 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Code { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:CURRENT_TIMESTAMP
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:A
            /// Nullable:False
            /// </summary>
@@ -52,20 +66,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public byte Sort { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Code { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:CURRENT_TIMESTAMP
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
 
 
     }

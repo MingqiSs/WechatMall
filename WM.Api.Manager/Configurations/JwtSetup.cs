@@ -46,18 +46,18 @@ namespace WM.Api.Manager.Configurations
                     ValidIssuer = tokenManagement.Issuer
 
                 };
-                //options.Events = new JwtBearerEvents()
-                //{
-                //    OnChallenge = context =>
-                //    {
-                //        context.HandleResponse();
-                //        context.Response.Clear();
-                //        context.Response.ContentType = "application/json";
-                //        context.Response.StatusCode = 401;
-                //        context.Response.WriteAsync(new { message = "授权未通过", status = false, code = 401 }.Serialize());
-                //        return Task.CompletedTask;
-                //    }
-                //};
+                options.Events = new JwtBearerEvents()
+                {
+                    OnChallenge = context =>
+                    {
+                        context.HandleResponse();
+                        context.Response.Clear();
+                        context.Response.ContentType = "application/json";
+                        context.Response.StatusCode = 401;
+                        context.Response.WriteAsync(new { message = "授权未通过", status = false, code = 401 }.Serialize());
+                        return Task.CompletedTask;
+                    }
+                };
             });
 
         }

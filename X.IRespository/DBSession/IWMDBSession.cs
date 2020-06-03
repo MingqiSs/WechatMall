@@ -12,7 +12,7 @@ namespace X.IRespository.DBSession
            X.IRespository.Sons.WMDB.ISys_Menu Sys_Menu {get;}
            X.IRespository.Sons.WMDB.ISys_Province Sys_Province {get;}
            X.IRespository.Sons.WMDB.ISys_Role Sys_Role {get;}
-           X.IRespository.Sons.WMDB.ISys_Roleauth Sys_Roleauth {get;}
+           X.IRespository.Sons.WMDB.ISys_RoleAuth Sys_RoleAuth {get;}
            X.IRespository.Sons.WMDB.ISys_Setting Sys_Setting {get;}
            X.IRespository.Sons.WMDB.ISys_User Sys_User {get;}
            X.IRespository.Sons.WMDB.Ir_product_tag r_product_tag {get;}

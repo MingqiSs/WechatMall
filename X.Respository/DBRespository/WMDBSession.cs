@@ -35,9 +35,9 @@ public partial class WMDBSession : X.Respository.RespositorySession, X.IResposit
            {
                get { return new X.Respository.Sons.WMDB.Sys_Role(); }
            }
-           public X.IRespository.Sons.WMDB.ISys_Roleauth Sys_Roleauth
+           public X.IRespository.Sons.WMDB.ISys_RoleAuth Sys_RoleAuth
            {
-               get { return new X.Respository.Sons.WMDB.Sys_Roleauth(); }
+               get { return new X.Respository.Sons.WMDB.Sys_RoleAuth(); }
            }
            public X.IRespository.Sons.WMDB.ISys_Setting Sys_Setting
            {

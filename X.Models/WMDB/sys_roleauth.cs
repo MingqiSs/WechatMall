@@ -6,9 +6,31 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class Sys_Roleauth
+    public partial class Sys_RoleAuth
     {
-           public Sys_Roleauth(){}
+           public Sys_RoleAuth(){}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int Auth_Id { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string AuthValue { get; set; }
 
            /// <summary>
            /// Desc:
@@ -51,28 +73,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public int? Role_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public int Auth_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string AuthValue { get; set; }
 
 
     }

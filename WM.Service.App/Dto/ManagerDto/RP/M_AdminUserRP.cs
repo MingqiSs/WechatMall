@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WM.Infrastructure.Models;
 
 namespace WM.Service.App.Dto.ManagerDto.RP
 {
@@ -46,25 +47,21 @@ namespace WM.Service.App.Dto.ManagerDto.RP
         /// </summary>
         public int Id { get; set; }
         /// <summary>
+        /// 名称
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
         /// 跳转地址
         /// </summary>
-        public string Path { get; set; }
+        public string Url { get; set; }
         /// <summary>
         /// Icon
         /// </summary>
         public string Icon { get; set; }
         /// <summary>
-        /// 名称
-        /// </summary>
-        public string Name { get; set; }
-        /// <summary>
         /// 父节点
         /// </summary>
-        public int ParentID { get; set; }
-        /// <summary>
-        /// 排序
-        /// </summary>
-        //public int Sort { get; set; }
+        public int ParentId { get; set; }
         /// <summary>
         /// 下级菜单
         /// </summary>

@@ -11,6 +11,34 @@ namespace X.Models.WMDB
            public wm_user_shopping_address(){}
 
            /// <summary>
+           /// Desc:市
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int CityID { get; set; }
+
+           /// <summary>
+           /// Desc:联系人详细地址
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Receiver_Address { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:联系人分名称
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Receiver_Name { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:1
            /// Nullable:False
@@ -66,34 +94,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ProvinceID { get; set; }
-
-           /// <summary>
-           /// Desc:市
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int CityID { get; set; }
-
-           /// <summary>
-           /// Desc:联系人详细地址
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Receiver_Address { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
-
-           /// <summary>
-           /// Desc:联系人分名称
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Receiver_Name { get; set; }
 
 
     }

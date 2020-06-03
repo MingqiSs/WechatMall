@@ -15,14 +15,42 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string Creator { get; set; }
+           public string Auth { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public int? OrderNo { get; set; }
+           public string Modifier { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? CreateDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Creator { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ParentId { get; set; }
 
            /// <summary>
            /// Desc:
@@ -34,9 +62,9 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:False
+           /// Nullable:True
            /// </summary>
-           public int ParentId { get; set; }
+           public int? Sort { get; set; }
 
            /// <summary>
            /// Desc:
@@ -80,34 +108,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string MenuName { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Auth { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Modifier { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? CreateDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyDate { get; set; }
 
 
     }

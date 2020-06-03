@@ -15,6 +15,21 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           [Key]
+           public int BillNo { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public DateTime CreateTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public decimal Order_Amount { get; set; }
 
            /// <summary>
@@ -44,21 +59,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string Remark { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public int BillNo { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public DateTime CreateTime { get; set; }
 
 
     }
