@@ -137,7 +137,7 @@ namespace WM.Service.App
                  ? string.Join(",", options.Key)
                  : $"'{string.Join("','", options.Key)}'";
             //逻辑删除
-            string sql = $"update {tableName} set DataStatus=3 where {tKey} in ({joinKeys});";
+            string sql = $"update {tableName} set Enable=2 where {tKey} in ({joinKeys});";
 
             Response.Status = repository.Sql_ExecuteCommand(sql) > 0;
             if (Response.Status && string.IsNullOrEmpty(Response.Message)) Response.OK(ResponseType.DelSuccess);
@@ -153,7 +153,7 @@ namespace WM.Service.App
             Type entityType = typeof(T);
             var tableName = entityType.Name;
             PageGridData<T> pageGridData = new PageGridData<T>();
-            var where = new StringBuilder($" DataStatus=1");
+            var where = new StringBuilder($" Enable=1");
             var order = new StringBuilder($" Sort desc");
             var query = new StringBuilder($"*");
             int totalCount = 0;

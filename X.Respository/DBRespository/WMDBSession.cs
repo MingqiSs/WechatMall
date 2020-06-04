@@ -19,6 +19,14 @@ public partial class WMDBSession : X.Respository.RespositorySession, X.IResposit
            {
                get { return new X.Respository.Sons.WMDB.Sys_City(); }
            }
+           public X.IRespository.Sons.WMDB.ISys_Dictionary Sys_Dictionary
+           {
+               get { return new X.Respository.Sons.WMDB.Sys_Dictionary(); }
+           }
+           public X.IRespository.Sons.WMDB.ISys_DictionaryList Sys_DictionaryList
+           {
+               get { return new X.Respository.Sons.WMDB.Sys_DictionaryList(); }
+           }
            public X.IRespository.Sons.WMDB.ISys_Log Sys_Log
            {
                get { return new X.Respository.Sons.WMDB.Sys_Log(); }

@@ -12,6 +12,20 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Value { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:CURRENT_TIMESTAMP
            /// Nullable:False
            /// </summary>
@@ -22,7 +36,7 @@ namespace X.Models.WMDB
            /// Default:1
            /// Nullable:False
            /// </summary>
-           public byte DataStatus { get; set; }
+           public byte Enable { get; set; }
 
            /// <summary>
            /// Desc:
@@ -38,20 +52,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Key { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Value { get; set; }
 
 
     }

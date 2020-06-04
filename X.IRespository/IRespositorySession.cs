@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Threading.Tasks;
 using WM.Infrastructure.Extensions.AutofacManager;
 
 namespace X.IRespository
@@ -23,6 +24,14 @@ namespace X.IRespository
         /// <param name="sql"></param>
         /// <returns></returns>
         List<T> Sql_Query<T>(string sql, params SugarParameter[] parameters) where T : class, new();
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="parameters"></param>
+        /// <returns></returns>
+        Task<List<T>> Sql_QueryAsync<T>(string sql, params SugarParameter[] parameters) where T : class, new();
         /// <summary>
         ///执行分页查询,返回list
         /// </summary>

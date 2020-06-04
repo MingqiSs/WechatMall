@@ -8,6 +8,8 @@ namespace X.IRespository.DBSession
     public partial interface IWMDBSession:X.IRespository.IRespositorySession
     {
            X.IRespository.Sons.WMDB.ISys_City Sys_City {get;}
+           X.IRespository.Sons.WMDB.ISys_Dictionary Sys_Dictionary {get;}
+           X.IRespository.Sons.WMDB.ISys_DictionaryList Sys_DictionaryList {get;}
            X.IRespository.Sons.WMDB.ISys_Log Sys_Log {get;}
            X.IRespository.Sons.WMDB.ISys_Menu Sys_Menu {get;}
            X.IRespository.Sons.WMDB.ISys_Province Sys_Province {get;}

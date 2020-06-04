@@ -16,6 +16,7 @@ let extension = {
     methods: {//事件扩展
         onInit() {
             this.boxOptions.height = 530;
+            
         },
         onInited() {
         },

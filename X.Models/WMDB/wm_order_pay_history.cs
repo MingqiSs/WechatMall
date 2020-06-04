@@ -15,6 +15,27 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public string Payment_Amount { get; set; }
+
+           /// <summary>
+           /// Desc:支付方式(1:微信)
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public int PaymentType { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Remark { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            [Key]
            public int BillNo { get; set; }
 
@@ -38,27 +59,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Pay_Json { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Payment_Amount { get; set; }
-
-           /// <summary>
-           /// Desc:支付方式(1:微信)
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public int PaymentType { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Remark { get; set; }
 
 
     }

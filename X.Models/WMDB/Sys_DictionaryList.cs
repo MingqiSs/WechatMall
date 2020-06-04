@@ -6,16 +6,38 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class Sys_Role
+    public partial class Sys_DictionaryList
     {
-           public Sys_Role(){}
+           public Sys_DictionaryList(){}
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int DicList_ID { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string DeptName { get; set; }
+           public string Remark { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string DicName { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string DicValue { get; set; }
 
            /// <summary>
            /// Desc:
@@ -29,7 +51,21 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:True
            /// </summary>
+           public DateTime? CreateDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
            public string Modifier { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? CreateID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -43,7 +79,21 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:True
            /// </summary>
-           public DateTime? CreateDate { get; set; }
+           public string Creator { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? ModifyID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? Dic_ID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -51,49 +101,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public int? OrderNo { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Creator { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ParentId { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string DeleteBy { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public int Role_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? Dept_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string RoleName { get; set; }
 
 
     }

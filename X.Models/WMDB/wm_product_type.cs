@@ -15,6 +15,20 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int Sort { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public DateTime CreateTime { get; set; }
 
            /// <summary>
@@ -38,20 +52,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int Sort { get; set; }
 
 
     }

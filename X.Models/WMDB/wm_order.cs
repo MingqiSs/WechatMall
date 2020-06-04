@@ -11,6 +11,56 @@ namespace X.Models.WMDB
            public wm_order(){}
 
            /// <summary>
+           /// Desc:(1 在线支付,2货到付款)
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte Distribution { get; set; }
+
+           /// <summary>
+           /// Desc:收货人电话
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Receiver_Phone { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:微信订单号
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string WxOrderNo { get; set; }
+
+           /// <summary>
+           /// Desc:订单价格
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public decimal OrderPrice { get; set; }
+
+           /// <summary>
            /// Desc:账单号
            /// Default:
            /// Nullable:False
@@ -65,56 +115,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Receiver_Name { get; set; }
-
-           /// <summary>
-           /// Desc:(1 在线支付,2货到付款)
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte Distribution { get; set; }
-
-           /// <summary>
-           /// Desc:收货人电话
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Receiver_Phone { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
-           /// Desc:微信订单号
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string WxOrderNo { get; set; }
-
-           /// <summary>
-           /// Desc:订单价格
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public decimal OrderPrice { get; set; }
 
 
     }

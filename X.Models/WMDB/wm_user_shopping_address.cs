@@ -11,6 +11,35 @@ namespace X.Models.WMDB
            public wm_user_shopping_address(){}
 
            /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int ID { get; set; }
+
+           /// <summary>
+           /// Desc:默认
+           /// Default:b'0'
+           /// Nullable:False
+           /// </summary>
+           public bool Isdef { get; set; }
+
+           /// <summary>
+           /// Desc:修改时间
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:省
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ProvinceID { get; set; }
+
+           /// <summary>
            /// Desc:市
            /// Default:
            /// Nullable:False
@@ -65,35 +94,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:默认
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool Isdef { get; set; }
-
-           /// <summary>
-           /// Desc:修改时间
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
-           /// Desc:省
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ProvinceID { get; set; }
 
 
     }

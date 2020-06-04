@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Encodings.Web;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
@@ -11,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
 using WM.Api.Manager.Configurations;
 using WM.Api.Manager.Filter;
@@ -18,7 +21,6 @@ using WM.Infrastructure.DI;
 using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Filters;
 using WM.Infrastructure.UserManager;
-
 namespace WM.Api.Manager
 {
     public class Startup
@@ -34,16 +36,25 @@ namespace WM.Api.Manager
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-         
+
             services.AddControllers();
+
             services.AddMvc(options =>
             {
-              //  options.Filters.Add(typeof(ApiAuthorizeFilter));
-               // options.Filters.Add(typeof(ActionPermissionFilter));
+                //  options.Filters.Add(typeof(ApiAuthorizeFilter));
+                // options.Filters.Add(typeof(ActionPermissionFilter));
                 //options.Filters.Add(typeof(ActionExecuteFilter));
             });
+            //    .AddJsonOptions(options =>
+            //{
+            //    options.JsonSerializerOptions.Encoder = JavaScriptEncoder.Create(UnicodeRanges.All);
+            //    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+            //}); 
+            
             services.AddSwaggerSetup();
 
+           
+            
             #region ×¢²á ÈÕÖ¾
             services.AddLogging(t => t.AddNLog());
             #endregion

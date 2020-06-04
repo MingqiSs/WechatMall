@@ -8,6 +8,12 @@ namespace X.IRespository.Sons.WMDB
     public partial interface ISys_City:IBaseRespository<X.Models.WMDB.Sys_City>
     {
     }
+    public partial interface ISys_Dictionary:IBaseRespository<X.Models.WMDB.Sys_Dictionary>
+    {
+    }
+    public partial interface ISys_DictionaryList:IBaseRespository<X.Models.WMDB.Sys_DictionaryList>
+    {
+    }
     public partial interface ISys_Log:IBaseRespository<X.Models.WMDB.Sys_Log>
     {
     }

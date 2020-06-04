@@ -340,7 +340,7 @@ export default {
         [
           {
             title: "是否启用",
-            field: "dataStatus",
+            field: "enable",
             dataType: "int",
             required: true,
             type: "switch",
@@ -393,7 +393,7 @@ export default {
         auth: "",
         icon: "",
         sort: 0,
-        dataStatus: 1,
+        enable: 1,
        // createDate: "",
         //creator: "",
        // modifyDate: ""

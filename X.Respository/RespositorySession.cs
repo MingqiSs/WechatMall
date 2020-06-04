@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace X.Respository
 {
@@ -30,6 +31,10 @@ namespace X.Respository
         public List<T> Sql_Query<T>(string sql, params SugarParameter[] parameters) where T : class, new()
         {
             return DB.Ado.SqlQuery<T>(sql, parameters);
+        }
+        public async Task<List<T>> Sql_QueryAsync<T>(string sql, params SugarParameter[] parameters) where T : class, new()
+        {
+            return await DB.Ado.SqlQueryAsync<T>(sql, parameters);
         }
         /// <summary>
         ///执行分页查询,返回list     

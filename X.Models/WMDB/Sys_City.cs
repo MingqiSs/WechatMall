@@ -12,6 +12,34 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:b'0'
+           /// Nullable:False
+           /// </summary>
+           public bool IsHot { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:0
+           /// Nullable:True
+           /// </summary>
+           public int? ProvinceID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:100
+           /// Nullable:False
+           /// </summary>
+           public byte Sort { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:
            /// Nullable:False
            /// </summary>
@@ -38,34 +66,6 @@ namespace X.Models.WMDB
            /// </summary>
            [Key]
            public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool IsHot { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Name { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:0
-           /// Nullable:True
-           /// </summary>
-           public int? ProvinceID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:100
-           /// Nullable:False
-           /// </summary>
-           public byte Sort { get; set; }
 
 
     }

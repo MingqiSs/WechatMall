@@ -15,6 +15,34 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:True
            /// </summary>
+           public string HeadImg { get; set; }
+
+           /// <summary>
+           /// Desc:手机号
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Mobile { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Name { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
            public DateTime? BirthDate { get; set; }
 
            /// <summary>
@@ -66,34 +94,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string WeChatAppID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string HeadImg { get; set; }
-
-           /// <summary>
-           /// Desc:手机号
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Mobile { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Name { get; set; }
 
 
     }

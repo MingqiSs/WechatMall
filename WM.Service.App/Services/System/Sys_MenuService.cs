@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WM.Infrastructure.Models;
@@ -30,32 +31,72 @@ namespace WM.Service.App.Services.System
         public async Task<List<M_AdminRoleMenuRP>>  GetCurrentMenuList()
         {
             var where = string.Empty;
-            if (!UserContext.Current.IsSuperAdmin)
+          
+            var list =await repository.Sys_Menu.Where(q=>q.Enable==(byte)EnumDataStatus.Enable).ToListAsync();
+            //var aaa = UserContext.Current.Permissions;
+            var menu = (from a in GetPermissions(UserContext.Current.RoleId)
+                       join b in list
+                       on a.Menu_Id equals b.Menu_Id
+                       orderby b.Sort descending
+                       select new M_AdminRoleMenuRP
+                       {
+                           Id = a.Menu_Id,
+                           Name = b.MenuName,
+                           Url = b.Url,
+                           ParentId = b.ParentId,
+                           Icon = b.Icon,
+                           Permission = a.UserAuthArr
+                       }).ToList();
+            return menu;
+        }
+        /// <summary>
+        /// 获取权限
+        /// </summary>
+        /// <returns></returns>
+        private List<Permissions> GetPermissions(int role_Id)
+        {
+            var where = string.Empty;
+            if (!UserContext.Current.IsRoleIdSuperAdmin(role_Id))
             {
-                where = $" and b.Role_Id = {UserContext.Current.RoleId}";
+                where = $" and b.Role_Id = {role_Id}";
             }
-            var list =await repository.DB.Ado.SqlQueryAsync<M_AdminRoleMenuRP>($@"
-                                                                SELECT a.Menu_Id as id,
-                                                                a.MenuName as Name,
-                                                                a.Icon,
-                                                                a.Url,
-                                                                 a.ParentId,
-                                                                a.Auth, 
-                                                                b.AuthValue as permission 
-                                                                from Sys_Menu a
-                                                                INNER JOIN Sys_RoleAuth b
-                                                                on a.Menu_Id=b.Menu_Id
-                                                                 where a.DataStatus=1 
-                                                               {where}");
+            var list = repository.Sql_Query<Permissions>($@"SELECT a.Menu_Id,a.ParentId,a.TableName,a.Auth, b.AuthValue from Sys_Menu a
+                                                            INNER JOIN Sys_RoleAuth b
+                                                            on a.Menu_Id = b.Menu_Id
+                                                             where a.Enable = 1
+                                                            {where}");
+            list.ForEach(q => q.UserAuthArr = new string[] { });
+            UserContext.Current.Permissions = list;
             return list;
         }
+        //private List<Permissions> MenuActionToArray(List<Permissions> permissions)
+        //{
+        //    permissions.ForEach(x =>
+        //    {
+        //        try
+        //        {
+        //            x.UserAuthArr = string.IsNullOrEmpty(x.UserAuth)
+        //            ? new string[0]
+        //            : x.UserAuth.DeserializeObject<List<Sys_Actions>>().Select(s => s.Value).ToArray();
+        //        }
+        //        catch { }
+        //        finally
+        //        {
+        //            if (x.UserAuthArr == null)
+        //            {
+        //                x.UserAuthArr = new string[0];
+        //            }
+        //        }
+        //    });
+        //    return permissions;
+        //}
         /// <summary>
         /// 获取所有菜单
         /// </summary>
         /// <returns></returns>
         public async Task<object> GetMenuList()
         {
-            var list = await repository.Sys_Menu.Where(q => q.DataStatus != (byte)EnumDataStatus.Delete).Select(a => new
+            var list = await repository.Sys_Menu.Where(q => q.Enable != (byte)EnumDataStatus.Delete).Select(a => new
             {
                 id = a.Menu_Id,
                 parentId = a.ParentId,
@@ -70,7 +111,7 @@ namespace WM.Service.App.Services.System
         /// <returns></returns>
         public async Task<object> GetTreeInfo(int menuId)
         {
-            var list = await repository.Sys_Menu.Where(q => q.DataStatus != (byte)EnumDataStatus.Delete && q.Menu_Id== menuId).Select(p => new
+            var list = await repository.Sys_Menu.Where(q => q.Enable != (byte)EnumDataStatus.Delete && q.Menu_Id== menuId).Select(p => new
             {
                 p.Menu_Id,
                 p.ParentId,
@@ -79,7 +120,7 @@ namespace WM.Service.App.Services.System
                 p.Auth,
                 p.Sort,
                 p.Icon,
-                p.DataStatus,
+                p.Enable,
                 p.CreateDate,
                 p.Creator,
                 p.TableName,
@@ -117,7 +158,7 @@ namespace WM.Service.App.Services.System
                 }
                 menu.ModifyDate = DateTime.Now;
                 menu.Modifier = UserContext.Current.UserName;
-                menu.DataStatus =(byte)EnumDataStatus.Enable;
+                menu.Enable =(byte)EnumDataStatus.Enable;
                 isSave = await repository.Sys_Menu.UpdateAsync(menu);
 
             }

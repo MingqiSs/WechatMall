@@ -130,19 +130,8 @@ export default {
     setInterval(function() {
       $vueIndex.showTime();
     }, 1000);
-        //   this.http.post("/api/menu/getTreeMenu", {}, true)
-        // .then(data => {
-        //      data.forEach(d => {             
-        //   if (!d.icon) d.icon = "ios-aperture";
-        //   d.path = (d.url || "").replace("/Manager", "");
-        //   d.to = (d.url || "").replace("/Manager", "");
-        // });
-        // $vueIndex.$store.dispatch("setPermission", data);
-        //  console.log(JSON.stringify(data))
-        // $vueIndex.menuOptions = data;
-        // });
-    this.http.ajax({
-      url: "/api/menu/getTreeMenu",
+   this.http.ajax({
+      url: "api/menu/getTreeMenu",
       json: true,
       success: function(data) {
         data.forEach(d => {

@@ -44,7 +44,7 @@ namespace WM.Service.App.Services
             }
             // var encryptPwd = AESEncrypt.Encrypt(password, AESEncrypt.pwdKey);
 
-            var user = repository.Sys_User.Where(q => q.DataStatus == (byte)DataStatus.Enable)
+            var user = repository.Sys_User.Where(q => q.Enable == (byte)DataStatus.Enable)
                               .Where(q => q.UserName == userName && q.UserPwd == password).First();
             if (user == null)
             {
@@ -92,7 +92,7 @@ namespace WM.Service.App.Services
             var list = repository.Sql_Query<Permissions>($@"SELECT a.Menu_Id,a.ParentId,a.TableName,a.Auth, b.AuthValue from Sys_Menu a
                                                             INNER JOIN Sys_RoleAuth b
                                                             on a.Menu_Id = b.Menu_Id
-                                                             where a.DataStatus = 1
+                                                             where a.Enable = 1
                                                             {where}");
             UserContext.Current.Permissions = list;
             return list; 

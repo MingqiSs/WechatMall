@@ -6,23 +6,101 @@ using System.Text;
 namespace X.Models.WMDB
 {
     [Serializable]
-    public partial class Sys_Role
+    public partial class Sys_Dictionary
     {
-           public Sys_Role(){}
+           public Sys_Dictionary(){}
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public string DeptName { get; set; }
+           public string DBServer { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
-           public byte? Enable { get; set; }
+           public int? ModifyID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string DbSql { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? OrderNo { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           [Key]
+           public int Dic_ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int ParentId { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string DicName { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Remark { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Config { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string DicNo { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? CreateDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public byte Enable { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? CreateID { get; set; }
 
            /// <summary>
            /// Desc:
@@ -36,64 +114,14 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:True
            /// </summary>
-           public DateTime? ModifyDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? CreateDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? OrderNo { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
            public string Creator { get; set; }
 
            /// <summary>
            /// Desc:
            /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int ParentId { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
            /// Nullable:True
            /// </summary>
-           public string DeleteBy { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           [Key]
-           public int Role_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? Dept_Id { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string RoleName { get; set; }
+           public DateTime? ModifyDate { get; set; }
 
 
     }

@@ -70,9 +70,13 @@ namespace WM.Service.App.Dto.ManagerDto.RP
         /// 父节点
         /// </summary>
         public int ParentId { get; set; }
+          /// <summary>
+          /// 权限
+          /// </summary>
+         public string[] Permission { get; set; }
         /// <summary>
         /// 下级菜单
         /// </summary>
-        public List<M_AdminRoleMenuRP> Children { get; set; }
+       // public List<M_AdminRoleMenuRP> Children { get; set; }
     }
 }

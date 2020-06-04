@@ -40,10 +40,10 @@ namespace WM.Api.Manager.Controllers.System
             return Ok(await Service.GetCurrentMenuList());
         }
         /// <summary>
-        /// 获取当前用户菜单
+        /// 获取菜单
         /// </summary>
         /// <returns></returns>
-        [HttpGet, HttpPost, Route("getMenu")]
+        [HttpPost, Route("getMenu")]
         public async Task<IActionResult> GetMenu()
         {
             return Ok(await Service.GetMenuList());
