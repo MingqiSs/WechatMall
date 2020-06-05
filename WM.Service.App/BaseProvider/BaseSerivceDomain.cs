@@ -1,13 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using WM.Infrastructure.Config;
 using WM.Infrastructure.Enums;
 using WM.Infrastructure.Extensions;
 using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Localization;
 using WM.Infrastructure.Models;
-using X.Models.WMDB;
+using WM.Infrastructure.UserManager;
 
 namespace WM.Service.App
 {
@@ -18,7 +19,7 @@ namespace WM.Service.App
     /// <typeparam name="TRepository"></typeparam>
     public abstract class BaseSerivceDomain<T, TRepository> : IDependency
         where TRepository : X.IRespository.DBSession.IWMDBSession
-       //where T : BaseEntity
+        //where T : BaseEntity
     {
         /// <summary>
         /// 
@@ -35,35 +36,35 @@ namespace WM.Service.App
         }
 
 
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <typeparam name="R"></typeparam>
-       /// <param name="inData"></param>
-       /// <returns></returns>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="R"></typeparam>
+        /// <param name="inData"></param>
+        /// <returns></returns>
         public ResultDto<R> Result<R>(R inData)
         {
             return new ResultDto<R>(inData);
         }
-       /// <summary>
-       /// 
-       /// </summary>
-       /// <typeparam name="R"></typeparam>
-       /// <param name="inData"></param>
-       /// <param name="msg"></param>
-       /// <returns></returns>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="R"></typeparam>
+        /// <param name="inData"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
         public ResultDto<R> Result<R>(R inData, string msg)
         {
             return new ResultDto<R>(inData) { Msg = msg };
         }
-      /// <summary>
-      /// 
-      /// </summary>
-      /// <typeparam name="R"></typeparam>
-      /// <param name="inData"></param>
-      /// <param name="code"></param>
-      /// <param name="msg"></param>
-      /// <returns></returns>
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="R"></typeparam>
+        /// <param name="inData"></param>
+        /// <param name="code"></param>
+        /// <param name="msg"></param>
+        /// <returns></returns>
         public ResultDto<R> Result<R>(R inData, ResponseCode code, string msg)
         {
             return new ResultDto<R>(inData) { Ec = code, Msg = msg };
@@ -115,7 +116,7 @@ namespace WM.Service.App
             return name;
         }
 
-        private WebResponseContent Response { get; set; }
+        public WebResponseContent Response { get; set; }
         /// <summary>
         /// 通用单表数据删除
         /// </summary>
@@ -170,6 +171,67 @@ namespace WM.Service.App
             pageGridData.total = totalCount;
             return pageGridData;
         }
+        /// <summary>
+        /// 编辑
+        /// </summary>
+        /// <param name="saveModel"></param>
+        /// <returns></returns>
+        public virtual WebResponseContent Update(SaveModel saveModel)
+        {
+            if (saveModel == null)
+                return Response.Error(ResponseType.ParametersLack);
+            if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
+            Type entityType = typeof(T);
+            var keyProperty = entityType.GetKeyProperty();
+            if (keyProperty == null) return Response.Error(ResponseType.KeyError);
+            //查找key
+            var tKey = keyProperty.Name;
+            if (string.IsNullOrEmpty(tKey))
+                return Response;
+            //设置修改时间,修改人的默认值
+            var userInfo = UserContext.Current.UserInfo;
+            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
+            saveModel.MainData.Add("Modifier", userInfo.UserName);
+            saveModel.MainData.Add("ModifyDate", DateTime.Now);
+            T mainEntity = saveModel.MainData.DicToEntity<T>();
+
+          var list= entityType.GetEditField().Where(c => saveModel.MainData.Keys.Contains(c)).ToArray();
+            // repository.Sys_User.Update(q => q.UserName = saveModel.MainData.Keys["userName"]);
+            //var isSave= repository.DB.Updateable<X.Models.WMDB.Sys_User>(q=>q.).ExecuteCommand()>0;
+            string sql = @$"update {entityType.Name} set  where {tKey}";
+
+            return Response;
+        }
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="saveModel"></param>
+        /// <returns></returns>
+        public virtual WebResponseContent Add(SaveModel saveModel)
+        {
+            if (saveModel == null)
+                return Response.Error(ResponseType.ParametersLack);
+            if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
+            Type entityType = typeof(T);
+            var keyProperty = entityType.GetKeyProperty();
+            if (keyProperty == null) return Response.Error(ResponseType.KeyError);
+            //查找key
+            var tKey = keyProperty.Name;
+            if (string.IsNullOrEmpty(tKey))
+                return Response;
+            //设置修改时间,修改人的默认值
+            var userInfo = UserContext.Current.UserInfo;
+            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
+            saveModel.MainData.Add("Modifier", userInfo.UserName);
+            saveModel.MainData.Add("ModifyDate", DateTime.Now);
+            T mainEntity = saveModel.MainData.DicToEntity<T>();
+
+            var list = entityType.GetEditField().Where(c => saveModel.MainData.Keys.Contains(c)).ToArray();
+            // repository.Sys_User.Update(q => q.UserName = saveModel.MainData.Keys["userName"]);
+            //var isSave= repository.DB.Updateable<X.Models.WMDB.Sys_User>(q=>q.).ExecuteCommand()>0;
+            string sql = @$"update {entityType.Name} set  where {tKey}";
+
+            return Response;
+        }
     }
-    
 }

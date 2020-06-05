@@ -66,10 +66,5 @@ namespace WM.Infrastructure.UserManager
         {
             get { return UserInfo.Role_Id; }
         }
-        /// <summary>
-        /// 登录时写入
-        /// </summary>
-        public List<Permissions> Permissions { get; set; }
-      
     }
 }

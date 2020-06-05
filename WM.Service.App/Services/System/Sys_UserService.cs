@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using WM.Infrastructure.Config;
+using WM.Infrastructure.Enums;
+using WM.Infrastructure.Extensions;
 using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Models;
 using WM.Infrastructure.UserManager;
@@ -64,8 +66,6 @@ namespace WM.Service.App.Services
           
             //HttpContext.Current.Response.Headers.Add("Authorization", new StringValues(token));
 
-            GetPermissions(user.Role_Id);
-
             return responseContent.OK("登录成功", new M_AdminUserRP
             {
                 id = user.UID,
@@ -75,27 +75,57 @@ namespace WM.Service.App.Services
                 Moblie = user.Mobile,
                 Email = user.Email,
                 Token = token,
-              //  Menus = new List<M_AdminRoleMenuRP> { },
             }); 
         }
         /// <summary>
-        /// 获取权限
+        /// 修改系统用户资料
         /// </summary>
+        /// <param name="saveModel"></param>
         /// <returns></returns>
-        private List<Permissions> GetPermissions(int role_Id)
+        public override WebResponseContent Update(SaveModel saveModel) {
+          
+            if (saveModel == null)
+                return Response.Error(ResponseType.ParametersLack);
+            if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
+            
+            //设置修改时间,修改人的默认值
+            var userInfo = UserContext.Current.UserInfo;
+            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
+            saveModel.MainData.Add("Modifier", userInfo.UserName);
+            saveModel.MainData.Add("ModifyDate", DateTime.Now);
+            Sys_User user = saveModel.MainData.DicToEntity<Sys_User>();
+
+            Response.Status = repository.Sys_User.Update(q => new Sys_User {
+            UserTrueName=user.UserTrueName,
+            }, q => q.UID == user.UID);
+            if(Response.Status) return Response.OK(ResponseType.EidtSuccess);
+           
+            return Response;
+        }
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="saveModel"></param>
+        /// <returns></returns>
+        public override WebResponseContent Add(SaveModel saveModel)
         {
-            var where = string.Empty;
-            if (!UserContext.Current.IsRoleIdSuperAdmin(role_Id))
-            {
-                where = $" and b.Role_Id = {role_Id}";
-            }
-            var list = repository.Sql_Query<Permissions>($@"SELECT a.Menu_Id,a.ParentId,a.TableName,a.Auth, b.AuthValue from Sys_Menu a
-                                                            INNER JOIN Sys_RoleAuth b
-                                                            on a.Menu_Id = b.Menu_Id
-                                                             where a.Enable = 1
-                                                            {where}");
-            UserContext.Current.Permissions = list;
-            return list; 
-        }      
+            if (saveModel == null)
+                return Response.Error(ResponseType.ParametersLack);
+            if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
+
+            //设置修改时间,修改人的默认值
+            var userInfo = UserContext.Current.UserInfo;
+            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
+            //  saveModel.MainData.Add("Creator", userInfo.UserName);
+            // saveModel.MainData.Add("CreateDate", DateTime.Now);
+            Sys_User user = saveModel.MainData.DicToEntity<Sys_User>();
+            user.UID = Guid.NewGuid().ToString();
+            user.Creator = userInfo.UserName;
+            user.CreateDate = DateTime.Now;
+            Response.Status = repository.Sys_User.Add(user);
+            if (Response.Status) return Response.OK(ResponseType.SaveSuccess);
+
+            return Response;
+        }
     }
 }

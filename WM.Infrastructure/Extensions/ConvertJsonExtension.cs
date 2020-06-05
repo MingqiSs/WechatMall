@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 using System.Text;
 
 namespace WM.Infrastructure.Extensions
@@ -23,6 +25,17 @@ namespace WM.Infrastructure.Extensions
 
             return JsonConvert.SerializeObject(obj, formatDate);
         }
-
+        public static T DeserializeObject<T>(this string entityString)
+        {
+            if (string.IsNullOrEmpty(entityString))
+            {
+                return default(T);
+            }
+            if (entityString == "{}")
+            {
+                entityString = "[]";
+            }
+            return JsonConvert.DeserializeObject<T>(entityString);
+        }     
     }
 }

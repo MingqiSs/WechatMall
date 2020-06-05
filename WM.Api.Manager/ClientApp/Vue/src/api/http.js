@@ -61,8 +61,8 @@ axios.interceptors.response.use((res) => {
   return Promise.reject(error.response);
 });
 
-let $httpVue = null, currentToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImp0aSI6ImEyMWFjZTM2LTk1NjAtNDcxZC1iNzc4LTJkNmUwZGVjYzc1MCIsImlhdCI6IjIwMjAvNi8zIDEwOjUyOjEyIiwidW5pcXVlX25hbWUiOiIzZTZlZTAzZC1hMTgzLTExZWEtODM2OC0wMjQyYWMxMTAwMDIiLCJuYW1lIjoiYWRtaW4iLCJlbWFpbCI6IiIsInVzZXJ0cnVlbmFtZSI6IiIsInJvbGVuYW1lIjoiIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvdXNlcmRhdGEiOiJVc2VyRGF0YSIsIm5iZiI6MTU5MTE4MTUzMiwiZXhwIjoxNTkxMTgzMzMyLCJpc3MiOiJNYW5hZ2VyLmNuIiwiYXVkIjoiTWFuYWdlciJ9.8wtMHc9Pj5eJGWuWlQuj377-O8-JXhYDi3BRusNqQrQ';
-const _Authorization = 'Authorization', _Bearer = 'Bearer ';
+let $httpVue = null, currentToken = '';
+const _Authorization = 'Authorization';
 function init(vue) {
     $httpVue = vue;
 }
@@ -88,7 +88,7 @@ let loading = {
 }
 function getToken() {
     if (currentToken) {
-        return _Bearer+currentToken;
+        return currentToken;
     }
     return $httpVue.$store.getters.getToken();
 }

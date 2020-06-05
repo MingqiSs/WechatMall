@@ -39,6 +39,18 @@ namespace WM.Infrastructure.Controllers.Basic
             var r = await Task.FromResult(InvokeService("GetPageData", new object[] { loadData }));
             return Ok(r);
         }
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public virtual async Task<ActionResult> Update(SaveModel saveModel)
+        {
+            var r = await Task.FromResult(InvokeService("Update", new object[] { saveModel }));
+            return Ok(r);
+        }
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public virtual async Task<ActionResult> Add(SaveModel saveModel)
+        {
+            var r = await Task.FromResult(InvokeService("Add", new object[] { saveModel }));
+            return Ok(r);
+        }
         /// <summary>
         /// 反射调用service方法
         /// </summary>

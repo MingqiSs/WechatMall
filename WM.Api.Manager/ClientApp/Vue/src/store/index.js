@@ -111,7 +111,8 @@ const system = {
         getToken: (state) => () => {
             getUserInfo(state);
             if (state.userInfo) {
-                return 'Bearer ' + state.userInfo.token;
+                //return 'Bearer ' + state.userInfo.token;
+                return  state.userInfo.token;
             }
             return '';
         },

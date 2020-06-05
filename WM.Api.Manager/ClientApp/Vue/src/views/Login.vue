@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     toGitHub() {
-      window.open("https://github.com/cq-panda/Vue.NetCore");
+      window.open("");
     },
     login() {
       if (this.userInfo.userName == "" || this.userInfo.userName.trim() == "")
@@ -85,7 +85,7 @@ export default {
           "正在登陆...."
         )
         .then(result => {
-          console.log(result);
+         // console.log(result);
           if (!result.status) return this.$Message.error(result.message);
           this.$Message.info("登陆成功,正在跳转!");
           this.$store.commit("setUserInfo", result.data);

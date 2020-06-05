@@ -43,5 +43,27 @@ namespace WM.Infrastructure.Controllers.Basic
         {
             return await base.GetPageData(loadData);
         }
+        /// <summary>
+        /// 修改数据
+        /// </summary>
+        /// <param name="loadData"></param>
+        /// <returns></returns>
+        [ApiActionPermission(Enums.ActionPermissionOptions.Update)]
+        [HttpPost, Route("Update")]
+        public new async Task<ActionResult> Update(SaveModel saveModel)
+        {
+            return await base.Update(saveModel);
+        }
+        /// <summary>
+        /// 添加数据
+        /// </summary>
+        /// <param name="loadData"></param>
+        /// <returns></returns>
+        [ApiActionPermission(Enums.ActionPermissionOptions.Update)]
+        [HttpPost, Route("Add")]
+        public new async Task<ActionResult> Add(SaveModel saveModel)
+        {
+            return await base.Add(saveModel);
+        }
     }
 }

@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Extensions\ObjectExtension.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Localization\Sources\Files\Xsmcfx-en.xml" />
     <None Remove="Localization\Sources\Files\Xsmcfx-zh-CN.xml" />
   </ItemGroup>
@@ -16,10 +12,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\Sources\Files\Xsmcfx-en.xml" />
     <EmbeddedResource Include="Localization\Sources\Files\Xsmcfx-zh-CN.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Extensions\ObjectExtension.cs" />
   </ItemGroup>
 
   <ItemGroup>

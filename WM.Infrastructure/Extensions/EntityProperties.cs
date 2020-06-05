@@ -8,6 +8,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using WM.Infrastructure.Const;
+using WM.Infrastructure.Models;
 
 namespace WM.Infrastructure.Extensions
 {
@@ -1004,9 +1005,21 @@ namespace WM.Infrastructure.Extensions
                     }
                 }
             }
+        /// <summary>
+        /// 获取实体所有可以编辑的列
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns></returns>
+        public static string[] GetEditField(this Type type)
+        {
+          //  Type editType = typeof(EditableAttribute);
+            PropertyInfo[] propertyInfo = type.GetProperties();
+            string keyName = propertyInfo.GetKeyName();
+            return propertyInfo.Where(x => x.Name != keyName).Select(s => s.Name).ToArray();
         }
+    }
 
-        public class ArrayEntity
+    public class ArrayEntity
         {
             public string column1 { get; set; }
         }

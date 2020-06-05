@@ -28,24 +28,21 @@
         data() {
             return {
                 table: {
-                    key: 'User_Id',
+                    key: 'uid',
                     footer: "Foots",
                     cnName: '用户管理',
                     name: 'Sys_User',
                     url: "/Sys_User/",
-                    sortName: "User_Id"
+                    sortName: "uid"
                 },
                 extend: extend,
-                editFormFileds: {"userName":"","userTrueName":"","Role_Id":"","gender":"","enable":"","createDate":"","creator":"","remark":"","headImageUrl":""},
-                editFormOptions: [[{"title":"帐号","required":true,"field":"userName","disabled":true},
+                editFormFileds: {"userName":"","userTrueName":"","role_Id":"","gender":"","enable":"","createDate":"","creator":"","remark":"","headImageUrl":""},//编辑表赋值
+                editFormOptions: [[{"title":"帐号","required":true,"field":"userName","type":"text"},
                                {"title":"真实姓名","required":true,"field":"userTrueName","type":"text"}],
-                              [{"dataKey":"roles","title":"角色","required":true,"field":"Role_Id","type":"drop"}],
-                              [{"dataKey":"gender","title":"性别","field":"Gender","type":"drop"},
-                               {"dataKey":"enable","title":"是否可用","required":true,"field":"Enable","type":"drop"}],
-                              [{"title":"注册时间","field":"createDate","disabled":true},
-                               {"title":"创建人","field":"creator","disabled":true}],
+                              [{"dataKey":"roles","title":"角色","required":true,"field":"role_Id","type":"drop"},{"dataKey":"gender","title":"性别","field":"gender","type":"drop"}],
+                              [{"dataKey":"enable","title":"是否可用","required":true,"field":"enable","type":"drop"},{"title":"创建人","field":"creator","disabled":true}],
                               [{"title":"备注","field":"remark","colSize":12,"type":"textarea"}],
-                              [{"title":"头像","field":"headImageUrl","type":"img"}]],
+                              [{"title":"头像","field":"headImageUrl","type":"img"}]],//编辑表的字段
                 searchFormFileds: {"userName":"","gender":""},
                 searchFormOptions: [[{"title":"帐号","field":"userName"},{"dataKey":"gender","title":"性别","field":"Gender","type":"drop"},{"title":"真实姓名","field":"UserTrueName"}],[{"title":"部门","field":"DeptName"},{"dataKey":"roles","title":"角色","field":"Role_Id","type":"drop"},{"title":"Token","field":"Token"}],[{"dataKey":"ut","title":"登陆设备类型","field":"AppType","type":"dropList"},{"dataKey":"isphone","title":"手机用户","field":"IsRegregisterPhone","type":"drop"},{"title":"手机号","field":"PhoneNo"}],[{"dataKey":"enable","title":"是否可用","field":"Enable","type":"drop"},{"title":"地址","field":"Address"},{"title":"Email","field":"Email"}],[{"title":"注册时间","field":"CreateDate","type":"datetime"},{"title":"最后登陆时间","field":"LastLoginDate","type":"datetime"}]],
                 columns: [{field:'userName',title:'帐号',type:'string',link:true,width:120,readonly:true,require:true,align:'left',sortable:true},

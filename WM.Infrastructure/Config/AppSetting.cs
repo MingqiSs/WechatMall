@@ -65,4 +65,25 @@ namespace WM.Infrastructure.Config
         }
 
     }
+    public class Connection
+    {
+        public string DBType { get; set; }
+        public string DbConnectionString { get; set; }
+        public string RedisConnectionString { get; set; }
+        public bool UseRedis { get; set; }
+    }
+
+    public class CreateMember : TableDefaultColumns
+    {
+    }
+    public class ModifyMember : TableDefaultColumns
+    {
+    }
+
+    public abstract class TableDefaultColumns
+    {
+        public string UserIdField { get; set; }
+        public string UserNameField { get; set; }
+        public string DateField { get; set; }
+    }
 }

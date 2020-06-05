@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WM.Infrastructure.Extensions;
 using WM.Infrastructure.Models;
 using WM.Infrastructure.UserManager;
 using WM.Service.App.Dto.ManagerDto.RP;
@@ -33,7 +34,7 @@ namespace WM.Service.App.Services.System
             var where = string.Empty;
           
             var list =await repository.Sys_Menu.Where(q=>q.Enable==(byte)EnumDataStatus.Enable).ToListAsync();
-            //var aaa = UserContext.Current.Permissions;
+           
             var menu = (from a in GetPermissions(UserContext.Current.RoleId)
                        join b in list
                        on a.Menu_Id equals b.Menu_Id
@@ -50,7 +51,7 @@ namespace WM.Service.App.Services.System
             return menu;
         }
         /// <summary>
-        /// 获取权限
+        /// 获取用户菜单权限
         /// </summary>
         /// <returns></returns>
         private List<Permissions> GetPermissions(int role_Id)
@@ -65,31 +66,32 @@ namespace WM.Service.App.Services.System
                                                             on a.Menu_Id = b.Menu_Id
                                                              where a.Enable = 1
                                                             {where}");
-            list.ForEach(q => q.UserAuthArr = new string[] { });
-            UserContext.Current.Permissions = list;
-            return list;
+
+            List<Permissions> MenuActionToArray(List<Permissions> permissions)
+            {
+                permissions.ForEach(x =>
+                {
+                    try
+                    {
+                        x.UserAuthArr = string.IsNullOrEmpty(x.Auth)
+                        ? new string[0]
+                        : x.Auth.DeserializeObject<List<Sys_Actions>>().Select(s => s.Value).ToArray();
+                    }
+                    catch { }
+                    finally
+                    {
+                        if (x.UserAuthArr == null)
+                        {
+                            x.UserAuthArr = new string[0];
+                        }
+                    }
+                });
+                return permissions;
+            }
+
+            return MenuActionToArray(list);
         }
-        //private List<Permissions> MenuActionToArray(List<Permissions> permissions)
-        //{
-        //    permissions.ForEach(x =>
-        //    {
-        //        try
-        //        {
-        //            x.UserAuthArr = string.IsNullOrEmpty(x.UserAuth)
-        //            ? new string[0]
-        //            : x.UserAuth.DeserializeObject<List<Sys_Actions>>().Select(s => s.Value).ToArray();
-        //        }
-        //        catch { }
-        //        finally
-        //        {
-        //            if (x.UserAuthArr == null)
-        //            {
-        //                x.UserAuthArr = new string[0];
-        //            }
-        //        }
-        //    });
-        //    return permissions;
-        //}
+         
         /// <summary>
         /// 获取所有菜单
         /// </summary>
@@ -168,5 +170,12 @@ namespace WM.Service.App.Services.System
             }
             return webResponse;
         }
+    }
+    public class Sys_Actions
+    {
+        public int Action_Id { get; set; }
+        public int Menu_Id { get; set; }
+        public string Text { get; set; }
+        public string Value { get; set; }
     }
 }
