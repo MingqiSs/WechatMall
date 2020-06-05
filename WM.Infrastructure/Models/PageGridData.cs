@@ -54,4 +54,11 @@ namespace WM.Infrastructure.Models
         /// </summary>
         public object Extra { get; set; }
     }
+    public class Sys_Actions
+    {
+        public int Action_Id { get; set; }
+        public int Menu_Id { get; set; }
+        public string Text { get; set; }
+        public string Value { get; set; }
+    }
 }

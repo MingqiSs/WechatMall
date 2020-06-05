@@ -11,6 +11,20 @@ namespace X.Models.WMDB
            public wm_user(){}
 
            /// <summary>
+           /// Desc:邮箱
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Email { get; set; }
+
+           /// <summary>
+           /// Desc:微信appID
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string WeChatAppID { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:True
@@ -80,20 +94,6 @@ namespace X.Models.WMDB
            /// </summary>
            [Key]
            public string UID { get; set; }
-
-           /// <summary>
-           /// Desc:邮箱
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Email { get; set; }
-
-           /// <summary>
-           /// Desc:微信appID
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string WeChatAppID { get; set; }
 
 
     }

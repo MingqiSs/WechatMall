@@ -15,6 +15,13 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public string ProductID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public DateTime CreateTime { get; set; }
 
            /// <summary>
@@ -31,13 +38,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int Product_TagID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string ProductID { get; set; }
 
 
     }

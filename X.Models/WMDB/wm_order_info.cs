@@ -15,6 +15,13 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:False
            /// </summary>
+           public int OrderId { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
            public string Product_Icon { get; set; }
 
            /// <summary>
@@ -66,13 +73,6 @@ namespace X.Models.WMDB
            /// </summary>
            [Key]
            public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int OrderId { get; set; }
 
 
     }

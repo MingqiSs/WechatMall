@@ -12,6 +12,20 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:b'0'
+           /// Nullable:False
+           /// </summary>
+           public bool Hot { get; set; }
+
+           /// <summary>
+           /// Desc:商品分类id
+           /// Default:0
+           /// Nullable:False
+           /// </summary>
+           public int ProductTypeID { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:
            /// Nullable:True
            /// </summary>
@@ -101,20 +115,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public decimal Price { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:b'0'
-           /// Nullable:False
-           /// </summary>
-           public bool Hot { get; set; }
-
-           /// <summary>
-           /// Desc:商品分类id
-           /// Default:0
-           /// Nullable:False
-           /// </summary>
-           public int ProductTypeID { get; set; }
 
 
     }

@@ -11,6 +11,20 @@ namespace X.Models.WMDB
            public wm_order(){}
 
            /// <summary>
+           /// Desc:数据状态
+           /// Default:1
+           /// Nullable:False
+           /// </summary>
+           public byte DataStatus { get; set; }
+
+           /// <summary>
+           /// Desc:收货人姓名
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string Receiver_Name { get; set; }
+
+           /// <summary>
            /// Desc:(1 在线支付,2货到付款)
            /// Default:1
            /// Nullable:False
@@ -101,20 +115,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Receiver_Address { get; set; }
-
-           /// <summary>
-           /// Desc:数据状态
-           /// Default:1
-           /// Nullable:False
-           /// </summary>
-           public byte DataStatus { get; set; }
-
-           /// <summary>
-           /// Desc:收货人姓名
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string Receiver_Name { get; set; }
 
 
     }

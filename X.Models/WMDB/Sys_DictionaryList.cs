@@ -13,6 +13,20 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? Dic_ID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? OrderNo { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:False
            /// </summary>
            [Key]
@@ -87,20 +101,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public int? ModifyID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? Dic_ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? OrderNo { get; set; }
 
 
     }

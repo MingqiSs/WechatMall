@@ -15,6 +15,20 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:True
            /// </summary>
+           public string Description { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public int? Sort { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
            public byte? Enable { get; set; }
 
            /// <summary>
@@ -94,20 +108,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public int ParentId { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Description { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public int? Sort { get; set; }
 
 
     }

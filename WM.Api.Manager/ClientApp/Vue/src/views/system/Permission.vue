@@ -64,7 +64,7 @@ export default {
   methods: {
     load() {
       this.http
-        .post("/api/role/getCurrentTreePermission", {}, true)
+        .post("/api/Sys_Role/getCurrentTreePermission", {}, true)
         .then(result => {
           if (!result.status) return this.$message.error(result.message);
           this.data.splice(0);
@@ -92,7 +92,7 @@ export default {
         });
       });
       this.http
-        .post("/api/role/getUserTreePermission?roleId=" + item.id, {}, true)
+        .post("/api/Sys_Role/getUserTreePermission?roleId=" + item.id, {}, true)
         .then(result => {
           if (!result.status) return this.$message.error(result.message);
           result.data.forEach(item => {

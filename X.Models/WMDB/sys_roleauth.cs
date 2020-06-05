@@ -13,6 +13,13 @@ namespace X.Models.WMDB
            /// <summary>
            /// Desc:
            /// Default:
+           /// Nullable:True
+           /// </summary>
+           public string Creator { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
            /// Nullable:False
            /// </summary>
            public int Menu_Id { get; set; }
@@ -66,13 +73,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public DateTime? CreateDate { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Creator { get; set; }
 
 
     }

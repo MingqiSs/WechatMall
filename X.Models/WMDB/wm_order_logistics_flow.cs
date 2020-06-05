@@ -11,6 +11,13 @@ namespace X.Models.WMDB
            public wm_order_logistics_flow(){}
 
            /// <summary>
+           /// Desc:订单标号
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string TrackingNumber { get; set; }
+
+           /// <summary>
            /// Desc:物流公司标号
            /// Default:
            /// Nullable:False
@@ -30,13 +37,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Remark { get; set; }
-
-           /// <summary>
-           /// Desc:订单标号
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string TrackingNumber { get; set; }
 
 
     }

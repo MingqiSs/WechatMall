@@ -11,6 +11,20 @@ namespace X.Models.WMDB
            public wm_user_shopping_address(){}
 
            /// <summary>
+           /// Desc:区
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public int DistrictID { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:False
+           /// </summary>
+           public string UID { get; set; }
+
+           /// <summary>
            /// Desc:
            /// Default:
            /// Nullable:False
@@ -80,20 +94,6 @@ namespace X.Models.WMDB
            /// Nullable:False
            /// </summary>
            public string Receiver_Phone { get; set; }
-
-           /// <summary>
-           /// Desc:区
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public int DistrictID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:False
-           /// </summary>
-           public string UID { get; set; }
 
 
     }

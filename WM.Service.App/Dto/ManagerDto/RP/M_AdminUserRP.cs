@@ -75,8 +75,8 @@ namespace WM.Service.App.Dto.ManagerDto.RP
           /// </summary>
          public string[] Permission { get; set; }
         /// <summary>
-        /// 下级菜单
+        /// 
         /// </summary>
-       // public List<M_AdminRoleMenuRP> Children { get; set; }
+        public List<Sys_Actions> Actions { get; set; }
     }
 }

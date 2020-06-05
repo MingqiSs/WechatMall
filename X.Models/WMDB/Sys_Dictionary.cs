@@ -15,6 +15,20 @@ namespace X.Models.WMDB
            /// Default:
            /// Nullable:True
            /// </summary>
+           public string Creator { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyDate { get; set; }
+
+           /// <summary>
+           /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
            public string DBServer { get; set; }
 
            /// <summary>
@@ -108,20 +122,6 @@ namespace X.Models.WMDB
            /// Nullable:True
            /// </summary>
            public string Modifier { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public string Creator { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyDate { get; set; }
 
 
     }

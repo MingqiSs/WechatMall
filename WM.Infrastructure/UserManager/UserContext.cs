@@ -43,7 +43,7 @@ namespace WM.Infrastructure.UserManager
         /// <summary>
         /// 角色ID为1的默认为超级管理员
         /// </summary>
-        public  bool IsRoleIdSuperAdmin(int roleId)
+        public static  bool IsRoleIdSuperAdmin(int roleId)
         {
             return roleId == 1;
         }

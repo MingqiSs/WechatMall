@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace WM.Infrastructure.Models
 {
@@ -79,6 +80,10 @@ namespace WM.Infrastructure.Models
         /// <summary>
         /// 当前用户权限,存储的是权限的值，如:Add,Search等
         /// </summary>
-        public string[] UserAuthArr { get; set; }
+       // public string[] UserAuthArr { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public List<Sys_Actions> Actions { get; set; }
     }
 }

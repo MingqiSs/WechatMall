@@ -46,7 +46,8 @@ namespace WM.Service.App.Services.System
                            Url = b.Url,
                            ParentId = b.ParentId,
                            Icon = b.Icon,
-                           Permission = a.UserAuthArr
+                           Actions=a.Actions,
+                           Permission = a.Actions.Select(s => s.Value).ToArray()
                        }).ToList();
             return menu;
         }
@@ -57,7 +58,7 @@ namespace WM.Service.App.Services.System
         private List<Permissions> GetPermissions(int role_Id)
         {
             var where = string.Empty;
-            if (!UserContext.Current.IsRoleIdSuperAdmin(role_Id))
+            if (!UserContext.Current.IsSuperAdmin)
             {
                 where = $" and b.Role_Id = {role_Id}";
             }
@@ -73,16 +74,21 @@ namespace WM.Service.App.Services.System
                 {
                     try
                     {
-                        x.UserAuthArr = string.IsNullOrEmpty(x.Auth)
-                        ? new string[0]
-                        : x.Auth.DeserializeObject<List<Sys_Actions>>().Select(s => s.Value).ToArray();
+                        x.Actions= string.IsNullOrEmpty(x.Auth)
+                        ? new List<Sys_Actions>()
+                        : x.Auth.DeserializeObject<List<Sys_Actions>>().ToList();
+
+                        //x.UserAuthArr = string.IsNullOrEmpty(x.Auth)
+                        //? new string[0]
+                        //: x.Auth.DeserializeObject<List<Sys_Actions>>().Select(s => s.Value).ToArray();
+
                     }
                     catch { }
                     finally
                     {
-                        if (x.UserAuthArr == null)
+                        if (x.Actions == null)
                         {
-                            x.UserAuthArr = new string[0];
+                            x.Actions = new List<Sys_Actions>();
                         }
                     }
                 });
@@ -171,11 +177,5 @@ namespace WM.Service.App.Services.System
             return webResponse;
         }
     }
-    public class Sys_Actions
-    {
-        public int Action_Id { get; set; }
-        public int Menu_Id { get; set; }
-        public string Text { get; set; }
-        public string Value { get; set; }
-    }
+   
 }

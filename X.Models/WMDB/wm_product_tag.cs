@@ -12,6 +12,13 @@ namespace X.Models.WMDB
 
            /// <summary>
            /// Desc:
+           /// Default:
+           /// Nullable:True
+           /// </summary>
+           public DateTime? ModifyTime { get; set; }
+
+           /// <summary>
+           /// Desc:
            /// Default:0
            /// Nullable:False
            /// </summary>
@@ -45,13 +52,6 @@ namespace X.Models.WMDB
            /// </summary>
            [Key]
            public int ID { get; set; }
-
-           /// <summary>
-           /// Desc:
-           /// Default:
-           /// Nullable:True
-           /// </summary>
-           public DateTime? ModifyTime { get; set; }
 
 
     }
