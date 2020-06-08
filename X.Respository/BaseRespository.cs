@@ -127,6 +127,7 @@ namespace X.Respository
         /// <returns></returns>
         public int UpdateRange(List<TEntity> list)
         {
+            if (list.Count == 0) return 0;
             return db.Updateable(list).ExecuteCommand();
         }
         /// <summary>
@@ -136,6 +137,7 @@ namespace X.Respository
         /// <returns></returns>
         public int AddRange(List<TEntity> list)
         {
+            if (list.Count == 0) return 0;
             return db.Insertable(list).ExecuteCommand();
         }
 

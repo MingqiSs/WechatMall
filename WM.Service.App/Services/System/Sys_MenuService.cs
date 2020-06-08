@@ -26,16 +26,16 @@ namespace WM.Service.App.Services.System
         }
 
         /// <summary>
-        /// 获取用户当前菜单
+        /// 获取用户当前菜单以及权限
         /// </summary>
+        /// <param name="roleId"></param>
         /// <returns></returns>
-        public async Task<List<M_AdminRoleMenuRP>>  GetCurrentMenuList()
+        public async Task<List<M_AdminRoleMenuRP>>  GetCurrentMenuList(int roleId)
         {
-            var where = string.Empty;
-          
-            var list =await repository.Sys_Menu.Where(q=>q.Enable==(byte)EnumDataStatus.Enable).ToListAsync();
            
-            var menu = (from a in GetPermissions(UserContext.Current.RoleId)
+            var list =await repository.Sys_Menu.Where(q=>q.Enable==(byte)EnumDataStatus.Enable).ToListAsync();
+            
+            var menu = (from a in GetPermissions(roleId)
                        join b in list
                        on a.Menu_Id equals b.Menu_Id
                        orderby b.Sort descending
@@ -46,56 +46,9 @@ namespace WM.Service.App.Services.System
                            Url = b.Url,
                            ParentId = b.ParentId,
                            Icon = b.Icon,
-                           Actions=a.Actions,
-                           Permission = a.Actions.Select(s => s.Value).ToArray()
+                           Permission = a.UserAuthArr.ToArray()
                        }).ToList();
             return menu;
-        }
-        /// <summary>
-        /// 获取用户菜单权限
-        /// </summary>
-        /// <returns></returns>
-        private List<Permissions> GetPermissions(int role_Id)
-        {
-            var where = string.Empty;
-            if (!UserContext.Current.IsSuperAdmin)
-            {
-                where = $" and b.Role_Id = {role_Id}";
-            }
-            var list = repository.Sql_Query<Permissions>($@"SELECT a.Menu_Id,a.ParentId,a.TableName,a.Auth, b.AuthValue from Sys_Menu a
-                                                            INNER JOIN Sys_RoleAuth b
-                                                            on a.Menu_Id = b.Menu_Id
-                                                             where a.Enable = 1
-                                                            {where}");
-
-            List<Permissions> MenuActionToArray(List<Permissions> permissions)
-            {
-                permissions.ForEach(x =>
-                {
-                    try
-                    {
-                        x.Actions= string.IsNullOrEmpty(x.Auth)
-                        ? new List<Sys_Actions>()
-                        : x.Auth.DeserializeObject<List<Sys_Actions>>().ToList();
-
-                        //x.UserAuthArr = string.IsNullOrEmpty(x.Auth)
-                        //? new string[0]
-                        //: x.Auth.DeserializeObject<List<Sys_Actions>>().Select(s => s.Value).ToArray();
-
-                    }
-                    catch { }
-                    finally
-                    {
-                        if (x.Actions == null)
-                        {
-                            x.Actions = new List<Sys_Actions>();
-                        }
-                    }
-                });
-                return permissions;
-            }
-
-            return MenuActionToArray(list);
         }
          
         /// <summary>

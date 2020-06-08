@@ -77,6 +77,6 @@ namespace WM.Service.App.Dto.ManagerDto.RP
         /// <summary>
         /// 
         /// </summary>
-        public List<Sys_Actions> Actions { get; set; }
+       // public List<Sys_Actions> Actions { get; set; }
     }
 }

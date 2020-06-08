@@ -8,6 +8,7 @@ using WM.Infrastructure.Controllers.Basic;
 using WM.Infrastructure.Enums;
 using WM.Infrastructure.Filters;
 using WM.Service.App.Interface.System;
+using WM.Service.App.Services.System;
 
 namespace WM.Api.Manager.Controllers.System
 {
@@ -34,18 +35,29 @@ namespace WM.Api.Manager.Controllers.System
         {
             return Ok(await Service.GetCurrentTreePermission());
         }
-
         /// <summary>
-        /// 获取权限
+        /// 获取用户相关权限
         /// </summary>
+        /// <param name="roleId"></param>
         /// <returns></returns>
-        [HttpPost, Route("getUserChildRoles")]
+        [HttpPost, Route("getUserTreePermission")]
         [ApiActionPermission(ActionPermissionOptions.Search)]
-        public async Task<IActionResult> GetUserChildRoles()
+        public async Task<IActionResult> GetUserTreePermission(int roleId)
         {
-            return Ok(await Service.GetCurrentTreePermission());
+            return Ok(await Service.GetUserTreePermission(roleId));
         }
-
+        /// <summary>
+        /// 保存权限
+        /// </summary>
+        /// <param name="userPermissions"></param>
+        /// <param name="roleId"></param>
+        /// <returns></returns>
+        [HttpPost, Route("SavePermission")]
+        [ApiActionPermission(ActionPermissionOptions.Update)]
+        public async Task<IActionResult> SavePermission([FromBody] List<UserPermissions> userPermissions, int roleId)
+        {
+            return Ok(await Service.SavePermission(userPermissions, roleId));
+        }
     }
 
 }

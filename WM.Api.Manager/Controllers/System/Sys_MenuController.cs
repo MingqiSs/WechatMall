@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using WM.Infrastructure.Controllers.Basic;
 using WM.Infrastructure.Enums;
 using WM.Infrastructure.Filters;
+using WM.Infrastructure.UserManager;
 using WM.Service.App.Dto.ManagerDto.RP;
 using WM.Service.App.Interface.System;
 using X.Models.WMDB;
@@ -37,7 +38,7 @@ namespace WM.Api.Manager.Controllers.System
         [ProducesResponseType(typeof(List<M_AdminRoleMenuRP>), 200)]
         public async Task<IActionResult> GetTreeMenu()
         {
-            return Ok(await Service.GetCurrentMenuList());
+            return Ok(await Service.GetCurrentMenuList(UserContext.Current.RoleId));
         }
         /// <summary>
         /// 获取菜单

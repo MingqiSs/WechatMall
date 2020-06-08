@@ -28,9 +28,14 @@ namespace WM.Infrastructure.Controllers.Basic
         /// <returns></returns>
         [ApiActionPermission(Enums.ActionPermissionOptions.Delete)]
         [HttpPost, Route("Del")]
-        public new async Task<ActionResult> Del( KeyOptions keys)
+        public new async Task<ActionResult> Del([FromBody] object[]  keys)
         {
-            return await base.Del(keys);
+            var r = new KeyOptions { Key = new List<string>() };
+            foreach (var item in keys)
+            {
+                r.Key.Add(item.ToString());
+            }
+            return await base.Del(r);
         }
         /// <summary>
         /// 获取列表

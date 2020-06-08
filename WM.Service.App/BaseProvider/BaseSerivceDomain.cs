@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WM.Infrastructure.Config;
@@ -232,6 +233,90 @@ namespace WM.Service.App
             string sql = @$"update {entityType.Name} set  where {tKey}";
 
             return Response;
+        }
+
+
+        /// <summary>
+        /// 获取用户权限
+        /// </summary>
+        /// <returns></returns>
+        public List<Permissions> GetPermissions(int role_Id)
+        {
+            var where = string.Empty;
+            var list = new List<Permissions>();
+            if (UserContext.IsRoleIdSuperAdmin(role_Id))
+            {
+                list = repository.Sys_Menu.Where(q => q.Enable == (byte)EnumDataStatus.Enable)
+                                  .Select(q => new Permissions
+                                  {
+                                      Menu_Id = q.Menu_Id,
+                                      Menu_Name=q.MenuName,
+                                      ParentId = q.ParentId,
+                                      TableName = (q.TableName ?? "").ToLower(),
+                                      MenuAuth = q.Auth,
+                                      UserAuth = q.Auth,
+                                  }).ToList();
+                list.ForEach(x =>
+                {
+                    try
+                    {
+                        x.UserAuthArr = string.IsNullOrEmpty(x.UserAuth)
+                          ? new string[0]
+                          : x.UserAuth.DeserializeObject<List<Sys_Actions>>().Select(s => s.Value).ToArray();
+
+                    }
+                    catch { }
+                    finally
+                    {
+                        if (x.UserAuthArr == null)
+                        {
+                            x.UserAuthArr = new string[0];
+                        }
+                    }
+                });
+            }
+            else
+            {
+                list = repository.Sql_Query<Permissions>($@"SELECT a.Menu_Id,a.ParentId,a.MenuName as Menu_Name,a.TableName,a.Auth as MenuAuth, b.AuthValue as UserAuth from Sys_Menu a
+                                                            INNER JOIN Sys_RoleAuth b
+                                                            on a.Menu_Id = b.Menu_Id
+                                                             where a.Enable = 1  and b.Role_Id = {role_Id}");
+
+                list.ForEach(x =>
+                {
+                    try
+                    {
+                        x.UserAuthArr = string.IsNullOrEmpty(x.UserAuth)
+                       ? new string[0]
+                       : x.UserAuth.Split(",");
+                    }
+                    catch { }
+                    finally
+                    {
+                        if (x.UserAuthArr == null)
+                        {
+                            x.UserAuthArr = new string[0];
+                        }
+                    }
+                });
+            }
+            list.ForEach(x =>
+            {
+                try
+                {
+                    x.Actions = string.IsNullOrEmpty(x.MenuAuth)
+                      ? new List<Sys_Actions>()
+                      : x.MenuAuth.DeserializeObject<List<Sys_Actions>>().ToList();
+
+                }
+                catch { }
+                finally
+                {
+                    if (x.Actions == null) x.Actions = new List<Sys_Actions>();
+                }
+                x.Actions = x.Actions.Where(q => x.UserAuthArr.Contains(q.Value)).ToList();
+            });
+            return list;
         }
     }
 }

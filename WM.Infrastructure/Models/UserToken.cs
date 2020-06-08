@@ -72,17 +72,36 @@ namespace WM.Infrastructure.Models
     }
     public class Permissions
     {
-        public int Menu_Id { get; set; }
-        public int ParentId { get; set; }
-        public string TableName { get; set; }
-        public string AuthValue { get; set; }
-        public string Auth { get; set; }
         /// <summary>
-        /// 当前用户权限,存储的是权限的值，如:Add,Search等
+        /// 菜单id
         /// </summary>
-       // public string[] UserAuthArr { get; set; }
+        public int Menu_Id { get; set; }
         /// <summary>
-        /// 
+        /// 菜单id
+        /// </summary>
+        public string Menu_Name { get; set; }
+        /// <summary>
+        /// 父级id
+        /// </summary>
+        public int ParentId { get; set; }
+        /// <summary>
+        /// 表名称
+        /// </summary>
+        public string TableName { get; set; }
+        /// <summary>
+        /// 用户权限
+        /// </summary>
+        public string UserAuth { get; set; }
+        /// <summary>
+        /// 菜单权限
+        /// </summary>
+        public string MenuAuth { get; set; }
+        /// <summary>
+        /// 用户菜单权限
+        /// </summary>
+        public string[] UserAuthArr { get; set; }
+        /// <summary>
+        /// 当前用哪个胡菜单权限
         /// </summary>
         public List<Sys_Actions> Actions { get; set; }
     }

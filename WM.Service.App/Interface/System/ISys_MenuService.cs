@@ -10,11 +10,11 @@ namespace WM.Service.App.Interface.System
 {
    public interface ISys_MenuService
     {
-       /// <summary>
-       /// 获取用户当前菜单
-       /// </summary>
-       /// <returns></returns>
-        Task<List<M_AdminRoleMenuRP>> GetCurrentMenuList();
+        /// <summary>
+        /// 获取用户当前菜单
+        /// </summary>
+        /// <returns></returns>
+        Task<List<M_AdminRoleMenuRP>> GetCurrentMenuList(int roleId);
         /// <summary>
         /// 获取列表
         /// </summary>

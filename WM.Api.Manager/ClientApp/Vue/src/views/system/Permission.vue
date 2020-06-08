@@ -131,7 +131,7 @@ export default {
       let roleId = this.roles[this.selectIndex].id;
       this.http
         .post(
-          "/api/role/SavePermission?roleId=" + roleId,
+          "/api/Sys_Role/SavePermission?roleId=" + roleId,
           userPermissions,
           true
         )
