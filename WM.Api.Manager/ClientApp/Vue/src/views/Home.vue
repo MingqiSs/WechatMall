@@ -21,8 +21,8 @@
           </div> -->
         </div>
         <div style="background:#fff;">
-          <div class="h5-desc">
-             <h1>欢迎进入系统</h1>
+          <div class="list">
+          <div style="padding: 150px 0px;text-align: center"><h1>欢迎使用</h1><h1>{{new Date().getFullYear()}}年{{new Date().getMonth()+1}}月{{ new Date().getDate()}}日</h1></div>
             <!-- <Divider>移动H5页面(此处是H5页面,可点击--功能未实现)</Divider> -->
           </div>
           <div class="home-app">
@@ -125,7 +125,7 @@ export default {
       value1: "1"
     };
   },
-  mounted() {
+  mounted() {  
     var myChart = echarts.init(document.getElementById("charts"));
     // 绘制图表
     myChart.setOption({
@@ -147,6 +147,7 @@ export default {
         }
       ]
     });
+    
   }
 };
 </script>

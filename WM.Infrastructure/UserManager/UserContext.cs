@@ -85,16 +85,6 @@ namespace WM.Infrastructure.UserManager
             var list = new List<Permissions>();
             if (IsRoleIdSuperAdmin(role_Id))
             {
-                //list = repository.Sys_Menu.Where(q => q.Enable == (byte)EnumDataStatus.Enable)
-                //                  .Select(q => new Permissions
-                //                  {
-                //                      Menu_Id = q.Menu_Id,
-                //                      Menu_Name = q.MenuName,
-                //                      ParentId = q.ParentId,
-                //                      TableName = q.TableName,
-                //                      MenuAuth = q.Auth,
-                //                      UserAuth = q.Auth,
-                //                  }).ToList();
                 using (var conn = GetOpenConnection())
                 {
                     list = conn.Query<Permissions>($@"SELECT a.Menu_Id,a.ParentId,a.MenuName as Menu_Name,a.TableName,a.Auth as MenuAuth, a.Auth as UserAuth from Sys_Menu a

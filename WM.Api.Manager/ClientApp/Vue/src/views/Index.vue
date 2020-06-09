@@ -32,7 +32,6 @@
             <span>{{userName}}</span>
             <br />
             <span>{{date}}</span>
-            <!-- <span>星期五</span> -->
           </div>
           <div class="settings">
             <Icon :size="20" type="md-settings" @click="()=>{theme_moel=true;}" />
