@@ -50,7 +50,6 @@ namespace WM.Service.App.Services.System
                        }).ToList();
             return menu;
         }
-         
         /// <summary>
         /// 获取所有菜单
         /// </summary>

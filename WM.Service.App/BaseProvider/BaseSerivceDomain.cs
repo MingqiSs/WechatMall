@@ -252,7 +252,7 @@ namespace WM.Service.App
                                       Menu_Id = q.Menu_Id,
                                       Menu_Name=q.MenuName,
                                       ParentId = q.ParentId,
-                                      TableName = (q.TableName ?? "").ToLower(),
+                                      TableName = q.TableName,
                                       MenuAuth = q.Auth,
                                       UserAuth = q.Auth,
                                   }).ToList();
@@ -304,6 +304,8 @@ namespace WM.Service.App
             {
                 try
                 {
+                    x.TableName = (x.TableName ?? "").ToLower();
+
                     x.Actions = string.IsNullOrEmpty(x.MenuAuth)
                       ? new List<Sys_Actions>()
                       : x.MenuAuth.DeserializeObject<List<Sys_Actions>>().ToList();

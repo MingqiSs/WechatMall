@@ -34,37 +34,22 @@ namespace WM.Infrastructure.Filters
         }
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-           var aa= OnActionExecutionPermission(context);
             if (OnActionExecutionPermission(context).Status)
             {
                 await next();
                 return;
             }
-            //  FilterResponse.SetActionResult(context, ResponseContent);
             context.Result = new ContentResult()
             {
-                Content = new { status = false, message = "" }.Serialize(),
+                Content = new { status = false, message = ResponseContent.Message }.Serialize(),
+                ContentType = "application/json; charset=utf-8",
                 StatusCode = (int)HttpStatusCode.Unauthorized
             };
         }
         private WebResponseContent OnActionExecutionPermission(ActionExecutingContext context)
         {
-            //!context.Filters.Any(item => item is IFixedTokenFilter))固定token的是否验证权限
-            //if ((context.Filters.Any(item => item is IAllowAnonymousFilter)
-            //    && !context.Filters.Any(item => item is IFixedTokenFilter))
-            //    || UserContext.Current.IsSuperAdmin
-            //    )
             if (context.Filters.Any(item => item is IAllowAnonymousFilter))
                 return ResponseContent.OK();
-
-            ////演示环境除了admin帐号，其他帐号都不能增删改等操作
-            /// //if (!_userContext.IsSuperAdmin)
-            //{
-            //    return ResponseContent.Error("");
-            //}
-
-            // var actName=((Microsoft.AspNetCore.Mvc.Controllers.ControllerActionDescriptor)context.ActionDescriptor).ActionName;
-
 
             ////如果没有指定表的权限，则默认为代码生成的控制器，优先获取PermissionTableAttribute指定的表，如果没有数据则使用当前控制器的名作为表名权限
             if (ActionPermission.SysController)
@@ -80,7 +65,6 @@ namespace WM.Infrastructure.Filters
                 }
                 if (string.IsNullOrEmpty(ActionPermission.TableName))
                 {
-                    //responseType = ResponseType.ParametersLack;
                     return ResponseContent.Error(ResponseType.ParametersLack);
                 }
             }
@@ -105,18 +89,18 @@ namespace WM.Infrastructure.Filters
                 }
             }
             ////2020.05.05移除x.TableName.ToLower()转换,获取权限时已经转换成为小写
-          //  var actionAuth = _userContext.GetPermissions(x => x.TableName == ActionPermission.TableName.ToLower())?.UserAuthArr;
+            var actionAuth = _userContext.GetPermissions(UserContext.Current.RoleId).Where(x => x.TableName == ActionPermission.TableName.ToLower()).FirstOrDefault()?.UserAuthArr;
 
-            //if (actionAuth == null
-            //     || actionAuth.Count() == 0
-            //     || !actionAuth.Contains(ActionPermission.TableAction))
-            //{
-            //    //Logger.Info(LoggerType.Authorzie, $"没有权限操作," +
-            //    //    $"用户ID{_userContext.UserId}:{_userContext.UserTrueName}," +
-            //    //    $"角色ID:{_userContext.RoleId}:{_userContext.UserInfo.RoleName}," +
-            //    //    $"操作权限{ActionPermission.TableName}:{ActionPermission.TableAction}");
-            //    return ResponseContent.Error(ResponseType.NoPermissions);
-            //}
+            if (actionAuth == null
+                 || actionAuth.Count() == 0
+                 || !actionAuth.Contains(ActionPermission.TableAction))
+            {
+                //Logger.Info(LoggerType.Authorzie, $"没有权限操作," +
+                //    $"用户ID{_userContext.UserId}:{_userContext.UserTrueName}," +
+                //    $"角色ID:{_userContext.RoleId}:{_userContext.UserInfo.RoleName}," +
+                //    $"操作权限{ActionPermission.TableName}:{ActionPermission.TableAction}");
+                return ResponseContent.Error(ResponseType.NoPermissions);
+            }
             return ResponseContent.OK();
         }
     }

@@ -13,6 +13,7 @@ namespace WM.Infrastructure.Enums
         ParametersLack = 303,
         TokenExpiration,
         PINError,
+        [Description("无操作权限")]
         NoPermissions,
         NoRolePermissions,
         LoginError,

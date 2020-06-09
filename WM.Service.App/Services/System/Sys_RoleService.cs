@@ -257,6 +257,15 @@ namespace WM.Service.App.Services.System
             return rolesChildren;
         }
 
+        // <summary>
+        // 获取用户权限
+        // </summary>
+        // <returns></returns>
+        public List<Permissions> GetPermissions()
+        {
+
+            return GetPermissions(UserContext.Current.RoleId);
+        }
 
     }
     /// <summary>
