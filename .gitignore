@@ -33,3 +33,5 @@
 /WM.Manager.Mvc/bin/Debug/netcoreapp3.1
 /WM.Manager.Mvc/obj
 /WM.Api.Manager/ClientApp/Vue/node_modules
+/Resilience.http/bin
+/Resilience.http/obj

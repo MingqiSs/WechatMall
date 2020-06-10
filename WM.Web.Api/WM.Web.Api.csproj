@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Resilience.http\Resilience.http.csproj" />
     <ProjectReference Include="..\WM.Infrastructure\WM.Infrastructure.csproj" />
     <ProjectReference Include="..\WM.Service.App\WM.Service.App.csproj" />
     <ProjectReference Include="..\X.Models\X.Models.csproj" />

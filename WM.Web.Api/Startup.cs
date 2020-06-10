@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
@@ -16,10 +17,12 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using NLog.Extensions.Logging;
+using Resilience.http;
 using WM.Infrastructure.Config;
 using WM.Infrastructure.DI;
 using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Web.Api.Configurations;
+using WM.Web.Api.Extensions;
 
 namespace WM.Web.Api
 {
@@ -36,7 +39,22 @@ namespace WM.Web.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            #region ×¢²áResilience.http
+            services.AddHttpClient<IHttpClinet, ResilienceHttpClient>();
+            services.AddSingleton(typeof(ResilienceClinetFactory), sp =>
+            {
+                var logger = sp.GetRequiredService<ILogger<ResilienceHttpClient>>();
+                var httpContextAccessor = sp.GetRequiredService<IHttpContextAccessor>();
+                var retyCount = 3;
+                var exceptionCount = 3;
+                return new ResilienceClinetFactory(logger, httpContextAccessor, new HttpClient(), retyCount, exceptionCount);
+            });
+            services.AddSingleton<IHttpClinet>(sp =>
+            {
+                return sp.GetRequiredService<ResilienceClinetFactory>().GetResilienceHttpClient();
 
+            });
+            #endregion
             services.AddControllers();
 
             services.AddSwaggerSetup();

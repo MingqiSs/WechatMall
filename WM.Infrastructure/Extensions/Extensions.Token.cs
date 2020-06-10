@@ -19,16 +19,12 @@ namespace WM.Infrastructure.Models
         /// <returns></returns>
         //public static string GetClientIP(this ControllerBase controllerBase)
         //{
-        //    var ips = controllerBase.HttpContext.Request.Headers["X-Forwarded-For"];
-        //    if (ips.Count > 0)
+        //    var ip = controllerBase.HttpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+        //    if (string.IsNullOrWhiteSpace(ip))
         //    {
-        //        // 如果HTTP_X_FORWARDED_FOR 有复数IP的话 ,获取 最后一个IP
-        //        return ips[ips.Count - 1].Trim();
+        //        return controllerBase.HttpContext.Connection.RemoteIpAddress.ToString().Replace("::1", "127.0.0.1");
         //    }
-        //    else
-        //    {
-        //        return controllerBase.HttpContext.Connection.RemoteIpAddress.ToString();
-        //    }
+        //    return ip;
         //}
 
         ///// <summary>
