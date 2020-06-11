@@ -39,7 +39,7 @@ namespace WM.Api.Manager.Controllers.System
         [ProducesResponseType(typeof(List<M_AdminRoleMenuRP>), 200)]
         public async Task<IActionResult> GetTreeMenu()
         {
-            return Ok(await Service.GetCurrentMenuList(UserContext.Current.RoleId));
+            return Ok(await Service.GetCurrentMenuList());
         }
         /// <summary>
         /// 获取菜单

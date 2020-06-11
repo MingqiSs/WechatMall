@@ -89,7 +89,7 @@ namespace WM.Infrastructure.Filters
                 }
             }
             ////2020.05.05移除x.TableName.ToLower()转换,获取权限时已经转换成为小写
-            var actionAuth = _userContext.GetPermissions(UserContext.Current.RoleId).Where(x => x.TableName == ActionPermission.TableName.ToLower()).FirstOrDefault()?.UserAuthArr;
+            var actionAuth = _userContext.Permissions.Where(x => x.TableName == ActionPermission.TableName.ToLower()).FirstOrDefault()?.UserAuthArr;
 
             if (actionAuth == null
                  || actionAuth.Count() == 0

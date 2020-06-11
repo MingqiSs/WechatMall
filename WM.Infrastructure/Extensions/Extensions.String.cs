@@ -565,10 +565,10 @@ namespace WM.Infrastructure.Models
         /// </summary>
         /// <param name="value">要测试的字符串。</param>
         /// <returns>如果 <paramref name="value"/> 参数为 null、<see cref="string.Empty"/> 或仅由空字符组成，则返回 true。 否则，false。</returns>
-        public static bool IsNullOrWhiteSpace(this string value)
-        {
-            return string.IsNullOrWhiteSpace(value);
-        }
+        //public static bool IsNullOrWhiteSpace(this string value)
+        //{
+        //    return string.IsNullOrWhiteSpace(value);
+        //}
         /// <summary>
         /// Extension method that replaces keys in a string with the values of matching object properties.
         /// <remarks>Uses <see cref="String.Format()"/> internally; custom formats should match those used for that method.</remarks>

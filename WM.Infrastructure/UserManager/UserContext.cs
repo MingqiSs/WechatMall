@@ -14,8 +14,7 @@ namespace WM.Infrastructure.UserManager
 {
     public class UserContext : DapperBaseMysql
     {
-        public static string ConnectionString = AppSetting.GetConfig("ConnectionStrings:WMDB");
-        public override string NewConnect => ConnectionString;
+        public override string NewConnect => AppSetting.GetConfig("ConnectionStrings:WMDB");
 
         /// 为了尽量减少redis或Memory读取,保证执行效率,将UserContext注入到DI，
         /// </summary>
@@ -74,14 +73,19 @@ namespace WM.Infrastructure.UserManager
         {
             get { return UserInfo.Role_Id; }
         }
-
+        public List<Permissions> Permissions
+        {
+            get
+            {
+                return GetPermissions(RoleId);
+            }
+        }
         /// <summary>
         /// 获取用户权限
         /// </summary>
         /// <returns></returns>
         public List<Permissions> GetPermissions(int role_Id)
         {
-            var where = string.Empty;
             var list = new List<Permissions>();
             if (IsRoleIdSuperAdmin(role_Id))
             {

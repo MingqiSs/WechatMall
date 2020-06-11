@@ -34,7 +34,7 @@ namespace WM.Service.App.Services.System
         {
             int roleId = UserContext.Current.RoleId;
             //当前用户的权限
-            var permissions = GetPermissions(UserContext.Current.RoleId);
+            var permissions = UserContext.Current.Permissions;
 
             var data = permissions.Select(x => new UserPermissions
             {
@@ -85,7 +85,7 @@ namespace WM.Service.App.Services.System
                 }
             }
             //权限用户权限查询所有的菜单信息
-            var menus = GetPermissions(roleId);
+            var menus = UserContext.Current.GetPermissions(roleId);
             
             var data = menus.Select(x => new UserPermissions
             {
@@ -110,7 +110,7 @@ namespace WM.Service.App.Services.System
                 if (!(await GetAllChildren(user.Role_Id)).Exists(x => x.Id == roleId))
                     return Response.Error("没有权限修改此角色的权限信息");
                 //当前用户的权限
-                var permissions = GetPermissions(UserContext.Current.RoleId);
+                var permissions = UserContext.Current.Permissions;
 
                 List<int> originalMeunIds = new List<int>();
                 //被分配角色的权限
@@ -255,16 +255,6 @@ namespace WM.Service.App.Services.System
                 }
             });
             return rolesChildren;
-        }
-
-        // <summary>
-        // 获取用户权限
-        // </summary>
-        // <returns></returns>
-        public List<Permissions> GetPermissions()
-        {
-
-            return GetPermissions(UserContext.Current.RoleId);
         }
 
     }

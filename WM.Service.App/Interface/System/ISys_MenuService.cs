@@ -14,7 +14,7 @@ namespace WM.Service.App.Interface.System
         /// 获取用户当前菜单
         /// </summary>
         /// <returns></returns>
-        Task<List<M_AdminRoleMenuRP>> GetCurrentMenuList(int roleId);
+        Task<List<M_AdminRoleMenuRP>> GetCurrentMenuList();
         /// <summary>
         /// 获取列表
         /// </summary>

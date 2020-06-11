@@ -30,13 +30,13 @@ namespace WM.Service.App.Services.System
         /// </summary>
         /// <param name="roleId"></param>
         /// <returns></returns>
-        public async Task<List<M_AdminRoleMenuRP>>  GetCurrentMenuList(int roleId)
+        public async Task<List<M_AdminRoleMenuRP>>  GetCurrentMenuList()
         {
            
             var list =await repository.Sys_Menu.Where(q=>q.Enable==(byte)EnumDataStatus.Enable).ToListAsync();
             
-            var menu = (from a in GetPermissions(roleId)
-                       join b in list
+            var menu = (from a in UserContext.Current.Permissions
+                        join b in list
                        on a.Menu_Id equals b.Menu_Id
                        orderby b.Sort descending
                        select new M_AdminRoleMenuRP
