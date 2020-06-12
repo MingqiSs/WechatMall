@@ -1,26 +1,16 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Text.Unicode;
-using System.Threading.Tasks;
 using Autofac;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
 using WM.Api.Manager.Configurations;
 using WM.Api.Manager.Filter;
-using WM.Infrastructure.DI;
 using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Filters;
-using WM.Infrastructure.UserManager;
 namespace WM.Api.Manager
 {
     public class Startup
@@ -44,6 +34,7 @@ namespace WM.Api.Manager
                 //  options.Filters.Add(typeof(ApiAuthorizeFilter));
                 // options.Filters.Add(typeof(ActionPermissionFilter));
                 //options.Filters.Add(typeof(ActionExecuteFilter));
+                options.Filters.Add(typeof(WM.Api.Manager.Filter.ActionPermissionFilter));
             });
             //    .AddJsonOptions(options =>
             //{

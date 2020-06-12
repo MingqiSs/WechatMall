@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
+using WM.Api.Manager.Controllers.Basic;
 using WM.Infrastructure.Config;
 using WM.Infrastructure.Controllers.Basic;
 using WM.Infrastructure.Extensions.AutofacManager;

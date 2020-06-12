@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WM.Api.Manager.Controllers.Basic;
+using WM.Api.Manager.Filter;
 using WM.Infrastructure.Controllers.Basic;
 using WM.Infrastructure.Filters;
 using WM.Service.App.Interface.System;
@@ -26,7 +28,8 @@ namespace WM.Api.Manager.Controllers.System
         /// <param name="dicNos"></param>
         /// <returns></returns>
         [HttpPost, Route("GetVueDictionary")]
-        [ApiActionPermission()]
+      //  [ApiActionPermission()]
+      //  [Permission]
         public async Task<IActionResult> GetVueDictionary([FromBody]string[] dicNos)
         {
             return Ok(await Service.GetVueDictionary(dicNos));

@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\" />
-    <Folder Include="UserManager\" />
   </ItemGroup>
 
   <ItemGroup>

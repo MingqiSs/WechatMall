@@ -1,24 +1,27 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using WM.Api.Manager.Filter;
 using WM.Infrastructure.Filters;
 using WM.Infrastructure.Models;
 
-namespace WM.Infrastructure.Controllers.Basic
+namespace WM.Api.Manager.Controllers.Basic
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="IServiceBase"></typeparam>
     [Authorize]
     [ApiController]
     public class ApiBaseController<IServiceBase> : BaseController<IServiceBase>
-    {
+    {   /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="service"></param>
         public ApiBaseController(IServiceBase service)
       : base(service)
-        {
-        }
-        public ApiBaseController(string projectName, string folder, string tablename, IServiceBase service)
-       : base(projectName, folder, tablename, service)
         {
         }
         /// <summary>
@@ -26,9 +29,9 @@ namespace WM.Infrastructure.Controllers.Basic
         /// </summary>
         /// <param name="keys"></param>
         /// <returns></returns>
-        [ApiActionPermission(Enums.ActionPermissionOptions.Delete)]
+        [Permission(PermCode.Delete)]
         [HttpPost, Route("Del")]
-        public new async Task<ActionResult> Del([FromBody] object[]  keys)
+        public  async Task<ActionResult> Del([FromBody] object[] keys)
         {
             var r = new KeyOptions { Key = new List<string>() };
             foreach (var item in keys)
@@ -42,18 +45,18 @@ namespace WM.Infrastructure.Controllers.Basic
         /// </summary>
         /// <param name="loadData"></param>
         /// <returns></returns>
-        [ApiActionPermission(Enums.ActionPermissionOptions.Search)]
+        [Permission(PermCode.Search)]
         [HttpPost, Route("GetPageData")]
-        public new async Task<ActionResult> GetPageData( PageDataOptions loadData)
+        public new async Task<ActionResult> GetPageData(PageDataOptions loadData)
         {
             return await base.GetPageData(loadData);
         }
         /// <summary>
         /// 修改数据
         /// </summary>
-        /// <param name="loadData"></param>
+        /// <param name="saveModel"></param>
         /// <returns></returns>
-        [ApiActionPermission(Enums.ActionPermissionOptions.Update)]
+        [Permission(PermCode.Update)]
         [HttpPost, Route("Update")]
         public new async Task<ActionResult> Update(SaveModel saveModel)
         {
@@ -62,9 +65,9 @@ namespace WM.Infrastructure.Controllers.Basic
         /// <summary>
         /// 添加数据
         /// </summary>
-        /// <param name="loadData"></param>
+        /// <param name="saveModel"></param>
         /// <returns></returns>
-        [ApiActionPermission(Enums.ActionPermissionOptions.Update)]
+        [Permission(PermCode.Add)]
         [HttpPost, Route("Add")]
         public new async Task<ActionResult> Add(SaveModel saveModel)
         {

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WM.Api.Manager.Controllers.Basic;
 using WM.Api.Manager.Filter;
-using WM.Infrastructure.Controllers.Basic;
-using WM.Infrastructure.Enums;
 using WM.Infrastructure.Filters;
-using WM.Infrastructure.UserManager;
 using WM.Service.App.Dto.ManagerDto.RP;
 using WM.Service.App.Interface.System;
 using X.Models.WMDB;
@@ -56,7 +51,7 @@ namespace WM.Api.Manager.Controllers.System
         /// <param name="menuId"></param>
         /// <returns></returns>
         [HttpPost, Route("getTreeItem")]
-        [ApiActionPermission("Sys_Menu", "1", ActionPermissionOptions.Search)]
+        [Permission(PermCode.Search)]
         public async Task<IActionResult> GetTreeItem(int menuId)
         {
             return Ok(await Service.GetTreeInfo(menuId));
@@ -67,7 +62,7 @@ namespace WM.Api.Manager.Controllers.System
        /// <param name="menu"></param>
        /// <returns></returns>
         [HttpPost, Route("save"), ApiActionPermission(1)]
-        [ApiActionPermission("Sys_Menu", "1", ActionPermissionOptions.Search)]
+        [Permission(PermCode.Search)]
         public async Task<IActionResult> Save(Sys_Menu menu)
         {
             return Ok(await Service.Save(menu));

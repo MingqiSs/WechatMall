@@ -35,7 +35,7 @@ namespace WM.Service.App.Services.System
            
             var list =await repository.Sys_Menu.Where(q=>q.Enable==(byte)EnumDataStatus.Enable).ToListAsync();
             
-            var menu = (from a in UserContext.Current.Permissions
+            var menu = (from a in GetPermissions(UserContext.Current.RoleId)
                         join b in list
                        on a.Menu_Id equals b.Menu_Id
                        orderby b.Sort descending

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WM.Api.Manager.Controllers.Basic;
 using WM.Api.Manager.Filter;
 using WM.Infrastructure.Controllers.Basic;
 using WM.Infrastructure.Filters;

@@ -89,18 +89,18 @@ namespace WM.Infrastructure.Filters
                 }
             }
             ////2020.05.05移除x.TableName.ToLower()转换,获取权限时已经转换成为小写
-            var actionAuth = _userContext.Permissions.Where(x => x.TableName == ActionPermission.TableName.ToLower()).FirstOrDefault()?.UserAuthArr;
+            //var actionAuth = _userContext.Permissions.Where(x => x.TableName == ActionPermission.TableName.ToLower()).FirstOrDefault()?.UserAuthArr;
 
-            if (actionAuth == null
-                 || actionAuth.Count() == 0
-                 || !actionAuth.Contains(ActionPermission.TableAction))
-            {
-                //Logger.Info(LoggerType.Authorzie, $"没有权限操作," +
-                //    $"用户ID{_userContext.UserId}:{_userContext.UserTrueName}," +
-                //    $"角色ID:{_userContext.RoleId}:{_userContext.UserInfo.RoleName}," +
-                //    $"操作权限{ActionPermission.TableName}:{ActionPermission.TableAction}");
-                return ResponseContent.Error(ResponseType.NoPermissions);
-            }
+            //if (actionAuth == null
+            //     || actionAuth.Count() == 0
+            //     || !actionAuth.Contains(ActionPermission.TableAction))
+            //{
+            //    //Logger.Info(LoggerType.Authorzie, $"没有权限操作," +
+            //    //    $"用户ID{_userContext.UserId}:{_userContext.UserTrueName}," +
+            //    //    $"角色ID:{_userContext.RoleId}:{_userContext.UserInfo.RoleName}," +
+            //    //    $"操作权限{ActionPermission.TableName}:{ActionPermission.TableAction}");
+            //    return ResponseContent.Error(ResponseType.NoPermissions);
+            //}
             return ResponseContent.OK();
         }
     }
