@@ -82,26 +82,26 @@ namespace WM.Service.App.Services
         /// </summary>
         /// <param name="saveModel"></param>
         /// <returns></returns>
-        public override WebResponseContent Update(SaveModel saveModel) {
+        //public override WebResponseContent Update(SaveModel saveModel) {
           
-            if (saveModel == null)
-                return Response.Error(ResponseType.ParametersLack);
-            if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
+        //    if (saveModel == null)
+        //        return Response.Error(ResponseType.ParametersLack);
+        //    if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
             
-            //设置修改时间,修改人的默认值
-            var userInfo = UserContext.Current.UserInfo;
-            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
-            saveModel.MainData.Add("Modifier", userInfo.UserName);
-            saveModel.MainData.Add("ModifyDate", DateTime.Now);
-            Sys_User user = saveModel.MainData.DicToEntity<Sys_User>();
+        //    //设置修改时间,修改人的默认值
+        //    var userInfo = UserContext.Current.UserInfo;
+        //    // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
+        //    saveModel.MainData.Add("Modifier", userInfo.UserName);
+        //    saveModel.MainData.Add("ModifyDate", DateTime.Now);
+        //    Sys_User user = saveModel.MainData.DicToEntity<Sys_User>();
 
-            Response.Status = repository.Sys_User.Update(q => new Sys_User {
-            UserTrueName=user.UserTrueName,
-            }, q => q.UID == user.UID);
-            if(Response.Status) return Response.OK(ResponseType.EidtSuccess);
+        //    Response.Status = repository.Sys_User.Update(q => new Sys_User {
+        //    UserTrueName=user.UserTrueName,
+        //    }, q => q.UID == user.UID);
+        //    if(Response.Status) return Response.OK(ResponseType.EidtSuccess);
            
-            return Response;
-        }
+        //    return Response;
+        //}
         /// <summary>
         /// 添加
         /// </summary>

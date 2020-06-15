@@ -160,7 +160,7 @@ namespace WM.Service.App
             PageGridData<T> pageGridData = new PageGridData<T>();
 
             //ValidatePageOptions
-            var where = new StringBuilder($" Enable=1 ");
+            var where = new StringBuilder($" (Enable=1 or Enable=0) ");
             var order = new StringBuilder($"{key} desc");
             if (!string.IsNullOrWhiteSpace(options.Sort))//默认排序字段
             {
@@ -189,7 +189,8 @@ namespace WM.Service.App
                         PropertyInfo property = entityType.GetProperties().Where(c => c.Name.ToUpper() == x.Name.ToUpper()).FirstOrDefault();
                         if (property != null)
                         {
-                            where.Append($" and {property.Name}={x.Value} ");
+                            //property.PropertyType == typeof(string)
+                            where.Append($" and {property.Name}='{x.Value}' ");
                         }
                     }
                 }
@@ -230,7 +231,6 @@ namespace WM.Service.App
                 return Response;
             //设置修改时间,修改人的默认值
             var userInfo = UserContext.Current.UserInfo;
-            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
             // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
             if (saveModel.MainData.ContainsKey("modifier")) saveModel.MainData.Remove("modifier");
             if (saveModel.MainData.ContainsKey("modifyDate")) saveModel.MainData.Remove("modifyDate");
