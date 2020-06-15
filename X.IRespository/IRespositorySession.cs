@@ -107,6 +107,28 @@ namespace X.IRespository
         /// <param name="action"></param>
         /// <returns></returns>
         bool Sql_TransT(Action action);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+         bool Add<TEntity>(TEntity entities) where TEntity : class, new();
+ 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+         bool AddRange<TEntity>(List<TEntity> entities);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <typeparam name="TEntity"></typeparam>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+        bool Update<TEntity>(TEntity entities) where TEntity : class, new();
         #endregion
     }
 }

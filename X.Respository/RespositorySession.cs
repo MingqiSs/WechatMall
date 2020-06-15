@@ -167,6 +167,21 @@ namespace X.Respository
             }
 
         }
+
+        public bool Add<TEntity>(TEntity entities) where TEntity : class, new()
+        {
+            return DB.Insertable(entities).ExecuteCommand() > 0;
+            
+        }
+        public  bool AddRange<TEntity>(List<TEntity> entities)
+        {
+            return DB.Insertable(entities).ExecuteCommand() > 0;
+        }
+        public bool Update<TEntity>(TEntity entities) where TEntity : class, new()
+        {
+            return DB.Updateable(entities).ExecuteCommand() > 0;
+
+        }
         #endregion
 
     }

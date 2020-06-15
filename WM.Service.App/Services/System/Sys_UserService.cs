@@ -107,25 +107,25 @@ namespace WM.Service.App.Services
         /// </summary>
         /// <param name="saveModel"></param>
         /// <returns></returns>
-        public override WebResponseContent Add(SaveModel saveModel)
-        {
-            if (saveModel == null)
-                return Response.Error(ResponseType.ParametersLack);
-            if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
+        //public override WebResponseContent Add(SaveModel saveModel)
+        //{
+        //    if (saveModel == null)
+        //        return Response.Error(ResponseType.ParametersLack);
+        //    if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
 
-            //设置修改时间,修改人的默认值
-            var userInfo = UserContext.Current.UserInfo;
-            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
-            //  saveModel.MainData.Add("Creator", userInfo.UserName);
-            // saveModel.MainData.Add("CreateDate", DateTime.Now);
-            Sys_User user = saveModel.MainData.DicToEntity<Sys_User>();
-            user.UID = Guid.NewGuid().ToString();
-            user.Creator = userInfo.UserName;
-            user.CreateDate = DateTime.Now;
-            Response.Status = repository.Sys_User.Add(user);
-            if (Response.Status) return Response.OK(ResponseType.SaveSuccess);
+        //    //设置修改时间,修改人的默认值
+        //    var userInfo = UserContext.Current.UserInfo;
+        //    // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
+        //    //  saveModel.MainData.Add("Creator", userInfo.UserName);
+        //    // saveModel.MainData.Add("CreateDate", DateTime.Now);
+        //    Sys_User user = saveModel.MainData.DicToEntity<Sys_User>();
+        //    user.UID = Guid.NewGuid().ToString();
+        //    user.Creator = userInfo.UserName;
+        //    user.CreateDate = DateTime.Now;
+        //    Response.Status = repository.Sys_User.Add(user);
+        //    if (Response.Status) return Response.OK(ResponseType.SaveSuccess);
 
-            return Response;
-        }
+        //    return Response;
+        //}
     }
 }

@@ -11,6 +11,7 @@ using WM.Infrastructure.Extensions.AutofacManager;
 using WM.Infrastructure.Localization;
 using WM.Infrastructure.Models;
 using WM.Infrastructure.UserManager;
+using X.Models.WMDB;
 
 namespace WM.Service.App
 {
@@ -21,7 +22,7 @@ namespace WM.Service.App
     /// <typeparam name="TRepository"></typeparam>
     public abstract class BaseSerivceDomain<T, TRepository> : IDependency
         where TRepository : X.IRespository.DBSession.IWMDBSession
-        //where T : BaseEntity
+        where T : class, new()
     {
         /// <summary>
         /// 
@@ -230,15 +231,16 @@ namespace WM.Service.App
             //设置修改时间,修改人的默认值
             var userInfo = UserContext.Current.UserInfo;
             // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
-            saveModel.MainData.Add("Modifier", userInfo.UserName);
-            saveModel.MainData.Add("ModifyDate", DateTime.Now);
+            // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
+            if (saveModel.MainData.ContainsKey("modifier")) saveModel.MainData.Remove("modifier");
+            if (saveModel.MainData.ContainsKey("modifyDate")) saveModel.MainData.Remove("modifyDate");
+            saveModel.MainData.Add("modifier", userInfo.UserName);
+            saveModel.MainData.Add("modifyDate", DateTime.Now);
+
+
             T mainEntity = saveModel.MainData.DicToEntity<T>();
-
-          var list= entityType.GetEditField().Where(c => saveModel.MainData.Keys.Contains(c)).ToArray();
-            // repository.Sys_User.Update(q => q.UserName = saveModel.MainData.Keys["userName"]);
-            //var isSave= repository.DB.Updateable<X.Models.WMDB.Sys_User>(q=>q.).ExecuteCommand()>0;
-            string sql = @$"update {entityType.Name} set  where {tKey}";
-
+         // var list= entityType.GetEditField().Where(c => saveModel.MainData.Keys.Contains(c)).ToArray();
+            Response.Status = repository.Update(mainEntity);
             return Response;
         }
         /// <summary>
@@ -250,26 +252,44 @@ namespace WM.Service.App
         {
             if (saveModel == null)
                 return Response.Error(ResponseType.ParametersLack);
-            if (saveModel.MainData.Count <= 1) return Response.Error("系统没有配置好编辑的数据，请检查model!");
+            if (saveModel == null
+               || saveModel.MainData == null
+               || saveModel.MainData.Count == 0)
+                return Response.Set(ResponseType.ParametersLack, false);
+
             Type entityType = typeof(T);
+            //string validReslut = entityType.ValidateDicInEntity(saveModel.MainData, true);
+            //if (!string.IsNullOrEmpty(validReslut)) return Response.Error(validReslut);
             var keyProperty = entityType.GetKeyProperty();
             if (keyProperty == null) return Response.Error(ResponseType.KeyError);
             //查找key
             var tKey = keyProperty.Name;
             if (string.IsNullOrEmpty(tKey))
                 return Response;
+
+            //判断key类型是否为uuid
+            if (keyProperty.PropertyType == typeof(string)|| keyProperty.PropertyType == typeof(Guid))
+            {
+                saveModel.MainData.Add(keyProperty.Name, Guid.NewGuid());
+            }
+            else
+            {
+                saveModel.MainData.Remove(keyProperty.Name);
+            }
+
             //设置修改时间,修改人的默认值
             var userInfo = UserContext.Current.UserInfo;
             // 设置默认字段的值"CreateID", "Creator", "CreateDate"，"ModifyID", "Modifier", "ModifyDate"
-            saveModel.MainData.Add("Modifier", userInfo.UserName);
-            saveModel.MainData.Add("ModifyDate", DateTime.Now);
+            if(saveModel.MainData.ContainsKey("creator")) saveModel.MainData.Remove("creator");
+            if (saveModel.MainData.ContainsKey("createDate")) saveModel.MainData.Remove("createDate");
+            saveModel.MainData.Add("creator", userInfo.UserName);
+            saveModel.MainData.Add("createDate", DateTime.Now);
+
             T mainEntity = saveModel.MainData.DicToEntity<T>();
 
-            var list = entityType.GetEditField().Where(c => saveModel.MainData.Keys.Contains(c)).ToArray();
-            // repository.Sys_User.Update(q => q.UserName = saveModel.MainData.Keys["userName"]);
-            //var isSave= repository.DB.Updateable<X.Models.WMDB.Sys_User>(q=>q.).ExecuteCommand()>0;
-            string sql = @$"update {entityType.Name} set  where {tKey}";
-
+            Response.Status = repository.Add(mainEntity);
+            saveModel.MainData[keyProperty.Name] = keyProperty.GetValue(mainEntity);
+            if (Response.Status) return Response.OK(ResponseType.SaveSuccess);
             return Response;
         }
 
