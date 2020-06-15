@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using WM.Infrastructure.Config;
 using WM.Infrastructure.Enums;
@@ -154,9 +155,46 @@ namespace WM.Service.App
         {
             Type entityType = typeof(T);
             var tableName = entityType.Name;
+          var key=entityType.GetKeyProperty().Name;
             PageGridData<T> pageGridData = new PageGridData<T>();
-            var where = new StringBuilder($" Enable=1");
-            var order = new StringBuilder($" Sort desc");
+
+            //ValidatePageOptions
+            var where = new StringBuilder($" Enable=1 ");
+            var order = new StringBuilder($"{key} desc");
+            if (!string.IsNullOrWhiteSpace(options.Sort))//默认排序字段
+            {
+                var property = entityType.GetProperty(options.Sort);
+                if (property != null)
+                {
+                    options.Order ??= "desc";
+                    if (!(options.Order.ToLower() == "desc" || options.Order.ToLower() == "asc")) options.Order = "desc";
+                    order = new StringBuilder($"{property.Name}  {options.Order}");
+                }
+            }
+            if (!string.IsNullOrWhiteSpace(options.Wheres))
+            {
+                try
+                {
+                    var searchParametersList = options.Wheres.DeserializeObject<List<SearchParameters>>();
+                    //判断列的数据类型数字，日期的需要判断值的格式是否正确
+                    for (int i = 0; i < searchParametersList.Count; i++)
+                    {
+                        SearchParameters x = searchParametersList[i];
+                        x.DisplayType = x.DisplayType.GetDBCondition();
+                        if (string.IsNullOrEmpty(x.Value))
+                        {
+                            continue;
+                        }
+                        PropertyInfo property = entityType.GetProperties().Where(c => c.Name.ToUpper() == x.Name.ToUpper()).FirstOrDefault();
+                        if (property != null)
+                        {
+                            where.Append($" and {property.Name}={x.Value} ");
+                        }
+                    }
+                }
+                catch { }
+            }
+
             var query = new StringBuilder($"*");
             int totalCount = 0;
             var list = repository.SqlQueryWithPage<T>(new PageModel
@@ -165,8 +203,8 @@ namespace WM.Service.App
                 Order = order.ToString(),
                 Where = where.ToString(),
                 Query = query.ToString(),
-                Pageindex = 1,
-                PageSize = 10,
+                Pageindex = options.Page,
+                PageSize = options.Rows,
             }, ref totalCount);
             pageGridData.rows = list;
             pageGridData.total = totalCount;

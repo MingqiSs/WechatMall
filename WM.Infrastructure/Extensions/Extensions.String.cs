@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
+using WM.Infrastructure.Const;
 
 namespace WM.Infrastructure.Models
 {
@@ -652,6 +653,39 @@ namespace WM.Infrastructure.Models
                 }
             }
             return values;
+        }
+
+        public static string GetDBCondition(this string stringType)
+        {
+            string reslut = "";
+            switch (stringType?.ToLower())
+            {
+                case HtmlElementType.droplist:
+                case HtmlElementType.selectlist:
+                case HtmlElementType.textarea:
+                case HtmlElementType.checkbox:
+                    reslut = HtmlElementType.Contains;
+                    break;
+                case HtmlElementType.thanorequal:
+                    reslut = HtmlElementType.ThanOrEqual;
+                    break;
+                case HtmlElementType.lessorequal:
+                    reslut = HtmlElementType.LessOrequal;
+                    break;
+                case HtmlElementType.gt:
+                    reslut = HtmlElementType.GT;
+                    break;
+                case HtmlElementType.lt:
+                    reslut = HtmlElementType.lt;
+                    break;
+                case HtmlElementType.like:
+                    reslut = HtmlElementType.like;
+                    break;
+                default:
+                    reslut = HtmlElementType.Equal;
+                    break;
+            }
+            return reslut;
         }
 
     }
