@@ -35,3 +35,8 @@
 /WM.Api.Manager/ClientApp/Vue/node_modules
 /Resilience.http/bin
 /Resilience.http/obj
+/QuoteConsole/obj
+/QuoteConsole/bin/Debug/netcoreapp3.1
+/S.Quote.Api/bin/Debug/netcoreapp3.1
+/S.Quote.Api/obj
+/S.Quote.Api/Properties
